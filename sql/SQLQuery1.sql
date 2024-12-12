@@ -116,3 +116,36 @@ INSERT INTO Ban (TenBan) VALUES
 -- Validate data after insertion
 SELECT * FROM dbo.ChiTietDonHang;
 SELECT * FROM dbo.Ban;
+
+
+-- Them thong bao
+CREATE TABLE ThongBao (
+    TieuDe NVARCHAR(255), -- Định nghĩa chiều dài cụ thể
+    MoTa NVARCHAR(MAX),   -- Để lưu mô tả dài
+    Ngay DATE DEFAULT GETDATE(), -- Giá trị mặc định là ngày hiện tại
+    CONSTRAINT pk_TieuDe_ThongBao PRIMARY KEY (TieuDe)
+);
+
+INSERT INTO ThongBao (TieuDe,MoTa,Ngay) VALUES
+(N'Thong bao3' , N'KHAI TRƯƠNG GIẢM 99PT','2023-11-11'),
+(N'Thong bao4',N'MUA 1 TẶNG 1','2024-10-10')
+(N'Thong bacsac  sadsad ádo4',N'MUA 1 TẶNG 1','2024-11-10')
+select *
+from Ban
+SELECT name, definition
+FROM sys.default_constraints
+WHERE parent_object_id = OBJECT_ID('Ban') AND parent_column_id = COLUMNPROPERTY(OBJECT_ID('Ban'), 'TrangThai', 'ColumnId');
+
+ALTER TABLE Ban DROP CONSTRAINT DF__Ban__TrangThai__5AEE82B9;
+
+ALTER TABLE Ban DROP COLUMN TrangThai;
+
+alter table Ban add TrangThai Nvarchar(20) default(N'Còn Trống')
+
+delete from Ban where MaBan between 1 and 10
+
+insert into Ban(TenBan) values
+(N'Bàn 1'),
+(N'Bàn 2'),
+(N'Bàn 3'),
+(N'Bàn 4')

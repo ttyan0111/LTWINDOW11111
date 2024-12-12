@@ -39,10 +39,11 @@ namespace LTWINDOW_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
             string username = txtUserName.Text, passsword = txtPassword.Text;
 
             ListTaiKhoan ltk = new ListTaiKhoan();
-            ltk.queryTaiKhoan(@"select NhanVien.UserName, NhanVien.Passcode from NhanVien");
+            ltk.queryTaiKhoan(@"select NhanVien.UserName, NhanVien.Passcode, NhanVien.TenNhanVien from NhanVien");
             List<TaiKhoan> taiKhoans = ltk.List;
 
             errorProvider1.Clear();
@@ -57,6 +58,7 @@ namespace LTWINDOW_
                     {
                         if (tk.UserName == username && tk.Password == passsword)
                         {
+                            form.SetTenNhanVien(tk.TenNhanVien);
                             check = 1;
                             break;
                         }
@@ -66,8 +68,9 @@ namespace LTWINDOW_
                     {
                         lblThongBaoInvalid.Visible = false;
                         this.Hide();
-                        Form1 form = new Form1();
+                        
                         form.Show();
+                        
                     }
                     else lblThongBaoInvalid.Visible = true;
                 }

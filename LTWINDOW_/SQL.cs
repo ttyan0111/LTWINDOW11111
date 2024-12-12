@@ -100,32 +100,74 @@ namespace LTWINDOW_
             }
             return dt;
         }
-        // Phương thức lấy các bàn còn trống
-        public DataTable GetAvailableTables()
+        //// Phương thức lấy các bàn còn trống
+        //public DataTable GetAvailableTables()
+        //{
+        //    DataTable dt = new DataTable();
+        //    string query = @"
+        //        SELECT * FROM Ban
+        //        WHERE TrangThai = 0; -- TrangThai 1 indicates the table is available
+        //    ";
+
+        //    try
+        //    {
+        //        OpenConnection();
+        //        SqlCommand cmd = new SqlCommand(query, conn);
+        //        adapter = new SqlDataAdapter(cmd);
+        //        adapter.Fill(dt);
+        //        CloseConnection();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Lỗi khi lấy danh sách bàn còn trống.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    return dt;
+        //}
+        public List<ThongBao> GetThongBao()
         {
-            DataTable dt = new DataTable();
-            string query = @"
-                SELECT * FROM Ban
-                WHERE TrangThai = 0; -- TrangThai 1 indicates the table is available
-            ";
+            List<ThongBao> thongBaos = new List<ThongBao>();
+
+            // Ví dụ truy vấn SQL
+            string query = "SELECT TieuDe, MoTa, Ngay FROM ThongBao ORDER BY Ngay DESC";
 
             try
             {
                 OpenConnection();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                CloseConnection();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ThongBao tBao = new ThongBao
+                            {
+                                TieuDe = reader["TieuDe"].ToString(),
+                                MoTa = reader["MoTa"].ToString(),
+                                Ngay = Convert.ToDateTime(reader["Ngay"])
+                            };
+                            thongBaos.Add(tBao);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi lấy danh sách bàn còn trống.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi khi lấy dữ liệu thông báo từ cơ sở dữ liệu.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return dt;
+            finally
+            {
+                CloseConnection();
+            }
+
+            return thongBaos;
         }
     }
 
-    
+
 
 }
+
+
+
+
    

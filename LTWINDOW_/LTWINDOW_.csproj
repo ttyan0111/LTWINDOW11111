@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="TaiKhoan.cs" />
+    <Compile Include="ThongBao.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +109,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongBao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongBao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chuong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hot.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
