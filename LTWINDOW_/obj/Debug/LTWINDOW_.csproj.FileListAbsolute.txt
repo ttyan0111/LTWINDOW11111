@@ -24,3 +24,5 @@ C:\Users\ADMIN\source\repos\project winform\LTWINDOW_\obj\Debug\LTWINDOW_.exe
 C:\Users\ADMIN\source\repos\project winform\LTWINDOW_\obj\Debug\LTWINDOW_.pdb
 C:\Users\ADMIN\source\repos\project winform\LTWINDOW_\obj\Debug\LTWINDOW_.Login.resources
 C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.Login.resources
+C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.AddBan.resources
+C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.QuanLiBan.resources
