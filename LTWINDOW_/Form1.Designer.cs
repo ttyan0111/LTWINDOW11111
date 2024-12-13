@@ -119,6 +119,7 @@
             this.buttonQuanLyBan.Size = new System.Drawing.Size(183, 83);
             this.buttonQuanLyBan.TabIndex = 2;
             this.buttonQuanLyBan.Text = "Quản lý bàn";
+            this.buttonQuanLyBan.Click += new System.EventHandler(this.buttonQuanLyBan_Click);
             // 
             // buttonTrangChinh
             // 
@@ -173,9 +174,10 @@
             // uC_Menu1
             // 
             this.uC_Menu1.BackColor = System.Drawing.Color.White;
+            this.uC_Menu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_Menu1.Location = new System.Drawing.Point(0, 0);
             this.uC_Menu1.Name = "uC_Menu1";
-            this.uC_Menu1.Size = new System.Drawing.Size(1764, 1137);
+            this.uC_Menu1.Size = new System.Drawing.Size(1725, 1102);
             this.uC_Menu1.TabIndex = 1;
             // 
             // uC_DashBoard1

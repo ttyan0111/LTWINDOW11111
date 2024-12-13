@@ -60,7 +60,7 @@
             this.panelHoaDon.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelHoaDon.Location = new System.Drawing.Point(1012, 0);
             this.panelHoaDon.Name = "panelHoaDon";
-            this.panelHoaDon.Size = new System.Drawing.Size(700, 1099);
+            this.panelHoaDon.Size = new System.Drawing.Size(885, 1099);
             this.panelHoaDon.TabIndex = 2;
             // 
             // panelHienThiHoaDon
@@ -96,9 +96,9 @@
             this.buttonThanhToan.BackColor = System.Drawing.Color.White;
             this.buttonThanhToan.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonThanhToan.ForeColor = System.Drawing.Color.Purple;
-            this.buttonThanhToan.Location = new System.Drawing.Point(332, 186);
+            this.buttonThanhToan.Location = new System.Drawing.Point(238, 186);
             this.buttonThanhToan.Name = "buttonThanhToan";
-            this.buttonThanhToan.Size = new System.Drawing.Size(155, 49);
+            this.buttonThanhToan.Size = new System.Drawing.Size(249, 49);
             this.buttonThanhToan.TabIndex = 13;
             this.buttonThanhToan.Text = "Thanh Toán";
             this.buttonThanhToan.UseVisualStyleBackColor = false;
@@ -232,7 +232,7 @@
             this.Controls.Add(this.panelMon);
             this.Controls.Add(this.panelHoaDon);
             this.Name = "UC_Menu";
-            this.Size = new System.Drawing.Size(1715, 1099);
+            this.Size = new System.Drawing.Size(1900, 1099);
             this.panelHoaDon.ResumeLayout(false);
             this.panelHoaDon.PerformLayout();
             this.guna2CustomGradientPanel1.ResumeLayout(false);

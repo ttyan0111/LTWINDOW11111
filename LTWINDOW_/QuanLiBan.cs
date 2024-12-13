@@ -78,7 +78,7 @@ namespace LTWINDOW_
 
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount > 1)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Bạn có chác muốn xóa những hàng đã chọn không?", "Xóa Hàng Đã Chọn", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
@@ -120,7 +120,6 @@ namespace LTWINDOW_
                             dataGridView1.Rows.Remove(row);
                         }    
 
-                        
 
                         // dã xóa dữ liệu.
                         check = 1; 
@@ -143,6 +142,11 @@ namespace LTWINDOW_
             SuaBan suaBan = new SuaBan();
             suaBan.ShowDialog();
             loadData();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

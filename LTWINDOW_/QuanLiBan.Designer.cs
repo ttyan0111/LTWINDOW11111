@@ -37,12 +37,11 @@
             this.MaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_body = new System.Windows.Forms.Panel();
+            this.panel_right = new System.Windows.Forms.Panel();
+            this.panel_top = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.panel_body.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -64,12 +63,13 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 155);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -84,8 +84,7 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1132, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(1153, 942);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -96,7 +95,7 @@
             this.MaBan.MinimumWidth = 6;
             this.MaBan.Name = "MaBan";
             this.MaBan.ReadOnly = true;
-            this.MaBan.Width = 250;
+            this.MaBan.Width = 200;
             // 
             // TenBan
             // 
@@ -105,7 +104,7 @@
             this.TenBan.MinimumWidth = 6;
             this.TenBan.Name = "TenBan";
             this.TenBan.ReadOnly = true;
-            this.TenBan.Width = 300;
+            this.TenBan.Width = 200;
             // 
             // TrangThai
             // 
@@ -114,77 +113,66 @@
             this.TrangThai.MinimumWidth = 6;
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 250;
+            this.TrangThai.Width = 200;
             // 
-            // menuStrip1
+            // panel_body
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmToolStripMenuItem,
-            this.xóaToolStripMenuItem,
-            this.sửaToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 36);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel_body.Controls.Add(this.dataGridView1);
+            this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_body.Location = new System.Drawing.Point(0, 0);
+            this.panel_body.Name = "panel_body";
+            this.panel_body.Size = new System.Drawing.Size(1153, 942);
+            this.panel_body.TabIndex = 2;
+            this.panel_body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // thêmToolStripMenuItem
+            // panel_right
             // 
-            this.thêmToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thêmToolStripMenuItem.Image = global::LTWINDOW_.Properties.Resources.cộng;
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(99, 32);
-            this.thêmToolStripMenuItem.Text = "Thêm";
-            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
+            this.panel_right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_right.Location = new System.Drawing.Point(999, 0);
+            this.panel_right.Name = "panel_right";
+            this.panel_right.Size = new System.Drawing.Size(154, 942);
+            this.panel_right.TabIndex = 3;
             // 
-            // xóaToolStripMenuItem
+            // panel_top
             // 
-            this.xóaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xóaToolStripMenuItem.Image = global::LTWINDOW_.Properties.Resources.trừ;
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
-            this.xóaToolStripMenuItem.Text = "Xóa";
-            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
-            // 
-            // sửaToolStripMenuItem
-            // 
-            this.sửaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(61, 32);
-            this.sửaToolStripMenuItem.Text = "Sửa";
-            this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
+            this.panel_top.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(999, 100);
+            this.panel_top.TabIndex = 4;
             // 
             // QuanLiBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1155, 460);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1153, 942);
+            this.Controls.Add(this.panel_top);
+            this.Controls.Add(this.panel_right);
+            this.Controls.Add(this.panel_body);
+            this.ForeColor = System.Drawing.Color.Blue;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QuanLiBan";
             this.Text = "Quán Lý Bàn";
             this.Load += new System.EventHandler(this.QuanLiBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel_body.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_body;
+        private System.Windows.Forms.Panel panel_right;
+        private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
