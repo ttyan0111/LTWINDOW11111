@@ -104,12 +104,6 @@
     </Compile>
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThongBao.cs" />
-    <Compile Include="tmp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="tmp.Designer.cs">
-      <DependentUpon>tmp.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddBan.resx">
       <DependentUpon>AddBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuaBan.resx">
       <DependentUpon>SuaBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tmp.resx">
-      <DependentUpon>tmp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
