@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTWINDOW_.Options;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,7 @@ namespace LTWINDOW_
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 form = new Form1();
+            UC_DashBoard dashBoard = new UC_DashBoard();
             string username = txtUserName.Text, passsword = txtPassword.Text;
 
             ListTaiKhoan ltk = new ListTaiKhoan();
@@ -58,7 +60,7 @@ namespace LTWINDOW_
                     {
                         if (tk.UserName == username && tk.Password == passsword)
                         {
-                            //form.SetTenNhanVien(tk.TenNhanVien);
+                            dashBoard.SetTenNhanVien(tk.TenNhanVien);
                             check = 1;
                             break;
                         }

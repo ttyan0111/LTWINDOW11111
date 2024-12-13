@@ -80,16 +80,17 @@ namespace LTWINDOW_
         {
             if (dataGridView1.RowCount > 1)
             {
-                var getValueColumnCurrent = dataGridView1.SelectedRows[0].Cells[0].Value;
-                int MaBan = int.Parse(getValueColumnCurrent.ToString());
+                if (MessageBox.Show("Bạn có chác muốn xóa những hàng đã chọn không?", "Xóa Hàng Đã Chọn", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
 
                 // câu truy vấn.
                 string query = "delete from Ban where MaBan = @MaBan";
 
                 SQL sql = new SQL();
 
-                // kiểm tra xem có xóa được dữ liệu chưa.
-                int check = 0;
+                
+                int check = 0; // kiểm tra xem có xóa được dữ liệu chưa.
+
                 using (SqlConnection connection = sql.Conn)
                 {
                     try
@@ -98,14 +99,31 @@ namespace LTWINDOW_
 
                         SqlCommand command = new SqlCommand(query, connection);
 
-                        // add parameter
-                        command.Parameters.AddWithValue("@MaBan", MaBan);
+                        while(dataGridView1.SelectedRows.Count > 0)
+                        {
+                            DataGridViewRow row = dataGridView1.SelectedRows[0];
 
-                        // thực thi không tri vấn
-                        command.ExecuteNonQuery();
+                            if (row.IsNewRow) continue;
+
+                            var getValueColumnCurrent = dataGridView1.SelectedRows[0].Cells[0].Value;
+                            int MaBan = int.Parse(getValueColumnCurrent.ToString());
+
+                            // add parameter
+                            command.Parameters.AddWithValue("@MaBan", MaBan);
+
+                            // thực thi không tri vấn
+                            command.ExecuteNonQuery();
+
+                            command.Parameters.Clear();
+
+                            // xóa hàng đầu tiên được chọn.
+                            dataGridView1.Rows.Remove(row);
+                        }    
+
+                        
 
                         // dã xóa dữ liệu.
-                        check = 1;
+                        check = 1; 
                     }
                     catch  (SqlException ex)
                     {
@@ -114,10 +132,17 @@ namespace LTWINDOW_
                     
                 }
 
-                // nếu xóa được load lại datagridView.
-                if (check == 1) loadData();
+               
+                if (check == 1) loadData();  // nếu đã xóa thì load lại datagridView.
             }
             else MessageBox.Show("không có dòng nào để xóa");
+        }
+
+        private void sửaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuaBan suaBan = new SuaBan();
+            suaBan.ShowDialog();
+            loadData();
         }
     }
 }

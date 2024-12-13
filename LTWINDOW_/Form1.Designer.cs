@@ -37,8 +37,8 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -154,20 +154,20 @@
             this.panel1.Controls.Add(this.uC_DashBoard1);
             this.panel1.Location = new System.Drawing.Point(215, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1715, 1099);
+            this.panel1.Size = new System.Drawing.Size(1725, 1102);
             this.panel1.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
             // 
             // uC_DashBoard1
             // 
             this.uC_DashBoard1.BackColor = System.Drawing.Color.White;
-            this.uC_DashBoard1.Location = new System.Drawing.Point(3, 3);
+            this.uC_DashBoard1.Location = new System.Drawing.Point(0, 0);
             this.uC_DashBoard1.Name = "uC_DashBoard1";
-            this.uC_DashBoard1.Size = new System.Drawing.Size(1715, 1099);
+            this.uC_DashBoard1.Size = new System.Drawing.Size(1754, 1137);
             this.uC_DashBoard1.TabIndex = 0;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
             // 
             // Form1
             // 

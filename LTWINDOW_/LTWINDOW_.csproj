@@ -87,6 +87,12 @@
       <DependentUpon>QuanLiBan.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
+    <Compile Include="SuaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaBan.Designer.cs">
+      <DependentUpon>SuaBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="ThongBao.cs" />
     <EmbeddedResource Include="AddBan.resx">
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLiBan.resx">
       <DependentUpon>QuanLiBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaBan.resx">
+      <DependentUpon>SuaBan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -148,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cộng.png" />
+    <None Include="Resources\trừ1.png" />
+    <None Include="Resources\cộng1.png" />
+    <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

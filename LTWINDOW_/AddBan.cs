@@ -39,7 +39,11 @@ namespace LTWINDOW_
 
                         if (MessageBox.Show("bàn đã được thêm\nnếu muốn thêm tiếp nhấp Yes không nhập No?", "Question", MessageBoxButtons.YesNo) == DialogResult.No)
                             this.Close();
-                        else txtName.Text = "";
+                        else
+                        {
+                            txtName.Text = "";
+                            cmbStatus.SelectedIndex = 0;
+                        }
                     }
                     catch (Exception ex)
                     {
