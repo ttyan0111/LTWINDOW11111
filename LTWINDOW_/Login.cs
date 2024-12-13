@@ -58,7 +58,7 @@ namespace LTWINDOW_
                     {
                         if (tk.UserName == username && tk.Password == passsword)
                         {
-                            form.SetTenNhanVien(tk.TenNhanVien);
+                            //form.SetTenNhanVien(tk.TenNhanVien);
                             check = 1;
                             break;
                         }
