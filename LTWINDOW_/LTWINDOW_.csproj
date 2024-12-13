@@ -72,11 +72,20 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LuuTenLabelButton.cs" />
+    <Compile Include="LuuViTri.cs" />
+    <Compile Include="Mon.cs" />
     <Compile Include="Options\UC_DashBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Options\UC_DashBoard.Designer.cs">
       <DependentUpon>UC_DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\UC_Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UC_Menu.Designer.cs">
+      <DependentUpon>UC_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Options\UC_DashBoard.resx">
       <DependentUpon>UC_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UC_Menu.resx">
+      <DependentUpon>UC_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

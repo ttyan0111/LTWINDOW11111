@@ -149,3 +149,5 @@ insert into Ban(TenBan) values
 (N'Bàn 2'),
 (N'Bàn 3'),
 (N'Bàn 4')
+
+ALTER TABLE DanhSachMon add Image VARBINARY(MAX) -- Dữ liệu hình ảnh

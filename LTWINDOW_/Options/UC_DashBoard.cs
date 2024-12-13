@@ -163,5 +163,9 @@ namespace LTWINDOW_.Options
             }
         }
 
+        private void acount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

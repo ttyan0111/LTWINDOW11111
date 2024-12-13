@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTWINDOW_.Options;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,16 +20,21 @@ namespace LTWINDOW_
             InitializeComponent();
             sql = new SQL();
             sql.OpenConnection();
-           
+            uC_DashBoard1.Visible = true;
+            uC_Menu1.Visible = false;
+
         }
 
-       
-
-        
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void buttonTrangChinh_Click(object sender, EventArgs e)
         {
+            uC_DashBoard1.Visible = true;
+            uC_Menu1.Visible = false;
+        }
 
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            uC_DashBoard1.Visible = false;
+            uC_Menu1.Visible = true;
         }
     }
 }

@@ -30,108 +30,112 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonThem = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonQuanLy = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonMenu = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonQuanLyBan = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
+            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.Controls.Add(this.guna2Button6);
-            this.guna2Panel1.Controls.Add(this.guna2Button5);
-            this.guna2Panel1.Controls.Add(this.guna2Button4);
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.Controls.Add(this.buttonThem);
+            this.guna2Panel1.Controls.Add(this.buttonQuanLy);
+            this.guna2Panel1.Controls.Add(this.buttonMenu);
+            this.guna2Panel1.Controls.Add(this.buttonQuanLyBan);
+            this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(209, 1112);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2Button6
+            // buttonThem
             // 
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(12, 869);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(183, 83);
-            this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Text = "Thêm";
+            this.buttonThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonThem.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonThem.ForeColor = System.Drawing.Color.Purple;
+            this.buttonThem.Location = new System.Drawing.Point(12, 869);
+            this.buttonThem.Name = "buttonThem";
+            this.buttonThem.Size = new System.Drawing.Size(183, 83);
+            this.buttonThem.TabIndex = 5;
+            this.buttonThem.Text = "Thêm";
             // 
-            // guna2Button5
+            // buttonQuanLy
             // 
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(12, 704);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(183, 83);
-            this.guna2Button5.TabIndex = 4;
-            this.guna2Button5.Text = "Quản lý";
+            this.buttonQuanLy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonQuanLy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonQuanLy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonQuanLy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonQuanLy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonQuanLy.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonQuanLy.ForeColor = System.Drawing.Color.Purple;
+            this.buttonQuanLy.Location = new System.Drawing.Point(12, 704);
+            this.buttonQuanLy.Name = "buttonQuanLy";
+            this.buttonQuanLy.Size = new System.Drawing.Size(183, 83);
+            this.buttonQuanLy.TabIndex = 4;
+            this.buttonQuanLy.Text = "Quản lý";
             // 
-            // guna2Button4
+            // buttonMenu
             // 
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(12, 532);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(183, 83);
-            this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "Menu món";
+            this.buttonMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonMenu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonMenu.ForeColor = System.Drawing.Color.Purple;
+            this.buttonMenu.Location = new System.Drawing.Point(12, 532);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(183, 83);
+            this.buttonMenu.TabIndex = 3;
+            this.buttonMenu.Text = "Menu món";
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
-            // guna2Button3
+            // buttonQuanLyBan
             // 
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(12, 338);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(183, 83);
-            this.guna2Button3.TabIndex = 2;
-            this.guna2Button3.Text = "Quản lý bàn";
+            this.buttonQuanLyBan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonQuanLyBan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonQuanLyBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonQuanLyBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonQuanLyBan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonQuanLyBan.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonQuanLyBan.ForeColor = System.Drawing.Color.Purple;
+            this.buttonQuanLyBan.Location = new System.Drawing.Point(12, 338);
+            this.buttonQuanLyBan.Name = "buttonQuanLyBan";
+            this.buttonQuanLyBan.Size = new System.Drawing.Size(183, 83);
+            this.buttonQuanLyBan.TabIndex = 2;
+            this.buttonQuanLyBan.Text = "Quản lý bàn";
             // 
-            // guna2Button2
+            // buttonTrangChinh
             // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(12, 140);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(183, 83);
-            this.guna2Button2.TabIndex = 1;
-            this.guna2Button2.Text = "Trang chính";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.buttonTrangChinh.BackColor = System.Drawing.Color.DarkViolet;
+            this.buttonTrangChinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTrangChinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTrangChinh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonTrangChinh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonTrangChinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonTrangChinh.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTrangChinh.ForeColor = System.Drawing.Color.Purple;
+            this.buttonTrangChinh.Location = new System.Drawing.Point(12, 140);
+            this.buttonTrangChinh.Name = "buttonTrangChinh";
+            this.buttonTrangChinh.Size = new System.Drawing.Size(183, 83);
+            this.buttonTrangChinh.TabIndex = 1;
+            this.buttonTrangChinh.Text = "Trang chính";
+            this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
             // 
             // guna2Button1
             // 
@@ -139,7 +143,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::LTWINDOW_.Properties.Resources.home;
@@ -151,11 +155,28 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.uC_Menu1);
             this.panel1.Controls.Add(this.uC_DashBoard1);
             this.panel1.Location = new System.Drawing.Point(215, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1725, 1102);
             this.panel1.TabIndex = 1;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this;
+            // 
+            // uC_Menu1
+            // 
+            this.uC_Menu1.BackColor = System.Drawing.Color.White;
+            this.uC_Menu1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Menu1.Name = "uC_Menu1";
+            this.uC_Menu1.Size = new System.Drawing.Size(1764, 1137);
+            this.uC_Menu1.TabIndex = 1;
             // 
             // uC_DashBoard1
             // 
@@ -165,15 +186,11 @@
             this.uC_DashBoard1.Size = new System.Drawing.Size(1754, 1137);
             this.uC_DashBoard1.TabIndex = 0;
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel1);
@@ -191,14 +208,16 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button buttonTrangChinh;
+        private Guna.UI2.WinForms.Guna2Button buttonThem;
+        private Guna.UI2.WinForms.Guna2Button buttonQuanLy;
+        private Guna.UI2.WinForms.Guna2Button buttonMenu;
+        private Guna.UI2.WinForms.Guna2Button buttonQuanLyBan;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Options.UC_DashBoard uC_DashBoard1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Options.UC_Menu uC_Menu1;
     }
 }
 

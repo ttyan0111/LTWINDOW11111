@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
+using System.IO;
 
 namespace LTWINDOW_
 {
@@ -100,29 +101,7 @@ namespace LTWINDOW_
             }
             return dt;
         }
-        //// Phương thức lấy các bàn còn trống
-        //public DataTable GetAvailableTables()
-        //{
-        //    DataTable dt = new DataTable();
-        //    string query = @"
-        //        SELECT * FROM Ban
-        //        WHERE TrangThai = 0; -- TrangThai 1 indicates the table is available
-        //    ";
-
-        //    try
-        //    {
-        //        OpenConnection();
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        adapter = new SqlDataAdapter(cmd);
-        //        adapter.Fill(dt);
-        //        CloseConnection();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Lỗi khi lấy danh sách bàn còn trống.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    return dt;
-        //}
+       
         public List<ThongBao> GetThongBao()
         {
             List<ThongBao> thongBaos = new List<ThongBao>();
@@ -161,10 +140,52 @@ namespace LTWINDOW_
 
             return thongBaos;
         }
+        public List<Mon> GetDanhSachMon()
+        {
+            List<Mon> danhSachMonList = new List<Mon>();
+
+            string query = "SELECT * FROM DanhSachMon";
+
+            try
+            {
+                OpenConnection();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                           
+                            Mon mon = new Mon
+                            (
+                                reader["MaLoaiMon"].ToString(),
+                                reader["MaMon"].ToString(),
+                                reader["TenMon"].ToString(),
+                                Convert.ToDouble(reader["Gia"]),
+                                Convert.ToInt32(reader["SoLuong"]),
+                                reader["_Image"] as byte[]
+                            );
+                            danhSachMonList.Add(mon);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lấy dữ liệu món từ cơ sở dữ liệu.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return danhSachMonList;
+        }
+
+
+
+
     }
-
-
-
 }
 
 
