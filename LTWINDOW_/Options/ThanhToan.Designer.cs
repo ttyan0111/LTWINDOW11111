@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.buttonInHoaDon = new System.Windows.Forms.Button();
-            this.panelHienThiHoaDon = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelHienThi = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -48,14 +48,15 @@
             this.buttonInHoaDon.TabIndex = 21;
             this.buttonInHoaDon.Text = "In Hóa Đơn";
             this.buttonInHoaDon.UseVisualStyleBackColor = false;
+            this.buttonInHoaDon.Click += new System.EventHandler(this.buttonInHoaDon_Click);
             // 
-            // panelHienThiHoaDon
+            // panelHienThi
             // 
-            this.panelHienThiHoaDon.BackColor = System.Drawing.Color.White;
-            this.panelHienThiHoaDon.Location = new System.Drawing.Point(953, 65);
-            this.panelHienThiHoaDon.Name = "panelHienThiHoaDon";
-            this.panelHienThiHoaDon.Size = new System.Drawing.Size(547, 630);
-            this.panelHienThiHoaDon.TabIndex = 22;
+            this.panelHienThi.BackColor = System.Drawing.Color.White;
+            this.panelHienThi.Location = new System.Drawing.Point(953, 65);
+            this.panelHienThi.Name = "panelHienThi";
+            this.panelHienThi.Size = new System.Drawing.Size(547, 630);
+            this.panelHienThi.TabIndex = 22;
             // 
             // label2
             // 
@@ -92,7 +93,7 @@
             this.ClientSize = new System.Drawing.Size(1537, 934);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonInHoaDon);
-            this.Controls.Add(this.panelHienThiHoaDon);
+            this.Controls.Add(this.panelHienThi);
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "ThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -106,7 +107,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonInHoaDon;
-        private System.Windows.Forms.FlowLayoutPanel panelHienThiHoaDon;
+        private System.Windows.Forms.FlowLayoutPanel panelHienThi;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;

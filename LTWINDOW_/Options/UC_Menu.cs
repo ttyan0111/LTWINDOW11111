@@ -18,6 +18,7 @@ namespace LTWINDOW_.Options
         double totalPrice = 0;
         SQL sql;
         List<KeyValuePair<string, int>> ds;
+        string maNhanVien = "1234567890";
 
         private Dictionary<string, Label> quantityLabels = new Dictionary<string, Label>();
         public UC_Menu()
@@ -403,10 +404,19 @@ namespace LTWINDOW_.Options
 
         private void buttonThanhToan_Click(object sender, EventArgs e)
         {
-            Form form = new ThanhToan();
+            int u = -1;
+            if (radioButtonMuaVe.Checked)
+            {
+                u = 1; // mua ve
+            }
+            else if (radioButtonTaiQuan.Checked)
+            {
+                u = 2; // tai quan
+            }
+            ThanhToan form = new ThanhToan(ds,u,maNhanVien);
             // khởi tạo form con là form  muốn hiển thị.
-          
 
+           
             
             
             // hiển thị full trên panel chứa nó.
