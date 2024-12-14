@@ -47,6 +47,5 @@ C:\Users\Yan\source\repos\LTWINDOW_ - Copy\LTWINDOW_\bin\Debug\LTWINDOW_.exe
 C:\Users\Yan\source\repos\LTWINDOW_ - Copy\LTWINDOW_\bin\Debug\LTWINDOW_.pdb
 C:\Users\Yan\source\repos\LTWINDOW_ - Copy\LTWINDOW_\bin\Debug\Guna.UI2.dll
 C:\Users\Yan\source\repos\LTWINDOW_ - Copy\LTWINDOW_\obj\Debug\LTWINDOW_.csproj.Up2Date
-C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.tmp.resources
 C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.Options.UC_ThanhToan.resources
 C:\Users\Yan\source\repos\LTWINDOW_\LTWINDOW_\obj\Debug\LTWINDOW_.Options.ThanhToan.resources

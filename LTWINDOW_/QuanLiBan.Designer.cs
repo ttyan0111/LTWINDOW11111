@@ -38,15 +38,18 @@
             this.TenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_body = new System.Windows.Forms.Panel();
-            this.panel_right = new System.Windows.Forms.Panel();
             this.panel_top = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_body.SuspendLayout();
+            this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,9 +87,8 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1153, 942);
+            this.dataGridView1.Size = new System.Drawing.Size(1920, 833);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // MaBan
             // 
@@ -95,7 +97,7 @@
             this.MaBan.MinimumWidth = 6;
             this.MaBan.Name = "MaBan";
             this.MaBan.ReadOnly = true;
-            this.MaBan.Width = 200;
+            this.MaBan.Width = 400;
             // 
             // TenBan
             // 
@@ -104,7 +106,7 @@
             this.TenBan.MinimumWidth = 6;
             this.TenBan.Name = "TenBan";
             this.TenBan.ReadOnly = true;
-            this.TenBan.Width = 200;
+            this.TenBan.Width = 480;
             // 
             // TrangThai
             // 
@@ -113,35 +115,69 @@
             this.TrangThai.MinimumWidth = 6;
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 200;
+            this.TrangThai.Width = 460;
             // 
             // panel_body
             // 
             this.panel_body.Controls.Add(this.dataGridView1);
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_body.Location = new System.Drawing.Point(0, 0);
+            this.panel_body.Location = new System.Drawing.Point(0, 109);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1153, 942);
+            this.panel_body.Size = new System.Drawing.Size(1920, 833);
             this.panel_body.TabIndex = 2;
             this.panel_body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel_right
-            // 
-            this.panel_right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_right.Location = new System.Drawing.Point(999, 0);
-            this.panel_right.Name = "panel_right";
-            this.panel_right.Size = new System.Drawing.Size(154, 942);
-            this.panel_right.TabIndex = 3;
-            // 
             // panel_top
             // 
-            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.panel_top.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel_top.Controls.Add(this.btnSua);
+            this.panel_top.Controls.Add(this.btnXoa);
+            this.panel_top.Controls.Add(this.btnThem);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.ForeColor = System.Drawing.Color.Black;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(999, 100);
+            this.panel_top.Size = new System.Drawing.Size(1920, 109);
             this.panel_top.TabIndex = 4;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Silver;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnSua.Location = new System.Drawing.Point(559, 23);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(204, 60);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Red;
+            this.btnXoa.Location = new System.Drawing.Point(291, 23);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(204, 60);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Gray;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.Lime;
+            this.btnThem.Location = new System.Drawing.Point(12, 23);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(204, 60);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuanLiBan
             // 
@@ -149,10 +185,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1153, 942);
-            this.Controls.Add(this.panel_top);
-            this.Controls.Add(this.panel_right);
+            this.ClientSize = new System.Drawing.Size(1942, 942);
             this.Controls.Add(this.panel_body);
+            this.Controls.Add(this.panel_top);
             this.ForeColor = System.Drawing.Color.Blue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -163,6 +198,7 @@
             this.Load += new System.EventHandler(this.QuanLiBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel_body.ResumeLayout(false);
+            this.panel_top.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,10 +207,12 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel_body;
-        private System.Windows.Forms.Panel panel_right;
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
