@@ -403,10 +403,10 @@ namespace LTWINDOW_.Options
 
         private void buttonThanhToan_Click(object sender, EventArgs e)
         {
-            Form form = new ThanhToan();
+            ThanhToan form = new ThanhToan(ds);
             // khởi tạo form con là form  muốn hiển thị.
-          
 
+           
             
             
             // hiển thị full trên panel chứa nó.
