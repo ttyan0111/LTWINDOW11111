@@ -35,10 +35,11 @@
             this.buttonMenu = new Guna.UI2.WinForms.Guna2Button();
             this.buttonQuanLyBan = new Guna.UI2.WinForms.Guna2Button();
             this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.guna2Panel1.SuspendLayout();
@@ -48,12 +49,16 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.Controls.Add(this.panel2);
             this.guna2Panel1.Controls.Add(this.buttonThem);
             this.guna2Panel1.Controls.Add(this.buttonQuanLy);
             this.guna2Panel1.Controls.Add(this.buttonMenu);
             this.guna2Panel1.Controls.Add(this.buttonQuanLyBan);
             this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(209, 1112);
@@ -138,6 +143,23 @@
             this.buttonTrangChinh.Text = "Trang chính";
             this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.uC_DashBoard1);
+            this.panel1.Controls.Add(this.uC_Menu1);
+            this.panel1.Location = new System.Drawing.Point(215, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1725, 1102);
+            this.panel1.TabIndex = 1;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this;
+            // 
             // guna2Button1
             // 
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -154,26 +176,17 @@
             this.guna2Button1.Size = new System.Drawing.Size(88, 87);
             this.guna2Button1.TabIndex = 1;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.uC_Menu1);
-            this.panel1.Controls.Add(this.uC_DashBoard1);
-            this.panel1.Location = new System.Drawing.Point(215, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1725, 1102);
-            this.panel1.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Location = new System.Drawing.Point(201, 140);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(25, 798);
+            this.panel2.TabIndex = 2;
             // 
             // uC_Menu1
             // 
-            this.uC_Menu1.BackColor = System.Drawing.Color.White;
+            this.uC_Menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.uC_Menu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_Menu1.Location = new System.Drawing.Point(0, 0);
             this.uC_Menu1.Name = "uC_Menu1";
@@ -182,11 +195,11 @@
             // 
             // uC_DashBoard1
             // 
-            this.uC_DashBoard1.BackColor = System.Drawing.Color.White;
+            this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.uC_DashBoard1.Location = new System.Drawing.Point(0, 0);
             this.uC_DashBoard1.Name = "uC_DashBoard1";
-            this.uC_DashBoard1.Size = new System.Drawing.Size(1754, 1137);
-            this.uC_DashBoard1.TabIndex = 0;
+            this.uC_DashBoard1.Size = new System.Drawing.Size(1725, 1102);
+            this.uC_DashBoard1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -199,7 +212,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "z";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -217,9 +230,10 @@
         private Guna.UI2.WinForms.Guna2Button buttonQuanLyBan;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Options.UC_DashBoard uC_DashBoard1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Options.UC_Menu uC_Menu1;
+        private System.Windows.Forms.Panel panel2;
+        private Options.UC_DashBoard uC_DashBoard1;
     }
 }
 

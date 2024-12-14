@@ -66,15 +66,20 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ListTaiKhoan.cs" />
+    <Compile Include="LoaiMon.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LuuTenLabelButton.cs" />
-    <Compile Include="LuuViTri.cs" />
     <Compile Include="Mon.cs" />
+    <Compile Include="Options\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options\UC_DashBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +91,12 @@
     </Compile>
     <Compile Include="Options\UC_Menu.Designer.cs">
       <DependentUpon>UC_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\UC_ThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UC_ThanhToan.Designer.cs">
+      <DependentUpon>UC_ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,11 +124,17 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\UC_DashBoard.resx">
       <DependentUpon>UC_DashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\UC_Menu.resx">
       <DependentUpon>UC_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UC_ThanhToan.resx">
+      <DependentUpon>UC_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,9 +188,14 @@
     <None Include="Resources\hot.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\avata.png" />
     <Content Include="Resources\cộng.png" />
     <None Include="Resources\trừ1.png" />
     <None Include="Resources\cộng1.png" />
+    <None Include="Resources\timKiem.png" />
+    <None Include="Resources\timKiem1.png" />
+    <None Include="Resources\QRNhanTien.jpg" />
+    <None Include="Resources\QRNhanTien1.jpg" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

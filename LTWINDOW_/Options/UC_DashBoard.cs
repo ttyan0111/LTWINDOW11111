@@ -45,15 +45,18 @@ namespace LTWINDOW_.Options
             // Thay đổi kích thước chữ của tiêu đề biểu đồ
             chart1.Titles.Clear();
             chart1.Titles.Add("Biểu đồ doanh thu");
-            chart1.Titles[0].Font = new Font("Arial", 16, FontStyle.Bold);
+            chart1.Titles[0].Font = new Font("Arial", 18, FontStyle.Bold);
+
 
             // Tạo series
             Series series = new Series
             {
                 Name = "Doanh Thu Quán",
+               
                 ChartType = SeriesChartType.StackedBar, // Dạng cột
                 XValueType = ChartValueType.Date
             };
+
 
             chart1.Series.Add(series);
 
@@ -81,7 +84,7 @@ namespace LTWINDOW_.Options
         {
             List<ThongBao> tBao = sql.GetThongBao();
             int thongBaoIndex = 0;
-            panelButton.BackColor = Color.White; // Đặt màu nền
+            panelButton.BackColor = Color.FromArgb(255, 192, 255);// Đặt màu nền
             panelButton.FlowDirection = FlowDirection.TopDown; // Sắp xếp theo chiều dọc
             panelButton.AutoScroll = true; // Bật thanh cuộn dọc
             panelButton.WrapContents = false; // Không cho phép cuộn ngang
@@ -96,6 +99,7 @@ namespace LTWINDOW_.Options
                     Width = panelButton.ClientSize.Width - 20, // Chiều rộng container
                     Height = 70, // Chiều cao container
                     BackColor = Color.White,
+
                     Margin = new Padding(5) // Khoảng cách giữa các container
                 };
 

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelThongBao = new System.Windows.Forms.Label();
             this.panelButton = new System.Windows.Forms.FlowLayoutPanel();
             this.labelTenNhanVien = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.acount = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // 
             // panelButton
             // 
+            this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelButton.Location = new System.Drawing.Point(936, 384);
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(779, 698);
@@ -63,7 +64,7 @@
             // 
             this.labelTenNhanVien.AutoSize = true;
             this.labelTenNhanVien.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelTenNhanVien.Location = new System.Drawing.Point(1399, 31);
+            this.labelTenNhanVien.Location = new System.Drawing.Point(1423, 34);
             this.labelTenNhanVien.Name = "labelTenNhanVien";
             this.labelTenNhanVien.Size = new System.Drawing.Size(150, 26);
             this.labelTenNhanVien.TabIndex = 16;
@@ -71,25 +72,59 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Default;
             this.chart1.DataSource = this.chart1.Images;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 124);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
-            series2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            series2.Legend = "Legend1";
-            series2.Name = "Doanh thu quán";
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series2);
+            series3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar;
+            series3.Color = System.Drawing.Color.DarkOrchid;
+            series3.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.Name = "Doanh thu quán";
+            series3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(1120, 583);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "Doanh thu quán";
+            // 
+            // acount
+            // 
+            this.acount.BackColor = System.Drawing.Color.White;
+            this.acount.BorderColor = System.Drawing.Color.White;
+            this.acount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.acount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.acount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.acount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.acount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.acount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.acount.ForeColor = System.Drawing.Color.Black;
+            this.acount.Image = global::LTWINDOW_.Properties.Resources.avata;
+            this.acount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.acount.ImageSize = new System.Drawing.Size(40, 40);
+            this.acount.Location = new System.Drawing.Point(1638, 0);
+            this.acount.Name = "acount";
+            this.acount.PressedColor = System.Drawing.Color.Transparent;
+            this.acount.Size = new System.Drawing.Size(77, 87);
+            this.acount.TabIndex = 18;
+            this.acount.Click += new System.EventHandler(this.acount_Click);
             // 
             // pictureBox1
             // 
@@ -101,32 +136,11 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // acount
-            // 
-            this.acount.BackColor = System.Drawing.Color.White;
-            this.acount.BorderColor = System.Drawing.Color.White;
-            this.acount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.acount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.acount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.acount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.acount.FillColor = System.Drawing.Color.White;
-            this.acount.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.acount.ForeColor = System.Drawing.Color.Black;
-            this.acount.Image = global::LTWINDOW_.Properties.Resources.account1;
-            this.acount.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.acount.ImageSize = new System.Drawing.Size(40, 40);
-            this.acount.Location = new System.Drawing.Point(1638, 0);
-            this.acount.Name = "acount";
-            this.acount.PressedColor = System.Drawing.Color.Transparent;
-            this.acount.Size = new System.Drawing.Size(77, 87);
-            this.acount.TabIndex = 18;
-            this.acount.Click += new System.EventHandler(this.acount_Click);
-            // 
             // UC_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.acount);
             this.Controls.Add(this.labelThongBao);
             this.Controls.Add(this.panelButton);

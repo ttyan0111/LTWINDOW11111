@@ -19,12 +19,6 @@ namespace LTWINDOW_
             sql = new SQL();
             InitializeComponent();
         }
-
-        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SuaBan_Load(object sender, EventArgs e)
         {
             cmbStatus.SelectedIndex = 0;
