@@ -25,7 +25,7 @@ namespace LTWINDOW_
             conn = new SqlConnection(connectionString);
         }
 
-
+        // lấy chuỗi kết nối.
         public SqlConnection Conn { get { return conn; } }
 
         // Phương thức mở kết nối

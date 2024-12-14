@@ -28,26 +28,36 @@ namespace LTWINDOW_
 
         private void buttonTrangChinh_Click(object sender, EventArgs e)
         {
+            // đóng form đang mở
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
            
-
-            
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
+            // đóng form đang mở
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+
             uC_DashBoard1.Visible = false;
             uC_Menu1.Visible = true;
         }
 
         private void buttonQuanLyBan_Click(object sender, EventArgs e)
         {
-            // khởi tạo form quản lý bàn
-            //Form QuanLyBan = new QuanLiBan();
+            //khởi tạo form quản lý bàn
+            Form QuanLyBan = new QuanLiBan();
 
-            //// mở form QuanLyBan trong panel_body.
-            //openCurrentFormChild(QuanLyBan);
+            // mở form QuanLyBan trong panel_body.
+            openCurrentFormChild(QuanLyBan);
 
         }
 

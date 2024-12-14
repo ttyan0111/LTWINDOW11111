@@ -175,7 +175,7 @@ namespace LTWINDOW_
                 SQL sql = new SQL();
 
 
-                int check = 0; // kiểm tra xem có xóa được dữ liệu chưa.
+                int check = 1; // kiểm tra xem có xóa được dữ liệu chưa.
 
                 using (SqlConnection connection = sql.Conn)
                 {
@@ -185,33 +185,40 @@ namespace LTWINDOW_
 
                         SqlCommand command = new SqlCommand(query, connection);
 
-                        while (dataGridView1.SelectedRows.Count > 0)
+                        
+                        while (dataGridView1.SelectedRows.Count > 0 )
                         {
                             DataGridViewRow row = dataGridView1.SelectedRows[0];
 
-                            if (row.IsNewRow) continue;
+                            if (!row.IsNewRow)
+                            {
+                                var getValueColumnCurrent = dataGridView1.SelectedRows[0].Cells[0].Value;
+                                int MaBan = int.Parse(getValueColumnCurrent.ToString());
 
-                            var getValueColumnCurrent = dataGridView1.SelectedRows[0].Cells[0].Value;
-                            int MaBan = int.Parse(getValueColumnCurrent.ToString());
+                                // add parameter
+                                command.Parameters.AddWithValue("@MaBan", MaBan);
 
-                            // add parameter
-                            command.Parameters.AddWithValue("@MaBan", MaBan);
+                                // thực thi không tri vấn
+                                command.ExecuteNonQuery();
 
-                            // thực thi không tri vấn
-                            command.ExecuteNonQuery();
+                                command.Parameters.Clear();
 
-                            command.Parameters.Clear();
-
-                            // xóa hàng đầu tiên được chọn.
-                            dataGridView1.Rows.Remove(row);
+                                // xóa hàng đầu tiên được chọn.
+                                dataGridView1.Rows.Remove(row);
+                            }
+                            else
+                            {
+                                check = 0; // không có dòng nào được xóa
+                                MessageBox.Show("khi xóa không nên chọn hàng mới \n(Hàng mới là Hàng Cuối cùng và không có bất kì thông tin nào)");
+                                break;
+                            } 
+                                
+                            
                         }
-
-
-                        // dã xóa dữ liệu.
-                        check = 1;
                     }
                     catch (SqlException ex)
                     {
+                        check = 0; // không có dòng nào được xóa
                         MessageBox.Show(ex.Message);
                     }
 
@@ -219,6 +226,7 @@ namespace LTWINDOW_
 
 
                 if (check == 1) loadData();  // nếu đã xóa thì load lại datagridView.
+                else MessageBox.Show("Xóa Thất Bại", "Xóa Hàng Của bảng");
             }
             else MessageBox.Show("không có dòng nào để xóa hoặc Bạn chưa chọn dòng cần xóa");
         }

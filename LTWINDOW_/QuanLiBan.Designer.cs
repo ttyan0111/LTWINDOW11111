@@ -191,7 +191,7 @@
             this.Controls.Add(this.panel_body);
             this.Controls.Add(this.panel_top);
             this.ForeColor = System.Drawing.Color.Blue;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
