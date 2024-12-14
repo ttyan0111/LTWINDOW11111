@@ -48,6 +48,7 @@
             this.buttonInHoaDon.TabIndex = 21;
             this.buttonInHoaDon.Text = "In Hóa Đơn";
             this.buttonInHoaDon.UseVisualStyleBackColor = false;
+            this.buttonInHoaDon.Click += new System.EventHandler(this.buttonInHoaDon_Click);
             // 
             // panelHienThi
             // 
@@ -56,7 +57,6 @@
             this.panelHienThi.Name = "panelHienThi";
             this.panelHienThi.Size = new System.Drawing.Size(547, 630);
             this.panelHienThi.TabIndex = 22;
-     
             // 
             // label2
             // 
