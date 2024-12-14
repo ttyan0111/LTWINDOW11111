@@ -150,4 +150,10 @@ insert into Ban(TenBan) values
 (N'Bàn 3'),
 (N'Bàn 4')
 
-ALTER TABLE DanhSachMon add Image VARBINARY(MAX) -- Dữ liệu hình ảnh
+ALTER TABLE DanhSachMon add _Image VARBINARY(MAX) -- Dữ liệu hình ảnh
+INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, _Image)
+VALUES ('MN05', 'LM02', N'Cafe Den', 25000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\caffe_den.png', SINGLE_BLOB) AS img)),
+		('MN06', 'LM02', N'Nước Dừa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\nuocDua.png', SINGLE_BLOB) AS img)),
+		('MN07', 'LM02', N'Trà Sữa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
+		('MN08', 'LM02', N'Trà Gừng', 20000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img))
+			 

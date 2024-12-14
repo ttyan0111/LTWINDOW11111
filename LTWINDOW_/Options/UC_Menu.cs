@@ -15,25 +15,32 @@ namespace LTWINDOW_.Options
 {
     public partial class UC_Menu : UserControl
     {
+        double totalPrice = 0;
         SQL sql;
         List<KeyValuePair<string, int>> ds;
-        List<LuuViTri> dsLuuViTri = new List<LuuViTri>();
-        List<LuuTenLabelButton> dsluuTen = new List<LuuTenLabelButton>();
+
         private Dictionary<string, Label> quantityLabels = new Dictionary<string, Label>();
         public UC_Menu()
         {
             InitializeComponent();
+           
             sql = new SQL();
             panelHienThiHoaDon.AutoScroll = true; // Bật thanh cuộn dọc
             ds = new List<KeyValuePair<string, int>>();
             LoadDanhSachMon();
-            
-        }
-        public void LoadDanhSachMon()
-        {
+            LoadLoaiMonComboBox();
+            richTextBoxTenMon.KeyDown += richTextBoxTenMon_KeyDown;
+          
 
+        }
+        public void LoadDanhSachMon(List<Mon> danhSachMonList= null)
+        {
+            panelDanhSachMon.Controls.Clear();
             panelDanhSachMon.AutoScroll = true; // Bật thanh cuộn dọc
-            List<Mon> danhSachMonList = sql.GetDanhSachMon();
+            if(danhSachMonList == null)
+            {
+                danhSachMonList = sql.GetDanhSachMon();
+            }
             Image image;
             foreach (var mon in danhSachMonList)
             {
@@ -114,10 +121,7 @@ namespace LTWINDOW_.Options
         }
 
 
-        private void buttonTim_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         public Image ConvertBytesToImage(byte[] imageData)
         {
             if (imageData == null)
@@ -151,6 +155,8 @@ namespace LTWINDOW_.Options
                 // Cập nhật số lượng món trong danh sách
                 var existingItem = ds[index];
                 ds[index] = new KeyValuePair<string, int>(existingItem.Key, existingItem.Value + 1);
+                totalPrice += mon.Gia;
+                labelTien.Text = string.Format("{0:N0} đ", totalPrice);
 
                 // Cập nhật giao diện số lượng món
                 if (quantityLabels.ContainsKey(mon.TenMon))
@@ -162,6 +168,8 @@ namespace LTWINDOW_.Options
             {
                 // Thêm món mới vào danh sách
                 ds.Add(new KeyValuePair<string, int>(mon.TenMon, 1));
+                totalPrice += mon.Gia;
+                labelTien.Text = string.Format("{0:N0} đ", totalPrice);
 
                 // Tạo panel con để chứa các controls của món
                 Panel itemPanel = new Panel
@@ -237,7 +245,11 @@ namespace LTWINDOW_.Options
                 closeButton.Click += (s, e) =>
                 {
                     // Xóa khỏi danh sách
+                    var currentIndex = ds.FindIndex(item => item.Key == mon.TenMon);
+                    totalPrice -= mon.Gia * ds[currentIndex].Value;
+                    labelTien.Text = string.Format("{0:N0} đ", totalPrice);
                     ds.RemoveAll(item => item.Key == mon.TenMon);
+                    
 
                     // Xóa panel con khỏi giao diện
                     panelHienThiHoaDon.Controls.Remove(itemPanel);
@@ -260,7 +272,11 @@ namespace LTWINDOW_.Options
                             ds[currentIndex].Value - 1
                         );
                         quantityLabels[mon.TenMon].Text = $"Số lượng: {ds[currentIndex].Value}";
+                        totalPrice -= mon.Gia;
+                        
                     }
+                    labelTien.Text = string.Format("{0:N0} đ", totalPrice);
+
                 };
 
                 increaseButton.Click += (s, e) =>
@@ -273,7 +289,11 @@ namespace LTWINDOW_.Options
                             ds[currentIndex].Value + 1
                         );
                         quantityLabels[mon.TenMon].Text = $"Số lượng: {ds[currentIndex].Value}";
+                        totalPrice += mon.Gia;
+                        
                     }
+                    labelTien.Text = string.Format("{0:N0} đ", totalPrice);
+
                 };
 
                 // Thêm các controls vào panel con
@@ -292,9 +312,107 @@ namespace LTWINDOW_.Options
                     ? panelHienThiHoaDon.Controls[panelHienThiHoaDon.Controls.Count - 1].Bottom + 10
                     : 10;
                 itemPanel.Location = new Point(10, currentYPosition);
+                labelTien.Text = string.Format("{0:N0} đ", totalPrice);
+
             }
         }
 
-        
+        public void LoadLoaiMonComboBox()
+        {
+            
+            List<LoaiMon> loaiMons = sql.GetLoaiMon();
+
+            
+            gunaComboBoxLoaiMon.Items.Clear();
+
+            gunaComboBoxLoaiMon.Items.Add("");
+            // Thêm dữ liệu mới vào ComboBox
+            foreach (var loaiMon in loaiMons)
+            {
+                gunaComboBoxLoaiMon.Items.Add(loaiMon.TenLoaiMon);
+            }
+
+            // Tùy chọn đặt giá trị mặc định
+            if (gunaComboBoxLoaiMon.Items.Count > 0)
+            {
+                gunaComboBoxLoaiMon.SelectedIndex = 0; // Chọn item đầu tiên
+            }
+        }
+
+        private List<Mon> TimKiemDanhSachMon(string tenMon, string maLoaiMon)
+        {
+            List<Mon> danhSachMonList = sql.GetDanhSachMon();
+
+            // Lọc theo tên món và loại món
+            return danhSachMonList.Where(mon =>
+                (string.IsNullOrEmpty(tenMon) || mon.TenMon.IndexOf(tenMon, StringComparison.OrdinalIgnoreCase) >= 0) &&  // Lọc theo tên nếu có
+                (string.IsNullOrEmpty(maLoaiMon) || mon.MaLoaiMon == maLoaiMon) // Lọc theo loại nếu có
+            ).ToList();
+        }
+
+
+        private void buttonTim_Click(object sender, EventArgs e)
+        {
+            // Lấy thông tin tìm kiếm từ TextBox và ComboBox
+            string tenMon = richTextBoxTenMon.Text.Trim(); // Tên món tìm kiếm
+            string tenLoaiMon = gunaComboBoxLoaiMon.SelectedItem?.ToString(); // Loại món được chọn
+
+            if(tenMon == "")
+            {
+                labelTenMonTimKiem.Text = "";
+            }
+            else labelTenMonTimKiem.Text = "Tìm Kiếm: " + tenMon;
+            // Kiểm tra giá trị của loại món. Nếu không chọn loại, gán giá trị là string.Empty
+            if (string.IsNullOrEmpty(tenLoaiMon) || tenLoaiMon == "Tất cả")
+            {
+                tenLoaiMon = string.Empty; // Nếu "Tất cả" hoặc không chọn gì, không lọc theo loại
+            }
+
+            // Tìm mã loại món từ tên loại món
+            string maLoaiMon = string.Empty;
+
+            if (!string.IsNullOrEmpty(tenLoaiMon))
+            {
+                LoaiMon loaiMon = sql.GetLoaiMon().FirstOrDefault(l => l.TenLoaiMon == tenLoaiMon);
+                if (loaiMon != null)
+                {
+                    maLoaiMon = loaiMon.MaLoaiMon; // Gán mã loại món
+                }
+            }
+
+            // Lọc danh sách món dựa trên tên và loại món
+            List<Mon> danhSachMonTimKiem = TimKiemDanhSachMon(tenMon, maLoaiMon);
+
+            // Hiển thị lại danh sách đã lọc
+            richTextBoxTenMon.Clear();  // Xóa nội dung trong RichTextBox
+            gunaComboBoxLoaiMon.SelectedIndex = 0;  // Đặt lại ComboBox về giá trị mặc định (hoặc Tất cả nếu muốn)
+            LoadDanhSachMon(danhSachMonTimKiem);
+        }
+        private void richTextBoxTenMon_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Kiểm tra xem phím Enter có được nhấn không
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Ngừng hành vi mặc định của phím Enter (không tạo dòng mới)
+                e.SuppressKeyPress = true;
+
+                // Gọi hàm tìm kiếm
+                buttonTim_Click(sender, e);
+            }
+        }
+
+        private void buttonThanhToan_Click(object sender, EventArgs e)
+        {
+            Form form = new ThanhToan();
+            // khởi tạo form con là form  muốn hiển thị.
+          
+
+            
+            
+            // hiển thị full trên panel chứa nó.
+            form.Dock = DockStyle.Fill;
+            form.ShowDialog();
+
+        }
     }
 }

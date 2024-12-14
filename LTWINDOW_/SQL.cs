@@ -181,6 +181,42 @@ namespace LTWINDOW_
 
             return danhSachMonList;
         }
+        public List<LoaiMon> GetLoaiMon()
+        {
+            List<LoaiMon> loaiMons = new List<LoaiMon>();
+
+            string query = "SELECT MaLoaiMon, TenLoaiMon FROM LoaiMon";
+
+            try
+            {
+                OpenConnection();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            LoaiMon loaiMon = new LoaiMon
+                            {
+                                MaLoaiMon = reader["MaLoaiMon"].ToString(),
+                                TenLoaiMon = reader["TenLoaiMon"].ToString()
+                            };
+                            loaiMons.Add(loaiMon);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lấy dữ liệu loại món từ cơ sở dữ liệu.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return loaiMons;
+        }
 
 
 
