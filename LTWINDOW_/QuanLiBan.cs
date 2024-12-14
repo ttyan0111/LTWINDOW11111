@@ -16,6 +16,7 @@ namespace LTWINDOW_
     {
         public QuanLiBan()
         {
+            
             InitializeComponent();
         }
 
@@ -57,6 +58,7 @@ namespace LTWINDOW_
 
         private void QuanLiBan_Load(object sender, EventArgs e)
         {
+            
             loadData();
         }
 

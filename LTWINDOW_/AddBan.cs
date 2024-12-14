@@ -70,5 +70,7 @@ namespace LTWINDOW_
             //  đảm bạo chọn item còn trống khi bắt đầu chạy.
             cmbStatus.SelectedIndex = 0;
         }
+
+
     }
 }
