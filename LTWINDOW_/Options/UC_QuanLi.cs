@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTWINDOW_.MenuQuanLy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace LTWINDOW_.Options
             InitializeComponent();
         }
 
-    
+
         private void panel_top_ThucDon_MouseHover(object sender, EventArgs e)
         {
             panel_top_ThucDon.BackColor = Color.FromArgb(255, 128, 255);
@@ -73,6 +74,14 @@ namespace LTWINDOW_.Options
             panel_top_taiKhoan.BorderStyle = BorderStyle.FixedSingle;
         }
 
-     
+        private void ptbLoaiMon_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ptbLoaiMon_Click_2(object sender, EventArgs e)
+        {
+            uC_QuanLyMon.Visible = true;
+        }
     }
 }

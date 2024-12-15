@@ -55,9 +55,9 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(95, 33);
+            this.btnAdd.Location = new System.Drawing.Point(77, 33);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(81, 49);
+            this.btnAdd.Size = new System.Drawing.Size(125, 49);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Xác Nhận";
             this.btnAdd.UseVisualStyleBackColor = false;

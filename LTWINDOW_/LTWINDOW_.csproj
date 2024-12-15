@@ -79,6 +79,20 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\ListLoaiMoncs.cs" />
+    <Compile Include="MenuQuanLy\LoaiMon.cs" />
+    <Compile Include="MenuQuanLy\ThemLoaiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\ThemLoaiMon.Designer.cs">
+      <DependentUpon>ThemLoaiMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuQuanLy\UC_QuanLyMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\UC_QuanLyMon.Designer.cs">
+      <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mon.cs" />
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -112,12 +126,6 @@
     <Compile Include="QuanLiBan.Designer.cs">
       <DependentUpon>QuanLiBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyLoaiMon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyLoaiMon.Designer.cs">
-      <DependentUpon>QuanLyLoaiMon.cs</DependentUpon>
-    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="SuaBan.cs">
       <SubType>Form</SubType>
@@ -135,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\ThemLoaiMon.resx">
+      <DependentUpon>ThemLoaiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\UC_QuanLyMon.resx">
+      <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
@@ -160,9 +174,6 @@
     </Compile>
     <EmbeddedResource Include="QuanLiBan.resx">
       <DependentUpon>QuanLiBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyLoaiMon.resx">
-      <DependentUpon>QuanLyLoaiMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaBan.resx">
       <DependentUpon>SuaBan.cs</DependentUpon>
@@ -222,5 +233,6 @@
     <None Include="Resources\themThongBao.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

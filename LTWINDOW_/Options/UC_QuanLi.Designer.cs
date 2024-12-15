@@ -40,10 +40,11 @@
             this.ptbLoaiMon = new System.Windows.Forms.PictureBox();
             this.lblLoaiMon = new System.Windows.Forms.Label();
             this.panel_top_taiKhoan = new System.Windows.Forms.Panel();
+            this.ptbTaiKhoan = new System.Windows.Forms.PictureBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ptbTaiKhoan = new System.Windows.Forms.PictureBox();
+            this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyMon();
             this.panel_Top.SuspendLayout();
             this.ptn_ThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbLoaiMon)).BeginInit();
             this.panel_top_taiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).BeginInit();
+            this.panel_body.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Top
@@ -160,6 +162,7 @@
             this.ptbLoaiMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbLoaiMon.TabIndex = 0;
             this.ptbLoaiMon.TabStop = false;
+            this.ptbLoaiMon.Click += new System.EventHandler(this.ptbLoaiMon_Click_2);
             this.ptbLoaiMon.MouseLeave += new System.EventHandler(this.ptbLoaiMon_MouseLeave);
             this.ptbLoaiMon.MouseHover += new System.EventHandler(this.ptbLoaiMon_MouseHover);
             // 
@@ -185,6 +188,20 @@
             this.panel_top_taiKhoan.Size = new System.Drawing.Size(163, 149);
             this.panel_top_taiKhoan.TabIndex = 9;
             // 
+            // ptbTaiKhoan
+            // 
+            this.ptbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbTaiKhoan.Image = global::LTWINDOW_.Properties.Resources.account2;
+            this.ptbTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.ptbTaiKhoan.Name = "ptbTaiKhoan";
+            this.ptbTaiKhoan.Size = new System.Drawing.Size(163, 121);
+            this.ptbTaiKhoan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbTaiKhoan.TabIndex = 0;
+            this.ptbTaiKhoan.TabStop = false;
+            this.ptbTaiKhoan.MouseLeave += new System.EventHandler(this.ptbTaiKhoan_MouseLeave);
+            this.ptbTaiKhoan.MouseHover += new System.EventHandler(this.ptbTaiKhoan_MouseHover);
+            // 
             // lblTaiKhoan
             // 
             this.lblTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -202,10 +219,11 @@
             // 
             this.panel_body.BackColor = System.Drawing.Color.White;
             this.panel_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_body.Controls.Add(this.uC_QuanLyMon);
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_body.Location = new System.Drawing.Point(0, 0);
+            this.panel_body.Location = new System.Drawing.Point(0, 194);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1942, 1099);
+            this.panel_body.Size = new System.Drawing.Size(1942, 905);
             this.panel_body.TabIndex = 2;
             // 
             // guna2Elipse1
@@ -213,26 +231,22 @@
             this.guna2Elipse1.BorderRadius = 3;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // ptbTaiKhoan
+            // uC_QuanLyMon
             // 
-            this.ptbTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbTaiKhoan.Image = global::LTWINDOW_.Properties.Resources.account2;
-            this.ptbTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.ptbTaiKhoan.Name = "ptbTaiKhoan";
-            this.ptbTaiKhoan.Size = new System.Drawing.Size(163, 121);
-            this.ptbTaiKhoan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbTaiKhoan.TabIndex = 0;
-            this.ptbTaiKhoan.TabStop = false;
-            this.ptbTaiKhoan.MouseLeave += new System.EventHandler(this.ptbTaiKhoan_MouseLeave);
-            this.ptbTaiKhoan.MouseHover += new System.EventHandler(this.ptbTaiKhoan_MouseHover);
+            this.uC_QuanLyMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.uC_QuanLyMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_QuanLyMon.Location = new System.Drawing.Point(0, 0);
+            this.uC_QuanLyMon.Name = "uC_QuanLyMon";
+            this.uC_QuanLyMon.Size = new System.Drawing.Size(1938, 901);
+            this.uC_QuanLyMon.TabIndex = 0;
+            this.uC_QuanLyMon.Visible = false;
             // 
             // UC_QuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel_Top);
             this.Controls.Add(this.panel_body);
+            this.Controls.Add(this.panel_Top);
             this.Name = "UC_QuanLi";
             this.Size = new System.Drawing.Size(1942, 1099);
             this.panel_Top.ResumeLayout(false);
@@ -244,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbLoaiMon)).EndInit();
             this.panel_top_taiKhoan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).EndInit();
+            this.panel_body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,5 +280,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox ptbTaiKhoan;
+        private MenuQuanLy.UC_QuanLyMon uC_QuanLyMon;
     }
 }
