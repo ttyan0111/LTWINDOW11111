@@ -91,5 +91,11 @@ namespace LTWINDOW_
             currentFormChild.Show();
 
         }
+
+        private void buttonQuanLy_Click(object sender, EventArgs e)
+        {
+            Form menuQuanLi = new MenuQuanLi();
+            openCurrentFormChild(menuQuanLi);
+        }
     }
 }

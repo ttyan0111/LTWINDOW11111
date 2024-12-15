@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.buttonThem = new Guna.UI2.WinForms.Guna2Button();
             this.buttonQuanLy = new Guna.UI2.WinForms.Guna2Button();
             this.buttonMenu = new Guna.UI2.WinForms.Guna2Button();
             this.buttonQuanLyBan = new Guna.UI2.WinForms.Guna2Button();
             this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
+            this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
-            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,14 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(209, 1112);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Location = new System.Drawing.Point(201, 140);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(25, 798);
+            this.panel2.TabIndex = 2;
             // 
             // buttonThem
             // 
@@ -93,6 +101,7 @@
             this.buttonQuanLy.Size = new System.Drawing.Size(183, 83);
             this.buttonQuanLy.TabIndex = 4;
             this.buttonQuanLy.Text = "Quản lý";
+            this.buttonQuanLy.Click += new System.EventHandler(this.buttonQuanLy_Click);
             // 
             // buttonMenu
             // 
@@ -143,23 +152,6 @@
             this.buttonTrangChinh.Text = "Trang chính";
             this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.uC_DashBoard1);
-            this.panel1.Controls.Add(this.uC_Menu1);
-            this.panel1.Location = new System.Drawing.Point(215, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1725, 1102);
-            this.panel1.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this;
-            // 
             // guna2Button1
             // 
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -176,13 +168,22 @@
             this.guna2Button1.Size = new System.Drawing.Size(88, 87);
             this.guna2Button1.TabIndex = 1;
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(201, 140);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 798);
-            this.panel2.TabIndex = 2;
+            this.panel1.Controls.Add(this.uC_DashBoard1);
+            this.panel1.Controls.Add(this.uC_Menu1);
+            this.panel1.Location = new System.Drawing.Point(215, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1725, 1102);
+            this.panel1.TabIndex = 1;
+            // 
+            // uC_DashBoard1
+            // 
+            this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_DashBoard1.Location = new System.Drawing.Point(0, 0);
+            this.uC_DashBoard1.Name = "uC_DashBoard1";
+            this.uC_DashBoard1.Size = new System.Drawing.Size(1725, 1102);
+            this.uC_DashBoard1.TabIndex = 2;
             // 
             // uC_Menu1
             // 
@@ -193,13 +194,13 @@
             this.uC_Menu1.Size = new System.Drawing.Size(1725, 1102);
             this.uC_Menu1.TabIndex = 1;
             // 
-            // uC_DashBoard1
+            // guna2Elipse1
             // 
-            this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.uC_DashBoard1.Location = new System.Drawing.Point(0, 0);
-            this.uC_DashBoard1.Name = "uC_DashBoard1";
-            this.uC_DashBoard1.Size = new System.Drawing.Size(1725, 1102);
-            this.uC_DashBoard1.TabIndex = 2;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this;
             // 
             // Form1
             // 

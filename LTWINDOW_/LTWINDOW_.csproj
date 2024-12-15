@@ -79,6 +79,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLi.Designer.cs">
+      <DependentUpon>MenuQuanLi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mon.cs" />
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,12 @@
     <Compile Include="QuanLiBan.Designer.cs">
       <DependentUpon>QuanLiBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyLoaiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyLoaiMon.Designer.cs">
+      <DependentUpon>QuanLyLoaiMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="SuaBan.cs">
       <SubType>Form</SubType>
@@ -123,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLi.resx">
+      <DependentUpon>MenuQuanLi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
@@ -145,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLiBan.resx">
       <DependentUpon>QuanLiBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyLoaiMon.resx">
+      <DependentUpon>QuanLyLoaiMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaBan.resx">
       <DependentUpon>SuaBan.cs</DependentUpon>
@@ -186,6 +204,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avata.png" />
+    <None Include="Resources\avata1.png" />
+    <None Include="Resources\account1.png" />
     <Content Include="Resources\cộng.png" />
     <None Include="Resources\trừ1.png" />
     <None Include="Resources\cộng1.png" />
@@ -193,6 +213,10 @@
     <None Include="Resources\timKiem1.png" />
     <None Include="Resources\QRNhanTien.jpg" />
     <None Include="Resources\QRNhanTien1.jpg" />
+    <None Include="Resources\Thực Đơn.jpg" />
+    <None Include="Resources\Thực đơn 1.png" />
+    <None Include="Resources\thực Đon main.png" />
+    <None Include="Resources\Thực Đon main1.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

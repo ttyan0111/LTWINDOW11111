@@ -83,9 +83,29 @@ namespace LTWINDOW_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account2 {
+            get {
+                object obj = ResourceManager.GetObject("account2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avata {
             get {
                 object obj = ResourceManager.GetObject("avata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avata1 {
+            get {
+                object obj = ResourceManager.GetObject("avata1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +196,46 @@ namespace LTWINDOW_.Properties {
         internal static System.Drawing.Bitmap thongBao1 {
             get {
                 object obj = ResourceManager.GetObject("thongBao1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thực_Đơn {
+            get {
+                object obj = ResourceManager.GetObject("Thực Đơn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thực_đơn_1 {
+            get {
+                object obj = ResourceManager.GetObject("Thực đơn 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thực_Đon_main {
+            get {
+                object obj = ResourceManager.GetObject("thực Đon main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Thực_Đon_main1 {
+            get {
+                object obj = ResourceManager.GetObject("Thực Đon main1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
