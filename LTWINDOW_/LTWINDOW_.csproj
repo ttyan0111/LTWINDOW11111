@@ -79,12 +79,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuQuanLi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuQuanLi.Designer.cs">
-      <DependentUpon>MenuQuanLi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mon.cs" />
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -103,6 +97,12 @@
     </Compile>
     <Compile Include="Options\UC_Menu.Designer.cs">
       <DependentUpon>UC_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\UC_QuanLi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UC_QuanLi.Designer.cs">
+      <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,9 +136,6 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuQuanLi.resx">
-      <DependentUpon>MenuQuanLi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Options\UC_Menu.resx">
       <DependentUpon>UC_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UC_QuanLi.resx">
+      <DependentUpon>UC_QuanLi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,6 +219,7 @@
     <None Include="Resources\thực Đon main.png" />
     <None Include="Resources\Thực Đon main1.png" />
     <None Include="Resources\exit.png" />
+    <None Include="Resources\themThongBao.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

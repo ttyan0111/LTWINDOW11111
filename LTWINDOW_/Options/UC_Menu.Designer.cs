@@ -33,11 +33,11 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelMon = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.buttonTim = new Guna.UI2.WinForms.Guna2Button();
             this.labelTenMonTimKiem = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
+            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.panelThem = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.buttonTim = new System.Windows.Forms.Button();
             this.gunaComboBoxLoaiMon = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBoxTenMon = new System.Windows.Forms.RichTextBox();
@@ -52,9 +52,7 @@
             this.radioButtonTaiQuan = new System.Windows.Forms.RadioButton();
             this.panelHienThiHoaDon = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHoaDon = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.panelMon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelDanhSachMon.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelChuaRadioButton.SuspendLayout();
@@ -87,10 +85,9 @@
             // 
             this.panelMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelMon.Controls.Add(this.labelTenMonTimKiem);
-            this.panelMon.Controls.Add(this.pictureBox1);
+            this.panelMon.Controls.Add(this.buttonTim);
             this.panelMon.Controls.Add(this.panelDanhSachMon);
             this.panelMon.Controls.Add(this.panelThem);
-            this.panelMon.Controls.Add(this.buttonTim);
             this.panelMon.Controls.Add(this.gunaComboBoxLoaiMon);
             this.panelMon.Controls.Add(this.label1);
             this.panelMon.Controls.Add(this.richTextBoxTenMon);
@@ -104,6 +101,24 @@
             this.panelMon.Size = new System.Drawing.Size(741, 1099);
             this.panelMon.TabIndex = 4;
             // 
+            // buttonTim
+            // 
+            this.buttonTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonTim.FillColor = System.Drawing.Color.White;
+            this.buttonTim.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTim.ForeColor = System.Drawing.Color.Purple;
+            this.buttonTim.Image = global::LTWINDOW_.Properties.Resources.timKiem1;
+            this.buttonTim.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttonTim.Location = new System.Drawing.Point(40, 133);
+            this.buttonTim.Name = "buttonTim";
+            this.buttonTim.Size = new System.Drawing.Size(173, 45);
+            this.buttonTim.TabIndex = 14;
+            this.buttonTim.Text = "Tìm";
+            this.buttonTim.Click += new System.EventHandler(this.buttonTim_Click);
+            // 
             // labelTenMonTimKiem
             // 
             this.labelTenMonTimKiem.AutoSize = true;
@@ -112,17 +127,6 @@
             this.labelTenMonTimKiem.Name = "labelTenMonTimKiem";
             this.labelTenMonTimKiem.Size = new System.Drawing.Size(0, 33);
             this.labelTenMonTimKiem.TabIndex = 13;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pictureBox1.BackgroundImage = global::LTWINDOW_.Properties.Resources.timKiem1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // panelDanhSachMon
             // 
@@ -134,6 +138,14 @@
             this.panelDanhSachMon.Size = new System.Drawing.Size(741, 759);
             this.panelDanhSachMon.TabIndex = 11;
             // 
+            // uC_DashBoard1
+            // 
+            this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_DashBoard1.Location = new System.Drawing.Point(3, 3);
+            this.uC_DashBoard1.Name = "uC_DashBoard1";
+            this.uC_DashBoard1.Size = new System.Drawing.Size(8, 8);
+            this.uC_DashBoard1.TabIndex = 0;
+            // 
             // panelThem
             // 
             this.panelThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -144,18 +156,6 @@
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(741, 146);
             this.panelThem.TabIndex = 10;
-            // 
-            // buttonTim
-            // 
-            this.buttonTim.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonTim.ForeColor = System.Drawing.Color.Purple;
-            this.buttonTim.Location = new System.Drawing.Point(40, 118);
-            this.buttonTim.Name = "buttonTim";
-            this.buttonTim.Size = new System.Drawing.Size(176, 48);
-            this.buttonTim.TabIndex = 9;
-            this.buttonTim.Text = "Tìm";
-            this.buttonTim.UseVisualStyleBackColor = true;
-            this.buttonTim.Click += new System.EventHandler(this.buttonTim_Click);
             // 
             // gunaComboBoxLoaiMon
             // 
@@ -218,7 +218,6 @@
             this.label2.Size = new System.Drawing.Size(290, 35);
             this.label2.TabIndex = 13;
             this.label2.Text = "Thông Tin Hóa Đơn";
-        
             // 
             // labelTien
             // 
@@ -331,14 +330,6 @@
             this.panelHoaDon.Size = new System.Drawing.Size(885, 1099);
             this.panelHoaDon.TabIndex = 5;
             // 
-            // uC_DashBoard1
-            // 
-            this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.uC_DashBoard1.Location = new System.Drawing.Point(3, 3);
-            this.uC_DashBoard1.Name = "uC_DashBoard1";
-            this.uC_DashBoard1.Size = new System.Drawing.Size(8, 8);
-            this.uC_DashBoard1.TabIndex = 0;
-            // 
             // UC_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,7 +342,6 @@
             this.Size = new System.Drawing.Size(1942, 1099);
             this.panelMon.ResumeLayout(false);
             this.panelMon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelDanhSachMon.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
@@ -371,7 +361,6 @@
         public Guna.UI2.WinForms.Guna2CustomGradientPanel panelMon;
         public System.Windows.Forms.FlowLayoutPanel panelDanhSachMon;
         public Guna.UI2.WinForms.Guna2CustomGradientPanel panelThem;
-        public System.Windows.Forms.Button buttonTim;
         public Guna.UI2.WinForms.Guna2ComboBox gunaComboBoxLoaiMon;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.RichTextBox richTextBoxTenMon;
@@ -383,11 +372,11 @@
         public System.Windows.Forms.Button buttonThanhToan;
         public System.Windows.Forms.Label labelTongTien;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label labelTenMonTimKiem;
         public System.Windows.Forms.RadioButton radioButtonMuaVe;
         public System.Windows.Forms.RadioButton radioButtonTaiQuan;
         public Guna.UI2.WinForms.Guna2CustomGradientPanel panelChuaRadioButton;
         public UC_DashBoard uC_DashBoard1;
+        private Guna.UI2.WinForms.Guna2Button buttonTim;
     }
 }

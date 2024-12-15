@@ -42,7 +42,7 @@
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_QuanLi1 = new LTWINDOW_.Options.UC_QuanLi();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -190,6 +190,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.uC_QuanLi1);
             this.panel1.Controls.Add(this.uC_DashBoard1);
             this.panel1.Controls.Add(this.uC_Menu1);
             this.panel1.Location = new System.Drawing.Point(215, 0);
@@ -218,9 +219,12 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
-            // guna2Elipse2
+            // uC_QuanLi1
             // 
-            this.guna2Elipse2.TargetControl = this;
+            this.uC_QuanLi1.Location = new System.Drawing.Point(0, 0);
+            this.uC_QuanLi1.Name = "uC_QuanLi1";
+            this.uC_QuanLi1.Size = new System.Drawing.Size(1942, 1099);
+            this.uC_QuanLi1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -251,11 +255,11 @@
         private Guna.UI2.WinForms.Guna2Button buttonQuanLyBan;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Options.UC_Menu uC_Menu1;
         private System.Windows.Forms.Panel panel2;
         private Options.UC_DashBoard uC_DashBoard1;
         private Guna.UI2.WinForms.Guna2Button buttonExit;
+        private Options.UC_QuanLi uC_QuanLi1;
     }
 }
 
