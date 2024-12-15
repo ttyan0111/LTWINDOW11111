@@ -162,7 +162,6 @@ namespace LTWINDOW_
                                 reader["MaMon"].ToString(),
                                 reader["TenMon"].ToString(),
                                 Convert.ToDouble(reader["Gia"]),
-                                Convert.ToInt32(reader["SoLuong"]),
                                 reader["_Image"] as byte[]
                             );
                             danhSachMonList.Add(mon);

@@ -9,17 +9,17 @@ namespace LTWINDOW_
         public string MaMon { get; set; }
         public string TenMon { get; set; }
         public double Gia { get; set; }
-        public int SoLuong { get; set; }
+       
         public byte[] Image { get; set; }
 
         // Constructor đầy đủ
-        public Mon(string maLoaiMon, string maMon, string tenMon, double gia, int soLuong, byte[] image)
+        public Mon(string maLoaiMon, string maMon, string tenMon, double gia, byte[] image)
         {
             MaLoaiMon = maLoaiMon;
             MaMon = maMon;
             TenMon = tenMon;
             Gia = gia;
-            SoLuong = soLuong;
+     
             Image = image;
         }
 
@@ -56,14 +56,14 @@ namespace LTWINDOW_
         {
             return !string.IsNullOrWhiteSpace(MaMon) &&
                    !string.IsNullOrWhiteSpace(TenMon) &&
-                   Gia > 0 &&
-                   SoLuong >= 0;
+                   Gia > 0;
+          
         }
 
         // Ghi đè ToString
         public override string ToString()
         {
-            return $"{TenMon} - Giá: {Gia:N0} đ - Số lượng: {SoLuong}";
+            return $"{TenMon} - Giá: {Gia:N0} đ";
         }
     }
 }

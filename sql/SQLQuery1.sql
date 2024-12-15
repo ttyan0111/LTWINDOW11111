@@ -75,40 +75,10 @@ SELECT * FROM ChiTietDonHang;
 SELECT * FROM DonHang;
 SELECT * FROM LoaiMon;
 
--- Insert sample data into NhanVien table ensuring unique UserName
-INSERT INTO NhanVien (TenNhanVien, UserName, Passcode, ChucVu, trangThaiHoatDong) VALUES
-(N'Nguyễn Văn Dũ', 'nvd', 'pass1234', N'Nhân viên', 1),
-(N'Đang Lê Hoàng Danh', 'dlhd', 'pass1236', N'Nhân viên', 1),
-(N'Vũ Huy Minh', 'vhminh', 'pass1237', N'Nhân viên', 1),
-(N'Trương Trường Giang', 'ttg', 'pass1235', N'Nhân viên', 1);
-
--- Insert sample data into LoaiMon table ensuring unique MaLoaiMon
-INSERT INTO LoaiMon (MaLoaiMon, TenLoaiMon) VALUES
-('LM01', N'Trà Sữa'),
-('LM02', N'	Cà Phê'),
-('LM03', N'	Nước Ép');
-
--- Insert sample data into DonHang table
 
 
--- Insert sample data into DanhSachMon table
-INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong) VALUES
-('MN01', 'LM01', N'Trà Sữa Trân Châu', 25000.0, 100),
-('MN02', 'LM02', N'	Cà Phê Đen', 20000.0, 50),
-('MN03', 'LM03', N'	Nước Ép Cam', 	30000.0, 70);
 
--- Insert sample data into ChiTietDonHang table
-INSERT INTO ChiTietDonHang (MaMon, MaDonHang, SoLuongMon, TongPhu) VALUES
-('MN01', '1', 2, 50000.0),
-('MN02', '2', 3, 60000.0),
-('MN03', '3', 3, 90000.0);
 
--- Insert sample data into Ban table
-INSERT INTO Ban (TenBan) VALUES
-(N'Bàn 5'),
-(N'Bàn 6'),
-(N'Bàn 3'),
-(N'Bàn 4');
 
 -- Validate data after insertion
 SELECT * FROM dbo.ChiTietDonHang;
@@ -123,10 +93,6 @@ CREATE TABLE ThongBao (
     CONSTRAINT pk_TieuDe_ThongBao PRIMARY KEY (TieuDe)
 );
 
-INSERT INTO ThongBao (TieuDe,MoTa,Ngay) VALUES
-(N'Thong bao3' , N'KHAI TRƯƠNG GIẢM 99PT','2023-11-11'),
-(N'Thong bao4',N'MUA 1 TẶNG 1','2024-10-10')
-(N'Thong bacsac  sadsad ádo4',N'MUA 1 TẶNG 1','2024-11-10')
 select *
 from Ban
 SELECT name, definition
@@ -141,20 +107,8 @@ alter table Ban add TrangThai Nvarchar(20) default(N'Còn Trống')
 
 delete from Ban where MaBan between 1 and 10
 
-insert into Ban(TenBan) values
-(N'Bàn 1'),
-(N'Bàn 2'),
-(N'Bàn 3'),
-(N'Bàn 4')
 
-ALTER TABLE DanhSachMon add _Image VARBINARY(MAX) -- Dữ liệu hình ảnh
-INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, _Image)
-VALUES ('MN05', 'LM02', N'Cafe Den', 25000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\caffe_den.png', SINGLE_BLOB) AS img)),
-		('MN06', 'LM02', N'Nước Dừa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\nuocDua.png', SINGLE_BLOB) AS img)),
-		('MN07', 'LM02', N'Trà Sữa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
-		('MN08', 'LM02', N'Trà Gừng', 20000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img))
-	
-	
+
 -- 
 alter table ChiTietDonHang drop constraint fk_MaDonHang_CTDH
 
@@ -178,10 +132,6 @@ alter table ChiTietDonHang add constraint fk_MaChiTietDonHang_CTDH foreign key (
 
 
 
-INSERT INTO DonHang (MaNhanVien, NgayDatHang, TongTien) VALUES
-('1', '2024-12-08 10:00:00', 50000.0),
-('2', '2024-12-10 11:30:00', 70000.0),
-('3', '2024-12-12 14:00:00', 90000.0);
 
 delete from ChiTietDonHang
 
@@ -189,14 +139,51 @@ delete from DanhSachMon
 
 alter table DanhSachMon add  TrangThai bit default(1) not null
 
-INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, _Image)
-VALUES ('MN05', 'LM02', N'Cafe Den', 25000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\caffe_den.png', SINGLE_BLOB) AS img)),
-		('MN06', 'LM02', N'Nước Dừa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\nuocDua.png', SINGLE_BLOB) AS img)),
-		('MN07', 'LM02', N'Trà Sữa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
-		('MN08', 'LM02', N'Trà Gừng', 20000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img))
+
+
+delete from ChiTietDonHang
+delete from DanhSachMon
+delete from Ban
+delete from DonHang
+delete from LoaiMon
+delete from NhanVien
+delete from ThongBao
+ALTER TABLE DanhSachMon DROP COLUMN SoLuong;
+
+ALTER TABLE DanhSachMon DROP CONSTRAINT DF__DanhSachM__SoLuo__534D60F1;
+
+
+INSERT INTO NhanVien (TenNhanVien, UserName, Passcode, ChucVu, trangThaiHoatDong) VALUES
+(N'Nguyễn Văn Dũ', 'nvd', 'pass1234', N'Quản lý', 1),
+(N'Đặng Lê Hoàng Danh', 'dlhd', 'pass1236', N'Nhân viên', 1),
+(N'Vũ Huy Minh', 'vhminh', 'pass1237', N'Nhân viên', 1),
+(N'Trương Trường Giang', 'ttgiang', 'pass123', N'Quản lý', 1);
+
+INSERT INTO LoaiMon (MaLoaiMon, TenLoaiMon) VALUES
+('TS00', N'Trà Sữa'),
+('CF00', N'Cà Phê'),
+('NE00', N'Nước Ép'),
+('ST00', N'Sinh Tố'),
+('TR00', N'Trà');
 
 
 
+INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, _Image)
+VALUES ('MN01', 'CF00', N'Cafe Sữa', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeSua.png', SINGLE_BLOB) AS img)),
+		('MN02', 'ST00', N'Sinh Tố Dứa', 49000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\sinhToDua.png', SINGLE_BLOB) AS img)),
+		('MN03', 'TS00', N'Trà Sữa Trân Châu', 59000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
+		
+		('MN04', 'TR00', N'Trà Gừng', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img)),
+		('MN05', 'TR00', N'Trà Trái Cây', 55000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traTraiCay.png', SINGLE_BLOB) AS img)),
+		('MN06', 'TS00', N'Trà Sữa Matcha Latte', 65000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\matchaLatte.png', SINGLE_BLOB) AS img)),
+		('MN07', 'CF00', N'Cafe Đen', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeDen.png', SINGLE_BLOB) AS img));
+		
+	--('MN08', 'ST00', N'Sinh Tố Việt Quất', 59000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeDen.png', SINGLE_BLOB) AS img)),
 
-INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, TrangThai)
-VALUES	('MN01', 'LM02', N'Trà Ổi', 20000.0, 100, 1)
+	
+INSERT INTO ThongBao (TieuDe,MoTa,Ngay) VALUES
+(N'Giảm 20%' , N'Giảm 20% đơn trên 200k trong 2 ngày','2024-12-26'),
+(N'Free 500 Đơn Đầu',N'Nhân ngày đặc biệt quán free 500 đơn đầu','2024-09-02'),
+(N'Thầy Cô giảm 25%',N'Nhân ngày nhà giáo giảm 25% đơn','2024-11-20'),
+(N'Mua 1 tặng 1',N'Nhân ngày khai chương mua 1 tặng 1','2023-11-01')
+

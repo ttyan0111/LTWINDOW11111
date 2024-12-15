@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LTWINDOW_.Options
 {
@@ -89,11 +91,11 @@ namespace LTWINDOW_.Options
             panelButton.FlowDirection = FlowDirection.TopDown; // Sắp xếp theo chiều dọc
             panelButton.AutoScroll = true; // Bật thanh cuộn dọc
             panelButton.WrapContents = false; // Không cho phép cuộn ngang
-
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             foreach (ThongBao thongBao in tBao)
             {
                 thongBaoIndex++;
-
+               
                 // Tạo Panel để chứa PictureBox và Label
                 Panel container = new Panel
                 {
@@ -133,6 +135,14 @@ namespace LTWINDOW_.Options
                 {
                     Label hoveredLabel = (Label)sender;
                     ThongBao data = (ThongBao)hoveredLabel.Tag;
+
+                    // Thiết lập font cho ToolTip
+                    Font font = new Font("Arial", 15F); // Chọn font và kích thước bạn muốn
+
+                    // Hiển thị mô tả đầy đủ trong ToolTip
+                    toolTip.SetToolTip(hoveredLabel, data.MoTa);
+
+                    // Thay đổi font của Label khi di chuột vào
                     hoveredLabel.Text = $"{data.TieuDe}: {data.MoTa}";
                     hoveredLabel.Font = new Font("Arial", 12F, FontStyle.Italic);
                 };
@@ -142,9 +152,13 @@ namespace LTWINDOW_.Options
                 {
                     Label hoveredLabel = (Label)sender;
                     ThongBao data = (ThongBao)hoveredLabel.Tag;
+
+                    // Hiển thị lại nội dung ban đầu
                     hoveredLabel.Text = $"{data.TieuDe} - {data.Ngay:dd/MM/yyyy}";
                     hoveredLabel.Font = new Font("Arial", 14F, FontStyle.Bold);
                 };
+
+
 
                 // Thêm PictureBox và Label vào container
                 container.Controls.Add(pictureBox);

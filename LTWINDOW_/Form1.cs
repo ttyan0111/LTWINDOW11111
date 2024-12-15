@@ -1,4 +1,5 @@
-﻿using LTWINDOW_.Options;
+﻿using Guna.UI2.WinForms;
+using LTWINDOW_.Options;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,13 @@ namespace LTWINDOW_
     {
         SQL sql;
         Form currentFormChild;
-
+    
         public Form1(string tenNhanVien,string maNhanVien)
         {
             InitializeComponent();
+            
+
+
             sql = new SQL();
             sql.OpenConnection();
             uC_DashBoard1.SetTenNhanVien(tenNhanVien);
@@ -28,6 +32,12 @@ namespace LTWINDOW_
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = false;
+            HUBan.Visible = false;
+            HUMenu.Visible = false;
+            HUQuanLi.Visible = false;
+            HUTrangChinh.Visible = true;
+           
+         
 
         }
 
@@ -42,7 +52,11 @@ namespace LTWINDOW_
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = false;
-
+            
+            HUBan.Visible = false;
+            HUMenu.Visible = false;
+            HUQuanLi.Visible = false;
+            HUTrangChinh.Visible = true;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -56,6 +70,10 @@ namespace LTWINDOW_
             uC_DashBoard1.Visible = false;
             uC_Menu1.Visible = true;
             uC_QuanLi1.Visible = false;
+            HUBan.Visible = false;
+            HUMenu.Visible = true;
+            HUQuanLi.Visible = false;
+            HUTrangChinh.Visible = false;
         }
 
         private void buttonQuanLyBan_Click(object sender, EventArgs e)
@@ -66,6 +84,10 @@ namespace LTWINDOW_
             // mở form QuanLyBan trong panel_body.
             openCurrentFormChild(QuanLyBan);
 
+            HUBan.Visible = true;
+            HUMenu.Visible = false;
+            HUQuanLi.Visible = false;
+            HUTrangChinh.Visible = false;
         }
 
         // gắn form con vào panel_body.
@@ -110,6 +132,12 @@ namespace LTWINDOW_
             uC_DashBoard1.Visible = false;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = true;
+
+            HUBan.Visible = false;
+            HUMenu.Visible = false;
+            HUQuanLi.Visible = true;
+            HUTrangChinh.Visible = false;
+
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -141,6 +169,14 @@ namespace LTWINDOW_
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = false;
+            HUBan.Visible = false;
+            HUMenu.Visible = false;
+            HUQuanLi.Visible = false;
+            HUTrangChinh.Visible = true;
         }
+
+       
+
+       
     }
 }
