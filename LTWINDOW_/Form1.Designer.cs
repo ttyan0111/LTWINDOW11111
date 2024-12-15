@@ -30,19 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.HUQuanLi = new System.Windows.Forms.Panel();
+            this.HUMenu = new System.Windows.Forms.Panel();
+            this.HUBan = new System.Windows.Forms.Panel();
+            this.HUTrangChinh = new System.Windows.Forms.Panel();
+            this.buttonExit = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonThem = new Guna.UI2.WinForms.Guna2Button();
             this.buttonQuanLy = new Guna.UI2.WinForms.Guna2Button();
             this.buttonMenu = new Guna.UI2.WinForms.Guna2Button();
             this.buttonQuanLyBan = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.buttonExit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.uC_QuanLi1 = new LTWINDOW_.Options.UC_QuanLi();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,14 +54,18 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2Panel1.Controls.Add(this.HUQuanLi);
+            this.guna2Panel1.Controls.Add(this.HUMenu);
+            this.guna2Panel1.Controls.Add(this.HUBan);
+            this.guna2Panel1.Controls.Add(this.HUTrangChinh);
             this.guna2Panel1.Controls.Add(this.buttonExit);
             this.guna2Panel1.Controls.Add(this.panel2);
             this.guna2Panel1.Controls.Add(this.buttonThem);
             this.guna2Panel1.Controls.Add(this.buttonQuanLy);
             this.guna2Panel1.Controls.Add(this.buttonMenu);
             this.guna2Panel1.Controls.Add(this.buttonQuanLyBan);
-            this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
             this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -65,6 +73,59 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(209, 1112);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // HUQuanLi
+            // 
+            this.HUQuanLi.BackColor = System.Drawing.Color.DeepPink;
+            this.HUQuanLi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HUQuanLi.Location = new System.Drawing.Point(31, 762);
+            this.HUQuanLi.Name = "HUQuanLi";
+            this.HUQuanLi.Size = new System.Drawing.Size(150, 6);
+            this.HUQuanLi.TabIndex = 10;
+            // 
+            // HUMenu
+            // 
+            this.HUMenu.BackColor = System.Drawing.Color.DeepPink;
+            this.HUMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HUMenu.Location = new System.Drawing.Point(27, 576);
+            this.HUMenu.Name = "HUMenu";
+            this.HUMenu.Size = new System.Drawing.Size(150, 6);
+            this.HUMenu.TabIndex = 9;
+            // 
+            // HUBan
+            // 
+            this.HUBan.BackColor = System.Drawing.Color.DeepPink;
+            this.HUBan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HUBan.Location = new System.Drawing.Point(31, 412);
+            this.HUBan.Name = "HUBan";
+            this.HUBan.Size = new System.Drawing.Size(150, 6);
+            this.HUBan.TabIndex = 8;
+            // 
+            // HUTrangChinh
+            // 
+            this.HUTrangChinh.BackColor = System.Drawing.Color.DeepPink;
+            this.HUTrangChinh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HUTrangChinh.Location = new System.Drawing.Point(31, 214);
+            this.HUTrangChinh.Name = "HUTrangChinh";
+            this.HUTrangChinh.Size = new System.Drawing.Size(150, 6);
+            this.HUTrangChinh.TabIndex = 7;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Image = global::LTWINDOW_.Properties.Resources.exit;
+            this.buttonExit.ImageSize = new System.Drawing.Size(55, 55);
+            this.buttonExit.Location = new System.Drawing.Point(121, 3);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(88, 87);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // panel2
             // 
@@ -114,9 +175,9 @@
             this.buttonMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.buttonMenu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonMenu.ForeColor = System.Drawing.Color.Purple;
-            this.buttonMenu.Location = new System.Drawing.Point(12, 532);
+            this.buttonMenu.Location = new System.Drawing.Point(-2, 517);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(183, 83);
+            this.buttonMenu.Size = new System.Drawing.Size(211, 84);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.Text = "Menu món";
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -202,11 +263,35 @@
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // uC_QuanLi1
+            // buttonTrangChinh
+            // 
+            this.buttonTrangChinh.BackColor = System.Drawing.Color.DarkViolet;
+            this.buttonTrangChinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTrangChinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonTrangChinh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonTrangChinh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonTrangChinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonTrangChinh.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTrangChinh.ForeColor = System.Drawing.Color.Purple;
+            this.buttonTrangChinh.Location = new System.Drawing.Point(0, 143);
+            this.buttonTrangChinh.Name = "buttonTrangChinh";
+            this.buttonTrangChinh.Size = new System.Drawing.Size(209, 83);
+            this.buttonTrangChinh.TabIndex = 1;
+            this.buttonTrangChinh.Text = "Trang chính";
+            this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
+            // 
+            // panel1
             // 
             this.uC_QuanLi1.Location = new System.Drawing.Point(-11, 115);
             this.uC_QuanLi1.Name = "uC_QuanLi1";
             this.uC_QuanLi1.Size = new System.Drawing.Size(1942, 1099);
+            this.uC_QuanLi1.TabIndex = 3;
+            // 
+            // uC_QuanLi1
+            // 
+            this.uC_QuanLi1.Location = new System.Drawing.Point(-11, 0);
+            this.uC_QuanLi1.Name = "uC_QuanLi1";
+            this.uC_QuanLi1.Size = new System.Drawing.Size(1953, 1102);
             this.uC_QuanLi1.TabIndex = 3;
             // 
             // uC_DashBoard1
@@ -226,6 +311,10 @@
             this.uC_Menu1.Size = new System.Drawing.Size(1725, 1102);
             this.uC_Menu1.TabIndex = 1;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,6 +328,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "z";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
             this.guna2Panel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -260,6 +350,10 @@
         private Options.UC_DashBoard uC_DashBoard1;
         private Guna.UI2.WinForms.Guna2Button buttonExit;
         private Options.UC_QuanLi uC_QuanLi1;
+        private System.Windows.Forms.Panel HUTrangChinh;
+        private System.Windows.Forms.Panel HUQuanLi;
+        private System.Windows.Forms.Panel HUMenu;
+        private System.Windows.Forms.Panel HUBan;
     }
 }
 
