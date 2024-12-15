@@ -14,9 +14,9 @@ namespace LTWINDOW_
 {
     internal class SQL
     {
-        string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
+        //string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
 
-        //string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
         private SqlDataAdapter adapter;
         private DataTable dt;
         private SqlConnection conn;
@@ -217,8 +217,41 @@ namespace LTWINDOW_
 
             return loaiMons;
         }
+        public void LuuDonHang(string maDonHang,string maNhanVien, DateTime ngayDatHang, double tongTien)
+        {
+            string query = "INSERT INTO DonHang (MaDonHang, MaNhanVien, NgayDatHang, TongTien) " +
+                           "VALUES (@MaDonHang, @MaNhanVien, @NgayDatHang, @TongTien)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaDonHang", maDonHang);
+                    cmd.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
+                    cmd.Parameters.AddWithValue("@NgayDatHang", ngayDatHang);
+                    cmd.Parameters.AddWithValue("@TongTien", tongTien);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
-
+        public void LuuChiTietDonHang(string maMon,int soLuong,double tongTien,string maDonHang)
+        {
+            string query = "INSERT INTO CHiTietDonHang (MaMon, SoLuongMon, TongPhu, MaDonHang) " +
+                           "VALUES (@MaMon, @SoLuongMon, @TongPhu, @MaDonHang)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaMon", maMon);
+                    cmd.Parameters.AddWithValue("@SoLuongMon", soLuong);
+                    cmd.Parameters.AddWithValue("@TongPhu", tongTien);
+                    cmd.Parameters.AddWithValue("@MaDonHang", maDonHang);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
 
     }

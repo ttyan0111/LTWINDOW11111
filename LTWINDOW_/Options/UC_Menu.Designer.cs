@@ -34,6 +34,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelMon = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.labelTenMonTimKiem = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThem = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.buttonTim = new System.Windows.Forms.Button();
@@ -51,14 +52,13 @@
             this.radioButtonTaiQuan = new System.Windows.Forms.RadioButton();
             this.panelHienThiHoaDon = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHoaDon = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.panelMon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelDanhSachMon.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelChuaRadioButton.SuspendLayout();
             this.panelHoaDon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel2
@@ -112,6 +112,17 @@
             this.labelTenMonTimKiem.Name = "labelTenMonTimKiem";
             this.labelTenMonTimKiem.Size = new System.Drawing.Size(0, 33);
             this.labelTenMonTimKiem.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackgroundImage = global::LTWINDOW_.Properties.Resources.timKiem1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(350, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // panelDanhSachMon
             // 
@@ -207,6 +218,7 @@
             this.label2.Size = new System.Drawing.Size(290, 35);
             this.label2.TabIndex = 13;
             this.label2.Text = "Thông Tin Hóa Đơn";
+        
             // 
             // labelTien
             // 
@@ -319,17 +331,6 @@
             this.panelHoaDon.Size = new System.Drawing.Size(885, 1099);
             this.panelHoaDon.TabIndex = 5;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pictureBox1.BackgroundImage = global::LTWINDOW_.Properties.Resources.timKiem1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // uC_DashBoard1
             // 
             this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -350,6 +351,7 @@
             this.Size = new System.Drawing.Size(1942, 1099);
             this.panelMon.ResumeLayout(false);
             this.panelMon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelDanhSachMon.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
@@ -357,36 +359,35 @@
             this.panelChuaRadioButton.PerformLayout();
             this.panelHoaDon.ResumeLayout(false);
             this.panelHoaDon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelMon;
-        private System.Windows.Forms.FlowLayoutPanel panelDanhSachMon;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelThem;
-        private System.Windows.Forms.Button buttonTim;
-        private Guna.UI2.WinForms.Guna2ComboBox gunaComboBoxLoaiMon;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBoxTenMon;
-        private System.Windows.Forms.Label labelTenMon;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelHoaDon;
-        private System.Windows.Forms.FlowLayoutPanel panelHienThiHoaDon;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.Label labelTien;
-        private System.Windows.Forms.Button buttonThanhToan;
-        private System.Windows.Forms.Label labelTongTien;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelTenMonTimKiem;
-        private System.Windows.Forms.RadioButton radioButtonMuaVe;
-        private System.Windows.Forms.RadioButton radioButtonTaiQuan;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelChuaRadioButton;
-        private UC_DashBoard uC_DashBoard1;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel panelMon;
+        public System.Windows.Forms.FlowLayoutPanel panelDanhSachMon;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel panelThem;
+        public System.Windows.Forms.Button buttonTim;
+        public Guna.UI2.WinForms.Guna2ComboBox gunaComboBoxLoaiMon;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.RichTextBox richTextBoxTenMon;
+        public System.Windows.Forms.Label labelTenMon;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel panelHoaDon;
+        public System.Windows.Forms.FlowLayoutPanel panelHienThiHoaDon;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        public System.Windows.Forms.Label labelTien;
+        public System.Windows.Forms.Button buttonThanhToan;
+        public System.Windows.Forms.Label labelTongTien;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label labelTenMonTimKiem;
+        public System.Windows.Forms.RadioButton radioButtonMuaVe;
+        public System.Windows.Forms.RadioButton radioButtonTaiQuan;
+        public Guna.UI2.WinForms.Guna2CustomGradientPanel panelChuaRadioButton;
+        public UC_DashBoard uC_DashBoard1;
     }
 }

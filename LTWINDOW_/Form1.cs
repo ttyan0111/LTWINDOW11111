@@ -16,11 +16,15 @@ namespace LTWINDOW_
     {
         SQL sql;
         Form currentFormChild;
-        public Form1()
+
+        public Form1(string tenNhanVien,string maNhanVien)
         {
             InitializeComponent();
             sql = new SQL();
             sql.OpenConnection();
+            uC_DashBoard1.SetTenNhanVien(tenNhanVien);
+            uC_Menu1.SetMaNhanVien(maNhanVien);
+
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
 
@@ -96,6 +100,36 @@ namespace LTWINDOW_
         {
             Form menuQuanLi = new MenuQuanLi();
             openCurrentFormChild(menuQuanLi);
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                // Đóng toàn bộ ứng dụng bao gồm các form ẩn
+                Application.Exit();
+                // Đóng form hiện tại
+                this.Close();
+
+               
+            }
+
+
+            
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // đóng form đang mở
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+
+            uC_DashBoard1.Visible = true;
+            uC_Menu1.Visible = false;
         }
     }
 }

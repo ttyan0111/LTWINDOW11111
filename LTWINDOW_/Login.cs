@@ -13,24 +13,58 @@ namespace LTWINDOW_
 {
     public partial class Login : Form
     {
+        string maNhanVien, tenNhanVien;
+        private string actualPassword = "";
         public Login()
         {
             InitializeComponent();
-        }
+            
 
-        private void Login_Load(object sender, EventArgs e)
+
+        }
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
+            // Lấy vị trí con trỏ hiện tại
+            int cursorPosition = txtPassword.SelectionStart;
+
+            // Cập nhật mật khẩu thực tế
+            if (txtPassword.Text.Length > actualPassword.Length)
+            {
+                // Nếu có ký tự mới được nhập
+                actualPassword += txtPassword.Text.Substring(actualPassword.Length);
+            }
+            else if (txtPassword.Text.Length < actualPassword.Length)
+            {
+                // Nếu có ký tự bị xóa
+                actualPassword = actualPassword.Substring(0, txtPassword.Text.Length);
+            }
+
+            // Thay thế tất cả ký tự hiển thị bằng dấu *
+            txtPassword.Text = new string('*', actualPassword.Length);
+
+            // Khôi phục vị trí con trỏ
+            txtPassword.SelectionStart = cursorPosition;
+        }
+        private async void Login_Load(object sender, EventArgs e)
+        {
+            
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
+
+            await Task.Delay(100); // Đợi 100ms để đảm bảo form đã sẵn sàng
+            txtUserName.Focus();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            UC_DashBoard dashBoard = new UC_DashBoard();
-            string username = txtUserName.Text, passsword = txtPassword.Text;
+            
+          
+            string username = txtUserName.Text, passsword = actualPassword;
 
             ListTaiKhoan ltk = new ListTaiKhoan();
-            ltk.queryTaiKhoan(@"select NhanVien.UserName, NhanVien.Passcode, NhanVien.TenNhanVien from NhanVien");
+            ltk.queryTaiKhoan(@"select NhanVien.UserName, NhanVien.Passcode, NhanVien.TenNhanVien, NhanVien.MaNhanVien from NhanVien");
             List<TaiKhoan> taiKhoans = ltk.List;
 
             errorProvider1.Clear();
@@ -45,7 +79,9 @@ namespace LTWINDOW_
                     {
                         if (tk.UserName == username && tk.Password == passsword)
                         {
-                            dashBoard.SetTenNhanVien(tk.TenNhanVien);
+                            maNhanVien = tk.MaNhanVien;
+                            tenNhanVien = tk.TenNhanVien;
+                          
                             check = 1;
                             break;
                         }
@@ -55,7 +91,7 @@ namespace LTWINDOW_
                     {
                         lblThongBaoInvalid.Visible = false;
                         this.Hide();
-                        
+                        Form1 form = new Form1(tenNhanVien, maNhanVien);
                         form.Show();
                         
                     }
@@ -78,13 +114,32 @@ namespace LTWINDOW_
 
 
         }
-
-        
-
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+       
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
-            DialogResult result = MessageBox.Show("bạn có muốn chắc chắc muốn thoát", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result != DialogResult.Yes) e.Cancel = true;
+            // Kiểm tra xem phím Enter có được nhấn không
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Ngừng hành vi mặc định của phím Enter (không tạo dòng mới)
+                e.SuppressKeyPress = true;
+
+                // Chuyển focus từ txtUserName sang txtPassword
+                txtPassword.Focus();
+            }
+
         }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Kiểm tra xem phím Enter có được nhấn không
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Ngừng hành vi mặc định của phím Enter (không tạo dòng mới)
+                e.SuppressKeyPress = true;
+
+                // Gọi hàm tìm kiếm
+                button1_Click(sender, e);
+            }
+        }
+        
     }
 }

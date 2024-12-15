@@ -156,4 +156,25 @@ VALUES ('MN05', 'LM02', N'Cafe Den', 25000.0, 100, (SELECT * FROM OPENROWSET(BUL
 		('MN06', 'LM02', N'Nước Dừa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\nuocDua.png', SINGLE_BLOB) AS img)),
 		('MN07', 'LM02', N'Trà Sữa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
 		('MN08', 'LM02', N'Trà Gừng', 20000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img))
-			 
+	
+	
+-- 
+alter table ChiTietDonHang drop constraint fk_MaDonHang_CTDH
+
+alter table [dbo].[ChiTietDonHang] drop column MaDonHang
+
+alter table DonHang drop constraint pk_MaDonHang_DH
+
+alter table DonHang drop column MaDonHang
+delete from DonHang
+alter table DonHang add MaDonHang UNIQUEIDENTIFIER not null
+
+
+
+alter table DonHang add constraint pk_MaDonHang_DH primary key(MaDonHang)
+
+delete from ChiTietDonHang
+
+alter table ChiTietDonHang add MaDonHang UNIQUEIDENTIFIER
+
+alter table ChiTietDonHang add constraint fk_MaChiTietDonHang_CTDH foreign key (MaDonHang) references DonHang(MaDonHang)

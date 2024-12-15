@@ -17,6 +17,7 @@ using iTextSharp.text.pdf;
 using System.IO;
 using System.Drawing.Printing;
 using System.Xml.Linq;
+using System.Runtime.CompilerServices;
 
 namespace LTWINDOW_.Options
 {
@@ -26,9 +27,12 @@ namespace LTWINDOW_.Options
         int check;
         string maNhanVien;
         string maDonHang;
+        double grandTotal ;
+        bool checkIn;
+
         public List<KeyValuePair<string, int>> ds { get; set; }
 
-        public ThanhToan(List<KeyValuePair<string, int>> ds, int u, string maNhanVien)
+        public ThanhToan(List<KeyValuePair<string, int>> ds, int u, string maNhanVien,double grandTotal)
         {
             InitializeComponent();
             this.ds = ds ?? new List<KeyValuePair<string, int>>(); // Gán danh sách
@@ -37,7 +41,8 @@ namespace LTWINDOW_.Options
             this.maNhanVien = maNhanVien;
             this.maDonHang = Guid.NewGuid().ToString();
             HienThiThongTin(maNhanVien, maDonHang); // Hiển thị thông tin khi mở form
-
+            this.grandTotal = grandTotal;
+            this.checkIn = false;
         }
         public void HienThiThongTin(string maNhanVien,string maDonHang)
         {
@@ -90,7 +95,7 @@ namespace LTWINDOW_.Options
             // ==== Thêm ngày lập hóa đơn (dòng 2) ==== 
             Label ngayLabel = new Label
             {
-                Text = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy"),
+                Text = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
                 Font = new System.Drawing.Font("Arial", 12, FontStyle.Italic),
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
@@ -105,7 +110,7 @@ namespace LTWINDOW_.Options
             table.Controls.Add(new Label { Text = "Giá Đơn", Font = new System.Drawing.Font("Arial", 12, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter, AutoSize = true }, 2, 3);
             table.Controls.Add(new Label { Text = "Tổng Giá", Font = new System.Drawing.Font("Arial", 12, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter, AutoSize = true }, 3, 3);
 
-            double grandTotal = 0; // Tổng tiền cho tất cả các món
+            
             int row = 4; // Bắt đầu dòng dữ liệu từ dòng 4
 
             // ==== Duyệt qua danh sách món ăn ==== 
@@ -119,7 +124,7 @@ namespace LTWINDOW_.Options
                 if (mon == null) continue;
 
                 double total = mon.Gia * soLuong;
-                grandTotal += total;
+             
 
                 // Thêm thông tin vào bảng
                 table.Controls.Add(new Label { Text = tenMon, Font = new System.Drawing.Font("Arial", 12), TextAlign = ContentAlignment.MiddleLeft, AutoSize = true }, 0, row);
@@ -157,6 +162,14 @@ namespace LTWINDOW_.Options
 
         private void buttonInHoaDon_Click(object sender, EventArgs e)
         {
+
+            sql.LuuDonHang(maDonHang, maNhanVien, DateTime.Now, grandTotal);
+
+
+
+
+
+
             // Mở hộp thoại chọn vị trí lưu file
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
@@ -187,10 +200,15 @@ namespace LTWINDOW_.Options
                     tenCongTy.Alignment = Element.ALIGN_CENTER;
                     pdfDoc.Add(tenCongTy);
 
-                    Paragraph ngay = new Paragraph("Ngày: " + DateTime.Now.ToString("dd/MM/yyyy"), italicFont);
+                    Paragraph ngay = new Paragraph("Ngày: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), italicFont);
                     ngay.Alignment = Element.ALIGN_CENTER;
                     ngay.SpacingAfter = 20;
+
+                    // Thêm khoảng trắng rõ ràng giữa các phần:
+                    ngay.Add(" ");
+
                     pdfDoc.Add(ngay);
+
 
                     // Thêm mã nhân viên
                     Paragraph maNhanVienParagraph = new Paragraph("Mã nhân viên: " + maNhanVien, italicFont); // Thay `maNhanVien` bằng biến lưu mã nhân viên
@@ -221,7 +239,7 @@ namespace LTWINDOW_.Options
                     }
 
                     // Thêm dữ liệu món ăn
-                    double grandTotal = 0;
+                   
                     foreach (var item in ds)
                     {
                         string tenMon = item.Key;
@@ -232,12 +250,14 @@ namespace LTWINDOW_.Options
                         if (mon == null) continue;
 
                         double total = mon.Gia * soLuong;
-                        grandTotal += total;
-
+                        
+                        
                         table.AddCell(new PdfPCell(new Phrase(tenMon, new iTextSharp.text.Font(baseFont, 12))));
                         table.AddCell(new PdfPCell(new Phrase(soLuong.ToString(), new iTextSharp.text.Font(baseFont, 12))));
                         table.AddCell(new PdfPCell(new Phrase(mon.Gia.ToString("N0") + " đ", new iTextSharp.text.Font(baseFont, 12))));
                         table.AddCell(new PdfPCell(new Phrase(total.ToString("N0") + " đ", new iTextSharp.text.Font(baseFont, 12))));
+                        sql.LuuChiTietDonHang(mon.MaMon, soLuong, total, maDonHang);
+
                     }
 
                     // Dòng Tổng Cộng
@@ -260,12 +280,19 @@ namespace LTWINDOW_.Options
                     pdfDoc.Close();
 
                     DialogResult result = MessageBox.Show("Hóa đơn đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    
+                   
 
                     // Nếu người dùng nhấn OK, đóng form hiện tại
                     if (result == DialogResult.OK)
                     {
+                        this.checkIn = true;
                         // Đóng Form hiện tại
                         this.Close();
+
+
+
                     }
                 }
                 catch (Exception ex)
@@ -275,7 +302,7 @@ namespace LTWINDOW_.Options
             }
         }
 
-
+        public bool getCheckIn() { return checkIn; }
 
 
 

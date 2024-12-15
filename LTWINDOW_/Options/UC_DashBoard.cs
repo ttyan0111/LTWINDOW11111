@@ -79,6 +79,7 @@ namespace LTWINDOW_.Options
         {
             labelTenNhanVien.Text = tenNhanVien;
         }
+       
 
         private void LoadThongBao()
         {

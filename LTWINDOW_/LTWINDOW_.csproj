@@ -206,6 +206,7 @@
     <None Include="Resources\avata.png" />
     <None Include="Resources\avata1.png" />
     <None Include="Resources\account1.png" />
+    <None Include="Resources\background.png" />
     <Content Include="Resources\cộng.png" />
     <None Include="Resources\trừ1.png" />
     <None Include="Resources\cộng1.png" />
@@ -217,6 +218,7 @@
     <None Include="Resources\Thực đơn 1.png" />
     <None Include="Resources\thực Đon main.png" />
     <None Include="Resources\Thực Đon main1.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

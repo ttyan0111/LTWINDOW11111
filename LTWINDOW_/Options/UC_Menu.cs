@@ -18,7 +18,7 @@ namespace LTWINDOW_.Options
         double totalPrice = 0;
         SQL sql;
         List<KeyValuePair<string, int>> ds;
-        string maNhanVien = "1234567890";
+        string maNhanVien ;
 
         private Dictionary<string, Label> quantityLabels = new Dictionary<string, Label>();
         public UC_Menu()
@@ -413,16 +413,37 @@ namespace LTWINDOW_.Options
             {
                 u = 2; // tai quan
             }
-            ThanhToan form = new ThanhToan(ds,u,maNhanVien);
-            // khởi tạo form con là form  muốn hiển thị.
 
-           
-            
+
+
+            // khởi tạo form con là form  muốn hiển thị.
+            ThanhToan form = new ThanhToan(ds, u, maNhanVien, totalPrice);
+
+
             
             // hiển thị full trên panel chứa nó.
             form.Dock = DockStyle.Fill;
             form.ShowDialog();
+            if (form.getCheckIn())
+            {
+                XoaDuLieuHienThi();
+            }
 
         }
+        public void SetMaNhanVien(string maNhanVien)
+        {
+            this.maNhanVien = maNhanVien;
+        }
+        public void XoaDuLieuHienThi()
+        {
+            panelHienThiHoaDon.Controls.Clear();
+            ds.Clear();
+            totalPrice = 0;
+            labelTien.Text = 0 + "đ";
+            quantityLabels.Clear();
+            radioButtonMuaVe.Checked = false;
+            radioButtonTaiQuan.Checked = false;
+        }
+
     }
 }

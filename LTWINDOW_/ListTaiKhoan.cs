@@ -33,7 +33,7 @@ namespace LTWINDOW_
                     SqlDataReader data = cmd.ExecuteReader();
                     while (data.Read())
                     {
-                        list.Add(new TaiKhoan(data["UserName"].ToString(), data["Passcode"].ToString(), data["TenNhanVien"].ToString()));
+                        list.Add(new TaiKhoan(data["UserName"].ToString(), data["Passcode"].ToString(), data["TenNhanVien"].ToString(), data["MaNhanVien"].ToString()));
                     } 
                         
                 }
