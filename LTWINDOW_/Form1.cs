@@ -27,6 +27,7 @@ namespace LTWINDOW_
 
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
+            uC_QuanLi1.Visible = false;
 
         }
 
@@ -40,7 +41,8 @@ namespace LTWINDOW_
 
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
-           
+            uC_QuanLi1.Visible = false;
+
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace LTWINDOW_
 
             uC_DashBoard1.Visible = false;
             uC_Menu1.Visible = true;
+            uC_QuanLi1.Visible = false;
         }
 
         private void buttonQuanLyBan_Click(object sender, EventArgs e)
@@ -98,8 +101,15 @@ namespace LTWINDOW_
 
         private void buttonQuanLy_Click(object sender, EventArgs e)
         {
-            Form menuQuanLi = new MenuQuanLi();
-            openCurrentFormChild(menuQuanLi);
+            // đóng form đang mở
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+
+            uC_DashBoard1.Visible = false;
+            uC_Menu1.Visible = false;
+            uC_QuanLi1.Visible = true;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -130,6 +140,7 @@ namespace LTWINDOW_
 
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
+            uC_QuanLi1.Visible = false;
         }
     }
 }

@@ -144,7 +144,7 @@ namespace LTWINDOW_
         {
             List<Mon> danhSachMonList = new List<Mon>();
 
-            string query = "SELECT * FROM DanhSachMon";
+            string query = "SELECT * FROM DanhSachMon Where TrangThai = 1";
 
             try
             {

@@ -89,10 +89,7 @@ INSERT INTO LoaiMon (MaLoaiMon, TenLoaiMon) VALUES
 ('LM03', N'	Nước Ép');
 
 -- Insert sample data into DonHang table
-INSERT INTO DonHang (MaNhanVien, NgayDatHang, TongTien) VALUES
-('1', '2024-12-08 10:00:00', 50000.0),
-('2', '2024-12-10 11:30:00', 70000.0),
-('3', '2024-12-12 14:00:00', 90000.0);
+
 
 -- Insert sample data into DanhSachMon table
 INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong) VALUES
@@ -178,3 +175,28 @@ delete from ChiTietDonHang
 alter table ChiTietDonHang add MaDonHang UNIQUEIDENTIFIER
 
 alter table ChiTietDonHang add constraint fk_MaChiTietDonHang_CTDH foreign key (MaDonHang) references DonHang(MaDonHang)
+
+
+
+INSERT INTO DonHang (MaNhanVien, NgayDatHang, TongTien) VALUES
+('1', '2024-12-08 10:00:00', 50000.0),
+('2', '2024-12-10 11:30:00', 70000.0),
+('3', '2024-12-12 14:00:00', 90000.0);
+
+delete from ChiTietDonHang
+
+delete from DanhSachMon
+
+alter table DanhSachMon add  TrangThai bit default(1) not null
+
+INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, _Image)
+VALUES ('MN05', 'LM02', N'Cafe Den', 25000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\caffe_den.png', SINGLE_BLOB) AS img)),
+		('MN06', 'LM02', N'Nước Dừa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\nuocDua.png', SINGLE_BLOB) AS img)),
+		('MN07', 'LM02', N'Trà Sữa', 30000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
+		('MN08', 'LM02', N'Trà Gừng', 20000.0, 100, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img))
+
+
+
+
+INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, SoLuong, TrangThai)
+VALUES	('MN01', 'LM02', N'Trà Ổi', 20000.0, 100, 1)

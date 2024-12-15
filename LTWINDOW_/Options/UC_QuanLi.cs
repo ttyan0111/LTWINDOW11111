@@ -8,27 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTWINDOW_
+namespace LTWINDOW_.Options
 {
-    public partial class MenuQuanLi : Form
+    public partial class UC_QuanLi : UserControl
     {
-        public MenuQuanLi()
+        public UC_QuanLi()
         {
             InitializeComponent();
         }
-        //
-        // hiệu ứng chuột ptb loại món
-        //
-        private void ptbThucDon_MouseHover_1(object sender, EventArgs e)
+
+    
+        private void panel_top_ThucDon_MouseHover(object sender, EventArgs e)
         {
-            panel_top_mon.BackColor = Color.FromArgb(255, 128, 255);
-            panel_top_mon.BorderStyle = BorderStyle.Fixed3D;
+            panel_top_ThucDon.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_ThucDon.BorderStyle = BorderStyle.Fixed3D;
         }
 
-        private void ptbThucDon_MouseLeave_1(object sender, EventArgs e)
+        private void panel_top_ThucDon_MouseLeave(object sender, EventArgs e)
         {
-            panel_top_mon.BackColor = Color.FromArgb(255, 192, 255);
-            panel_top_mon.BorderStyle = BorderStyle.FixedSingle;
+            panel_top_ThucDon.BackColor = Color.FromArgb(255, 192, 255);
+            panel_top_ThucDon.BorderStyle = BorderStyle.FixedSingle;
         }
         //
         // hiệu ứng chuột ptb loại món
@@ -43,7 +42,7 @@ namespace LTWINDOW_
             panel_top_loaiMon.BackColor = Color.FromArgb(255, 128, 255);
             panel_top_loaiMon.BorderStyle = BorderStyle.Fixed3D;
         }
-        
+
         private void ptbLoaiMon_MouseLeave(object sender, EventArgs e)
         {
             panel_top_loaiMon.BackColor = Color.FromArgb(255, 192, 255);
@@ -63,7 +62,17 @@ namespace LTWINDOW_
             panel_top_taiKhoan.BackColor = Color.FromArgb(255, 192, 255);
             panel_top_taiKhoan.BorderStyle = BorderStyle.FixedSingle;
         }
+        private void ptn_ThongBao_MouseHover(object sender, EventArgs e)
+        {
+            panel_top_taiKhoan.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_taiKhoan.BorderStyle = BorderStyle.Fixed3D;
+        }
+        private void ptn_ThongBao_MouseLeave(object sender, EventArgs e)
+        {
+            panel_top_taiKhoan.BackColor = Color.FromArgb(255, 192, 255);
+            panel_top_taiKhoan.BorderStyle = BorderStyle.FixedSingle;
+        }
 
-        
+     
     }
 }
