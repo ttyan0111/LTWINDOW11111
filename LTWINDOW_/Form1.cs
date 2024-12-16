@@ -48,11 +48,11 @@ namespace LTWINDOW_
             {
                 currentFormChild.Close();
             }
-
+            
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = false;
-            
+            uC_DashBoard1.LoadDuLieuAll();
             HUBan.Visible = false;
             HUMenu.Visible = false;
             HUQuanLi.Visible = false;

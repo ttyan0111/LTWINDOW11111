@@ -93,6 +93,12 @@
     <Compile Include="MenuQuanLy\UC_QuanLyMon.Designer.cs">
       <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\UC_ThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\UC_ThongBao.Designer.cs">
+      <DependentUpon>UC_ThongBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mon.cs" />
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\UC_QuanLyMon.resx">
       <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\UC_ThongBao.resx">
+      <DependentUpon>UC_ThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
@@ -218,6 +227,7 @@
     <None Include="Resources\avata1.png" />
     <None Include="Resources\account1.png" />
     <None Include="Resources\background.png" />
+    <None Include="Resources\capNhat.png" />
     <Content Include="Resources\cộng.png" />
     <None Include="Resources\trừ1.png" />
     <None Include="Resources\cộng1.png" />
@@ -231,6 +241,11 @@
     <None Include="Resources\Thực Đon main1.png" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\themThongBao.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\minus1.png" />
+    <None Include="Resources\minus2.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <ItemGroup />

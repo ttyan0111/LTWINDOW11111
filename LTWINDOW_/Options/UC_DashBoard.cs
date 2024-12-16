@@ -16,10 +16,13 @@ namespace LTWINDOW_.Options
     public partial class UC_DashBoard : UserControl
     {
         SQL sql;
+        int index;
+        List<ThongBao> tBao;
         public UC_DashBoard()
         {
            
             InitializeComponent();
+            tBao = new List<ThongBao>();
             sql = new SQL();
             sql.OpenConnection();
             LoadRevenueChart();
@@ -85,7 +88,8 @@ namespace LTWINDOW_.Options
 
         private void LoadThongBao()
         {
-            List<ThongBao> tBao = sql.GetThongBao();
+            tBao.Clear();
+            tBao = sql.GetThongBao(out this.index);
             int thongBaoIndex = 0;
             panelButton.BackColor = Color.FromArgb(255, 192, 255);// Đặt màu nền
             panelButton.FlowDirection = FlowDirection.TopDown; // Sắp xếp theo chiều dọc
@@ -184,6 +188,13 @@ namespace LTWINDOW_.Options
 
         private void acount_Click(object sender, EventArgs e)
         {
+
+        }
+        public void LoadDuLieuAll()
+        {
+            panelButton.Controls.Clear();
+            LoadRevenueChart();
+            LoadThongBao();
 
         }
     }

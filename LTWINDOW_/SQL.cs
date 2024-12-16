@@ -9,20 +9,26 @@ using System.Drawing;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
 using System.IO;
+using System.ComponentModel;
+using System.Collections;
+using System.Data.Common;
+using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace LTWINDOW_
 {
     internal class SQL
     {
-        string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
+        //string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
 
-        //string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
         private SqlDataAdapter adapter;
         private DataTable dt;
         private SqlConnection conn;
         public SQL()
         {
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connectionString); 
+            
         }
 
         // lấy chuỗi kết nối.
@@ -101,14 +107,15 @@ namespace LTWINDOW_
             }
             return dt;
         }
-       
-        public List<ThongBao> GetThongBao()
+
+        public List<ThongBao> GetThongBao(out int lastIndex)
         {
             List<ThongBao> thongBaos = new List<ThongBao>();
+            lastIndex = 0; // Khởi tạo giá trị mặc định cho lastIndex
 
             // Ví dụ truy vấn SQL
-            string query = "SELECT TieuDe, MoTa, Ngay FROM ThongBao ORDER BY Ngay DESC";
-
+            string query = "SELECT ID, TieuDe, MoTa, Ngay FROM ThongBao ORDER BY Ngay DESC";
+            int max = -99999999;
             try
             {
                 OpenConnection();
@@ -120,12 +127,20 @@ namespace LTWINDOW_
                         {
                             ThongBao tBao = new ThongBao
                             {
+                                ID = Convert.ToInt32(reader["ID"]),
                                 TieuDe = reader["TieuDe"].ToString(),
                                 MoTa = reader["MoTa"].ToString(),
                                 Ngay = Convert.ToDateTime(reader["Ngay"])
                             };
                             thongBaos.Add(tBao);
+                            int stt = Convert.ToInt32(reader["ID"]);
+                            if (max < stt)
+                            {
+                                max = stt;
+                            }
                         }
+
+                        
                     }
                 }
             }
@@ -135,11 +150,13 @@ namespace LTWINDOW_
             }
             finally
             {
+                
                 CloseConnection();
             }
-
+            lastIndex = max;
             return thongBaos;
         }
+
         public List<Mon> GetDanhSachMon()
         {
             List<Mon> danhSachMonList = new List<Mon>();
@@ -236,7 +253,7 @@ namespace LTWINDOW_
 
         public void LuuChiTietDonHang(string maMon,int soLuong,double tongTien,string maDonHang)
         {
-            string query = "INSERT INTO CHiTietDonHang (MaMon, SoLuongMon, TongPhu, MaDonHang) " +
+            string query = "INSERT INTO ChiTietDonHang (MaMon, SoLuongMon, TongPhu, MaDonHang) " +
                            "VALUES (@MaMon, @SoLuongMon, @TongPhu, @MaDonHang)";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -251,6 +268,107 @@ namespace LTWINDOW_
                 }
             }
         }
+        public void UpdateThongBao(List<ThongBao> list)
+        {
+            try
+            {
+                if (list == null || list.Count == 0)
+                {
+                    MessageBox.Show("Danh sách thông báo rỗng hoặc chưa được khởi tạo.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Khởi tạo DataTable mới và cấu hình các cột
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("ID", typeof(int));
+                dataTable.Columns.Add("TieuDe", typeof(string));
+                dataTable.Columns.Add("MoTa", typeof(string));
+                dataTable.Columns.Add("Ngay", typeof(DateTime));
+
+                // Duyệt qua danh sách và thêm vào DataTable
+                foreach (ThongBao tb in list)
+                {
+                    DataRow row = dataTable.NewRow();
+                    row["ID"] = tb.ID;
+                    row["TieuDe"] = tb.TieuDe;
+                    row["MoTa"] = tb.MoTa;
+                    row["Ngay"] = tb.Ngay;
+                    dataTable.Rows.Add(row);
+                }
+
+                // Thực hiện xóa toàn bộ dữ liệu trong bảng trước khi chèn
+                OpenConnection();
+                using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM ThongBao", conn))
+                {
+                    deleteCommand.ExecuteNonQuery();
+                }
+                foreach (ThongBao tb in list)
+                {
+                    using (SqlCommand insertCommand = new SqlCommand("INSERT INTO ThongBao (ID, TieuDe, MoTa, Ngay) VALUES (@ID, @TieuDe, @MoTa, @Ngay)", conn))
+                    {
+                        // Gắn tham số cho câu lệnh SQL
+                        insertCommand.Parameters.AddWithValue("@ID", tb.ID);
+                        insertCommand.Parameters.AddWithValue("@TieuDe", tb.TieuDe);
+                        insertCommand.Parameters.AddWithValue("@MoTa", tb.MoTa);
+                        insertCommand.Parameters.AddWithValue("@Ngay", tb.Ngay);
+
+                        // Thực thi câu lệnh INSERT
+                        insertCommand.ExecuteNonQuery();
+                    }
+                }
+                CloseConnection();
+                MessageBox.Show("Cập nhật thành công!", "Thành Công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                CloseConnection();
+                MessageBox.Show($"Lỗi khi cập nhật thông báo.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        public void DeleteThongBao(int ID)
+        {
+            // Câu lệnh SQL để xóa thông báo dựa trên ID
+            string query = "DELETE FROM ThongBao WHERE ID = @ID";
+
+            try
+            {
+                OpenConnection();
+
+                // Tạo SqlCommand với câu lệnh SQL và kết nối
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Gắn giá trị cho tham số @ID
+                    cmd.Parameters.AddWithValue("@ID", ID);
+
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Kiểm tra nếu không có dòng nào bị ảnh hưởng
+                    if (rowsAffected == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy thông báo với ID được cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thực thi câu lệnh SQL.\nLỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+
+
+
+
+
+
 
 
     }

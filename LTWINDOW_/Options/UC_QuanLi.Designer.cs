@@ -44,7 +44,7 @@
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyMon();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel_Top.SuspendLayout();
             this.ptn_ThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbLoaiMon)).BeginInit();
             this.panel_top_taiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).BeginInit();
-            this.panel_body.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Top
@@ -78,8 +77,6 @@
             this.ptn_ThongBao.Name = "ptn_ThongBao";
             this.ptn_ThongBao.Size = new System.Drawing.Size(163, 149);
             this.ptn_ThongBao.TabIndex = 10;
-            this.ptn_ThongBao.MouseLeave += new System.EventHandler(this.ptn_ThongBao_MouseLeave);
-            this.ptn_ThongBao.MouseHover += new System.EventHandler(this.ptn_ThongBao_MouseHover);
             // 
             // pictureBox1
             // 
@@ -92,6 +89,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+ 
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // label1
             // 
@@ -105,6 +105,8 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Thông Báo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
             // 
             // panel_top_ThucDon
             // 
@@ -114,8 +116,6 @@
             this.panel_top_ThucDon.Name = "panel_top_ThucDon";
             this.panel_top_ThucDon.Size = new System.Drawing.Size(163, 149);
             this.panel_top_ThucDon.TabIndex = 10;
-            this.panel_top_ThucDon.MouseLeave += new System.EventHandler(this.panel_top_ThucDon_MouseLeave);
-            this.panel_top_ThucDon.MouseHover += new System.EventHandler(this.panel_top_ThucDon_MouseHover);
             // 
             // ptbThucDon
             // 
@@ -128,6 +128,8 @@
             this.ptbThucDon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbThucDon.TabIndex = 0;
             this.ptbThucDon.TabStop = false;
+            this.ptbThucDon.MouseLeave += new System.EventHandler(this.ptbThucDon_MouseLeave);
+            this.ptbThucDon.MouseHover += new System.EventHandler(this.ptbThucDon_MouseHover);
             // 
             // lblThucDon
             // 
@@ -141,6 +143,8 @@
             this.lblThucDon.TabIndex = 1;
             this.lblThucDon.Text = "Thực đơn";
             this.lblThucDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblThucDon.MouseLeave += new System.EventHandler(this.lblThucDon_MouseLeave);
+            this.lblThucDon.MouseHover += new System.EventHandler(this.lblThucDon_MouseHover);
             // 
             // panel_top_loaiMon
             // 
@@ -178,6 +182,8 @@
             this.lblLoaiMon.TabIndex = 1;
             this.lblLoaiMon.Text = "Loại Món";
             this.lblLoaiMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLoaiMon.MouseLeave += new System.EventHandler(this.lblLoaiMon_MouseLeave);
+            this.lblLoaiMon.MouseHover += new System.EventHandler(this.lblLoaiMon_MouseHover);
             // 
             // panel_top_taiKhoan
             // 
@@ -214,12 +220,13 @@
             this.lblTaiKhoan.TabIndex = 1;
             this.lblTaiKhoan.Text = "Tài Khoản";
             this.lblTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTaiKhoan.MouseLeave += new System.EventHandler(this.lblTaiKhoan_MouseLeave);
+            this.lblTaiKhoan.MouseHover += new System.EventHandler(this.lblTaiKhoan_MouseHover);
             // 
             // panel_body
             // 
             this.panel_body.BackColor = System.Drawing.Color.White;
             this.panel_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_body.Controls.Add(this.uC_QuanLyMon);
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_body.Location = new System.Drawing.Point(0, 194);
             this.panel_body.Name = "panel_body";
@@ -230,16 +237,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 3;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // uC_QuanLyMon
-            // 
-            this.uC_QuanLyMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.uC_QuanLyMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_QuanLyMon.Location = new System.Drawing.Point(0, 0);
-            this.uC_QuanLyMon.Name = "uC_QuanLyMon";
-            this.uC_QuanLyMon.Size = new System.Drawing.Size(1938, 901);
-            this.uC_QuanLyMon.TabIndex = 0;
-            this.uC_QuanLyMon.Visible = false;
             // 
             // UC_QuanLi
             // 
@@ -258,7 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbLoaiMon)).EndInit();
             this.panel_top_taiKhoan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbTaiKhoan)).EndInit();
-            this.panel_body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,6 +276,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox ptbTaiKhoan;
-        private MenuQuanLy.UC_QuanLyMon uC_QuanLyMon;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

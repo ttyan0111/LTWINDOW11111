@@ -180,10 +180,56 @@ VALUES ('MN01', 'CF00', N'Cafe Sữa', 35000.0, (SELECT * FROM OPENROWSET(BULK '
 		
 	--('MN08', 'ST00', N'Sinh Tố Việt Quất', 59000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeDen.png', SINGLE_BLOB) AS img)),
 
+
+delete from DanhSachMon
+delete from LoaiMon
+
+INSERT INTO LoaiMon (MaLoaiMon, TenLoaiMon) VALUES
+('TS00', N'Trà Sữa'),
+('CF00', N'Cà Phê'),
+('NE00', N'Nước Ép'),
+('ST00', N'Sinh Tố'),
+('TR00', N'Trà');
+
+
+
+INSERT INTO DanhSachMon (MaMon, MaLoaiMon, TenMon, Gia, _Image)
+VALUES ('MN01', 'CF00', N'Cafe Sữa', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeSua.png', SINGLE_BLOB) AS img)),
+		('MN02', 'ST00', N'Sinh Tố Dứa', 49000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\sinhToDua.png', SINGLE_BLOB) AS img)),
+		('MN03', 'TS00', N'Trà Sữa Trân Châu', 59000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traSua.png', SINGLE_BLOB) AS img)),
+		
+		('MN04', 'TR00', N'Trà Gừng', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traGung.png', SINGLE_BLOB) AS img)),
+		('MN05', 'TR00', N'Trà Trái Cây', 55000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\traTraiCay.png', SINGLE_BLOB) AS img)),
+		('MN06', 'TS00', N'Trà Sữa Matcha Latte', 65000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\matchaLatte.png', SINGLE_BLOB) AS img)),
+		('MN07', 'CF00', N'Cafe Đen', 35000.0, (SELECT * FROM OPENROWSET(BULK 'C:\Users\Yan\source\repos\LTWINDOW_\image\cafeDen.png', SINGLE_BLOB) AS img));
+		
+alter table LoaiMon add TrangThai bit default (1) not null
+
+
+DELETE FROM ThongBao;
+truncate table ThongBao
+
+
+
+CREATE TABLE ThongBao (
+	ID INT PRIMARY KEY,
+    TieuDe NVARCHAR(255), -- Định nghĩa chiều dài cụ thể
+    MoTa NVARCHAR(MAX),   -- Để lưu mô tả dài
+    Ngay DATE DEFAULT GETDATE() -- Giá trị mặc định là ngày hiện tại
+ 
+);
+
+
+
 	
-INSERT INTO ThongBao (TieuDe,MoTa,Ngay) VALUES
-(N'Giảm 20%' , N'Giảm 20% đơn trên 200k trong 2 ngày','2024-12-26'),
-(N'Free 500 Đơn Đầu',N'Nhân ngày đặc biệt quán free 500 đơn đầu','2024-09-02'),
-(N'Thầy Cô giảm 25%',N'Nhân ngày nhà giáo giảm 25% đơn','2024-11-20'),
-(N'Mua 1 tặng 1',N'Nhân ngày khai chương mua 1 tặng 1','2023-11-01')
+INSERT INTO ThongBao (ID,TieuDe,MoTa,Ngay) VALUES
+(1,N'Mua 1 tặng 1',N'Nhân ngày khai chương','2023-11-01'),
+(2,N'Free 500 Đơn Đầu',N'Nhân ngày đặc biệt','2024-09-02'),
+(3,N'Thầy Cô giảm 25%',N'Nhân ngày nhà giáo ','2024-11-20'),
+(4,N'Giảm 20%' , N'Giảm 20% đơn trên 200k trong 2 ngày','2024-12-26')
+
+
+select *
+from dbo.ThongBao
+
 

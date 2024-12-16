@@ -8,13 +8,15 @@ namespace LTWINDOW_
 {
     internal class ThongBao
     {
+        public int ID { get; set; }
         public string TieuDe { get; set; }
         public string MoTa { get; set; }
         public DateTime Ngay { get; set; }
 
         // Constructor để khởi tạo các thuộc tính
-        public ThongBao(string tieuDe, string moTa, DateTime ngay)
+        public ThongBao(int ID,string tieuDe, string moTa, DateTime ngay)
         {
+            this.ID = ID;
             TieuDe = tieuDe;
             MoTa = moTa;
             Ngay = ngay;
