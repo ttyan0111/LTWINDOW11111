@@ -63,13 +63,15 @@ namespace LTWINDOW_.Options
         {
 
             uC_QuanLyNhanVien.Visible = false;
-            uC_QuanLyLoaiMon.Visible = true; ;
+            uC_QuanLyLoaiMon.Visible = true;
+            uC_ThongBao1.Visible = false;
         }
 
         private void ptbTaiKhoan_Click(object sender, EventArgs e)
         {
             uC_QuanLyLoaiMon.Visible = false;
             uC_QuanLyNhanVien.Visible = true;
+            uC_ThongBao1.Visible = false;
 
         }
 
@@ -150,6 +152,11 @@ namespace LTWINDOW_.Options
             ptn_ThongBao.BorderStyle = BorderStyle.FixedSingle;
         }
 
-      
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyNhanVien.Visible = false;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_ThongBao1.Visible = true;
+        }
     }
 }
