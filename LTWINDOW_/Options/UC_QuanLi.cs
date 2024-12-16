@@ -16,6 +16,8 @@ namespace LTWINDOW_.Options
         public UC_QuanLi()
         {
             InitializeComponent();
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_QuanLyNhanVien.Visible = false;
         }
 
 
@@ -59,7 +61,16 @@ namespace LTWINDOW_.Options
 
         private void ptbLoaiMon_Click_2(object sender, EventArgs e)
         {
-            //uC_QuanLyMon.Visible = true;
+
+            uC_QuanLyNhanVien.Visible = false;
+            uC_QuanLyLoaiMon.Visible = true; ;
+        }
+
+        private void ptbTaiKhoan_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_QuanLyNhanVien.Visible = true;
+
         }
 
         private void uC_QuanLyMon_Load(object sender, EventArgs e)

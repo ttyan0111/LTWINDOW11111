@@ -1,6 +1,6 @@
 ﻿namespace LTWINDOW_.MenuQuanLy
 {
-    partial class ThemLoaiMon
+    partial class AddNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNhanVien));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -50,10 +55,10 @@
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Purple;
-            this.groupBox2.Location = new System.Drawing.Point(43, 287);
+            this.groupBox2.Location = new System.Drawing.Point(54, 282);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(351, 104);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.Size = new System.Drawing.Size(795, 104);
+            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao Tác";
             // 
@@ -61,9 +66,9 @@
             // 
             this.btnHuy.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(226, 33);
+            this.btnHuy.Location = new System.Drawing.Point(420, 29);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 49);
+            this.btnHuy.Size = new System.Drawing.Size(125, 49);
             this.btnHuy.TabIndex = 2;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -73,7 +78,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(77, 33);
+            this.btnAdd.Location = new System.Drawing.Point(239, 29);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(125, 49);
             this.btnAdd.TabIndex = 1;
@@ -84,35 +89,73 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.txtPosition);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Purple;
-            this.groupBox1.Location = new System.Drawing.Point(43, 60);
+            this.groupBox1.Location = new System.Drawing.Point(54, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 205);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.Size = new System.Drawing.Size(795, 213);
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // txtName
+            // txtPosition
             // 
-            this.txtName.Location = new System.Drawing.Point(22, 132);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(302, 30);
-            this.txtName.TabIndex = 5;
+            this.txtPosition.Location = new System.Drawing.Point(16, 132);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(302, 30);
+            this.txtPosition.TabIndex = 11;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(446, 132);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(302, 30);
+            this.txtPassword.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(16, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 24);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Chức Vụ:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Purple;
+            this.label3.Location = new System.Drawing.Point(446, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 24);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Password:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(446, 63);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(302, 30);
+            this.txtUsername.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Purple;
-            this.label2.Location = new System.Drawing.Point(16, 105);
+            this.label2.Location = new System.Drawing.Point(446, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
+            this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tên Loại Món:";
+            this.label2.Text = "Username:";
             // 
             // label1
             // 
@@ -120,30 +163,31 @@
             this.label1.ForeColor = System.Drawing.Color.Purple;
             this.label1.Location = new System.Drawing.Point(16, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 24);
+            this.label1.Size = new System.Drawing.Size(155, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Loại Món:";
+            this.label1.Text = "Tên Nhân Viên:";
             // 
-            // txtId
+            // txtName
             // 
-            this.txtId.Location = new System.Drawing.Point(22, 63);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(302, 30);
-            this.txtId.TabIndex = 2;
+            this.txtName.Location = new System.Drawing.Point(16, 63);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(302, 30);
+            this.txtName.TabIndex = 2;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ThemLoaiMon
+            // AddNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 450);
+            this.ClientSize = new System.Drawing.Size(888, 410);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ThemLoaiMon";
-            this.Text = "ThemLoaiMon";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "AddNhanVien";
+            this.Text = "Thêm Nhân Viên";
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -158,9 +202,13 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
