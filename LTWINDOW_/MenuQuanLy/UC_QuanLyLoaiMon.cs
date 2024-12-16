@@ -15,10 +15,10 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace LTWINDOW_.MenuQuanLy
 {
-    public partial class UC_QuanLyMon : UserControl
+    public partial class UC_QuanLyLoaiMon : UserControl
     {
         SQL sql;
-        public UC_QuanLyMon()
+        public UC_QuanLyLoaiMon()
         {
             InitializeComponent();
             loadData();

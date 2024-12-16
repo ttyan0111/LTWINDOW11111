@@ -79,6 +79,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\AddNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\AddNhanVien.Designer.cs">
+      <DependentUpon>AddNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\FixLoaiMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,17 +93,23 @@
     </Compile>
     <Compile Include="MenuQuanLy\ListLoaiMoncs.cs" />
     <Compile Include="MenuQuanLy\LoaiMon.cs" />
+    <Compile Include="MenuQuanLy\QuanLyNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\ThemLoaiMon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuQuanLy\ThemLoaiMon.Designer.cs">
       <DependentUpon>ThemLoaiMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuQuanLy\UC_QuanLyMon.cs">
+    <Compile Include="MenuQuanLy\UC_QuanLyLoaiMon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuQuanLy\UC_QuanLyMon.Designer.cs">
-      <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
+    <Compile Include="MenuQuanLy\UC_QuanLyLoaiMon.Designer.cs">
+      <DependentUpon>UC_QuanLyLoaiMon.cs</DependentUpon>
     </Compile>
     <Compile Include="Mon.cs" />
     <Compile Include="Options\ThanhToan.cs">
@@ -150,14 +162,20 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\AddNhanVien.resx">
+      <DependentUpon>AddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\FixLoaiMon.resx">
       <DependentUpon>FixLoaiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\ThemLoaiMon.resx">
       <DependentUpon>ThemLoaiMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuQuanLy\UC_QuanLyMon.resx">
-      <DependentUpon>UC_QuanLyMon.cs</DependentUpon>
+    <EmbeddedResource Include="MenuQuanLy\UC_QuanLyLoaiMon.resx">
+      <DependentUpon>UC_QuanLyLoaiMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>

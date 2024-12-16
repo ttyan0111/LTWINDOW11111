@@ -1,6 +1,6 @@
 ﻿namespace LTWINDOW_.MenuQuanLy
 {
-    partial class UC_QuanLyMon
+    partial class UC_QuanLyLoaiMon
     {
         /// <summary> 
         /// Required designer variable.

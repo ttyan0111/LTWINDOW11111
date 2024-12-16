@@ -25,21 +25,26 @@ namespace LTWINDOW_.MenuQuanLy
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = cmbId.SelectedItem.ToString();
-
-            foreach(LoaiMon lm in idList)
+            if(cmbId.SelectedIndex != -1)
             {
-                if (lm.getId() == id)
+                string id = cmbId.SelectedItem.ToString();
+
+                foreach (LoaiMon lm in idList)
                 {
-                    txtName.Text = lm.getName();
-                    if(lm.getTrangThai())
+                    if (lm.getId() == id)
                     {
-                        cmbStatus.SelectedIndex = 1;
+                        txtName.Text = lm.getName();
+                        if (lm.getTrangThai())
+                        {
+                            cmbStatus.SelectedIndex = 1;
+                        }
+                        else cmbStatus.SelectedIndex = 0;
+                        break;
                     }
-                    else cmbStatus.SelectedIndex = 0;
-                    break;
                 }
             }    
+
+                
         }
 
         private void FixLoaiMon_Load(object sender, EventArgs e)
@@ -72,9 +77,12 @@ namespace LTWINDOW_.MenuQuanLy
 
                 if (ListLoaiMoncs.update(strUpdate, name, status, id))
                 {
-                    MessageBox.Show("Thêm thành công", "Thông báo thêm");
+                    MessageBox.Show("thành công", "Thông báo sửa");
+                    cmbId.SelectedIndex = -1;
+                    txtName.Text = "";
+                    cmbStatus.SelectedIndex = -1;
                 }
-                else MessageBox.Show("Thêm Thất bại", "Thông báo thêm");
+                else MessageBox.Show("Thất bại", "Thông báo sửa");
             } 
                 
 

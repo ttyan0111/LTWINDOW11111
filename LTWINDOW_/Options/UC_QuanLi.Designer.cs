@@ -44,7 +44,10 @@
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyMon();
+            this.uC_QuanLyLoaiMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
+            this.uC_QuanLyAccount = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
+            this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
+            this.uC_QuanLyNhanVien = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.panel_Top.SuspendLayout();
             this.ptn_ThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,6 +202,7 @@
             this.ptbTaiKhoan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTaiKhoan.TabIndex = 0;
             this.ptbTaiKhoan.TabStop = false;
+            this.ptbTaiKhoan.Click += new System.EventHandler(this.ptbTaiKhoan_Click);
             this.ptbTaiKhoan.MouseLeave += new System.EventHandler(this.ptbTaiKhoan_MouseLeave);
             this.ptbTaiKhoan.MouseHover += new System.EventHandler(this.ptbTaiKhoan_MouseHover);
             // 
@@ -219,7 +223,8 @@
             // 
             this.panel_body.BackColor = System.Drawing.Color.White;
             this.panel_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_body.Controls.Add(this.uC_QuanLyMon);
+            this.panel_body.Controls.Add(this.uC_QuanLyNhanVien);
+            this.panel_body.Controls.Add(this.uC_QuanLyLoaiMon);
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_body.Location = new System.Drawing.Point(0, 194);
             this.panel_body.Name = "panel_body";
@@ -231,6 +236,24 @@
             this.guna2Elipse1.BorderRadius = 3;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // uC_QuanLyLoaiMon
+            // 
+            this.uC_QuanLyLoaiMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.uC_QuanLyLoaiMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_QuanLyLoaiMon.Location = new System.Drawing.Point(0, 0);
+            this.uC_QuanLyLoaiMon.Name = "uC_QuanLyLoaiMon";
+            this.uC_QuanLyLoaiMon.Size = new System.Drawing.Size(1938, 901);
+            this.uC_QuanLyLoaiMon.TabIndex = 0;
+            // 
+            // uC_QuanLyAccount
+            // 
+            this.uC_QuanLyAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.uC_QuanLyAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_QuanLyAccount.Location = new System.Drawing.Point(0, 0);
+            this.uC_QuanLyAccount.Name = "uC_QuanLyAccount";
+            this.uC_QuanLyAccount.Size = new System.Drawing.Size(1938, 901);
+            this.uC_QuanLyAccount.TabIndex = 1;
+            // 
             // uC_QuanLyMon
             // 
             this.uC_QuanLyMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -240,6 +263,15 @@
             this.uC_QuanLyMon.Size = new System.Drawing.Size(1938, 901);
             this.uC_QuanLyMon.TabIndex = 0;
             this.uC_QuanLyMon.Visible = false;
+            // 
+            // uC_QuanLyNhanVien
+            // 
+            this.uC_QuanLyNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_QuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_QuanLyNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.uC_QuanLyNhanVien.Name = "uC_QuanLyNhanVien";
+            this.uC_QuanLyNhanVien.Size = new System.Drawing.Size(1938, 901);
+            this.uC_QuanLyNhanVien.TabIndex = 1;
             // 
             // UC_QuanLi
             // 
@@ -280,6 +312,9 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox ptbTaiKhoan;
-        private MenuQuanLy.UC_QuanLyMon uC_QuanLyMon;
+        private MenuQuanLy.UC_QuanLyLoaiMon uC_QuanLyMon;
+        private MenuQuanLy.QuanLyNhanVien uC_QuanLyAccount;
+        private MenuQuanLy.UC_QuanLyLoaiMon uC_QuanLyLoaiMon;
+        private MenuQuanLy.QuanLyNhanVien uC_QuanLyNhanVien;
     }
 }
