@@ -104,7 +104,7 @@ namespace LTWINDOW_.Options
             panel_top_ThucDon.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void lblThucDon_MouseHover(object sender, EventArgs e)
+        private void ptbThucDon_MouseMove(object sender, MouseEventArgs e)
         {
             panel_top_ThucDon.BackColor = Color.FromArgb(255, 128, 255);
             panel_top_ThucDon.BorderStyle = BorderStyle.Fixed3D;
@@ -116,7 +116,7 @@ namespace LTWINDOW_.Options
             panel_top_ThucDon.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void lblLoaiMon_MouseHover(object sender, EventArgs e)
+        private void ptbLoaiMon_MouseMove(object sender, MouseEventArgs e)
         {
             panel_top_loaiMon.BackColor = Color.FromArgb(255, 128, 255);
             panel_top_loaiMon.BorderStyle = BorderStyle.Fixed3D;
@@ -128,7 +128,7 @@ namespace LTWINDOW_.Options
             panel_top_loaiMon.BorderStyle = BorderStyle.FixedSingle;
         }
 
-        private void lblTaiKhoan_MouseHover(object sender, EventArgs e)
+        private void ptbTaiKhoan_MouseMove(object sender, MouseEventArgs e)
         {
             panel_top_taiKhoan.BackColor = Color.FromArgb(255, 128, 255);
             panel_top_taiKhoan.BorderStyle = BorderStyle.Fixed3D;
@@ -140,6 +140,11 @@ namespace LTWINDOW_.Options
             panel_top_taiKhoan.BorderStyle = BorderStyle.FixedSingle;
         }
 
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
+            ptn_ThongBao.BorderStyle = BorderStyle.Fixed3D;
+        }
         private void label1_MouseHover(object sender, EventArgs e)
         {
             ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
@@ -158,5 +163,20 @@ namespace LTWINDOW_.Options
             uC_QuanLyLoaiMon.Visible = false;
             uC_ThongBao1.Visible = true;
         }
+
+        private void ptbThucDon_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyNhanVien.Visible = false;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_ThongBao1.Visible= true;
+        }
+
+        
+
+        
+
+        
+
+        
     }
 }

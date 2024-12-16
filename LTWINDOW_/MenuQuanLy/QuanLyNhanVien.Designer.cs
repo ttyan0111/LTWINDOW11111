@@ -64,15 +64,17 @@
             this.btnDiscontined.TabIndex = 2;
             this.btnDiscontined.Text = "Dừng hoạt động";
             this.btnDiscontined.UseVisualStyleBackColor = true;
+            this.btnDiscontined.Click += new System.EventHandler(this.btnDiscontined_Click);
             // 
             // btnFix
             // 
-            this.btnFix.Location = new System.Drawing.Point(207, 40);
+            this.btnFix.Location = new System.Drawing.Point(201, 40);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(75, 23);
             this.btnFix.TabIndex = 1;
             this.btnFix.Text = "Sửa";
             this.btnFix.UseVisualStyleBackColor = true;
+            this.btnFix.Click += new System.EventHandler(this.btnFix_Click);
             // 
             // btnThem
             // 

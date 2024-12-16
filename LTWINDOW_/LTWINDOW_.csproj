@@ -91,6 +91,12 @@
     <Compile Include="MenuQuanLy\FixLoaiMon.Designer.cs">
       <DependentUpon>FixLoaiMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\FixNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\FixNhanVien.Designer.cs">
+      <DependentUpon>FixNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\ListLoaiMoncs.cs" />
     <Compile Include="MenuQuanLy\LoaiMon.cs" />
     <Compile Include="MenuQuanLy\QuanLyNhanVien.cs">
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\FixLoaiMon.resx">
       <DependentUpon>FixLoaiMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\FixNhanVien.resx">
+      <DependentUpon>FixNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>

@@ -43,11 +43,11 @@
             this.ptbTaiKhoan = new System.Windows.Forms.PictureBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.uC_ThongBao1 = new LTWINDOW_.MenuQuanLy.UC_ThongBao();
             this.uC_QuanLyNhanVien = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.uC_QuanLyLoaiMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.uC_QuanLyAccount = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
             this.panel_Top.SuspendLayout();
@@ -98,6 +98,7 @@
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // label1
             // 
@@ -134,8 +135,10 @@
             this.ptbThucDon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbThucDon.TabIndex = 0;
             this.ptbThucDon.TabStop = false;
+            this.ptbThucDon.Click += new System.EventHandler(this.ptbThucDon_Click);
             this.ptbThucDon.MouseLeave += new System.EventHandler(this.ptbThucDon_MouseLeave);
             this.ptbThucDon.MouseHover += new System.EventHandler(this.ptbThucDon_MouseHover);
+            this.ptbThucDon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptbThucDon_MouseMove);
             // 
             // lblThucDon
             // 
@@ -150,7 +153,6 @@
             this.lblThucDon.Text = "Thực đơn";
             this.lblThucDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblThucDon.MouseLeave += new System.EventHandler(this.lblThucDon_MouseLeave);
-            this.lblThucDon.MouseHover += new System.EventHandler(this.lblThucDon_MouseHover);
             // 
             // panel_top_loaiMon
             // 
@@ -175,6 +177,7 @@
             this.ptbLoaiMon.Click += new System.EventHandler(this.ptbLoaiMon_Click_2);
             this.ptbLoaiMon.MouseLeave += new System.EventHandler(this.ptbLoaiMon_MouseLeave);
             this.ptbLoaiMon.MouseHover += new System.EventHandler(this.ptbLoaiMon_MouseHover);
+            this.ptbLoaiMon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptbLoaiMon_MouseMove);
             // 
             // lblLoaiMon
             // 
@@ -189,7 +192,6 @@
             this.lblLoaiMon.Text = "Loại Món";
             this.lblLoaiMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLoaiMon.MouseLeave += new System.EventHandler(this.lblLoaiMon_MouseLeave);
-            this.lblLoaiMon.MouseHover += new System.EventHandler(this.lblLoaiMon_MouseHover);
             // 
             // panel_top_taiKhoan
             // 
@@ -214,6 +216,7 @@
             this.ptbTaiKhoan.Click += new System.EventHandler(this.ptbTaiKhoan_Click);
             this.ptbTaiKhoan.MouseLeave += new System.EventHandler(this.ptbTaiKhoan_MouseLeave);
             this.ptbTaiKhoan.MouseHover += new System.EventHandler(this.ptbTaiKhoan_MouseHover);
+            this.ptbTaiKhoan.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptbTaiKhoan_MouseMove);
             // 
             // lblTaiKhoan
             // 
@@ -228,7 +231,6 @@
             this.lblTaiKhoan.Text = "Tài Khoản";
             this.lblTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTaiKhoan.MouseLeave += new System.EventHandler(this.lblTaiKhoan_MouseLeave);
-            this.lblTaiKhoan.MouseHover += new System.EventHandler(this.lblTaiKhoan_MouseHover);
             // 
             // panel_body
             // 
@@ -242,6 +244,11 @@
             this.panel_body.Name = "panel_body";
             this.panel_body.Size = new System.Drawing.Size(1942, 905);
             this.panel_body.TabIndex = 2;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 3;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // uC_ThongBao1
             // 
@@ -269,11 +276,6 @@
             this.uC_QuanLyLoaiMon.Name = "uC_QuanLyLoaiMon";
             this.uC_QuanLyLoaiMon.Size = new System.Drawing.Size(1938, 901);
             this.uC_QuanLyLoaiMon.TabIndex = 0;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 3;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // uC_QuanLyAccount
             // 
