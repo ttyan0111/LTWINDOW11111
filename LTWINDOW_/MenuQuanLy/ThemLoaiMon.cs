@@ -78,7 +78,7 @@ namespace LTWINDOW_.MenuQuanLy
                 string insertSql = "insert into LoaiMon(MaLoaiMon, TenLoaiMon) values (@id, @name)";
                 addRow(insertSql, id, name);
             }
-            else MessageBox.Show("thêm thất bại");
+            else if(check == 1) MessageBox.Show("thêm thất bại");
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

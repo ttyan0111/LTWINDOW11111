@@ -79,6 +79,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\FixLoaiMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\FixLoaiMon.Designer.cs">
+      <DependentUpon>FixLoaiMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\ListLoaiMoncs.cs" />
     <Compile Include="MenuQuanLy\LoaiMon.cs" />
     <Compile Include="MenuQuanLy\ThemLoaiMon.cs">
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\FixLoaiMon.resx">
+      <DependentUpon>FixLoaiMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\ThemLoaiMon.resx">
       <DependentUpon>ThemLoaiMon.cs</DependentUpon>
