@@ -68,15 +68,37 @@ namespace LTWINDOW_.MenuQuanLy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThemLoaiMon themLoaiMon = new ThemLoaiMon();
-            themLoaiMon.ShowDialog();
-            loadData();
+            
         }
 
         private void btnDelate_Click(object sender, EventArgs e)
         {
             
 
+            
+
+            
+        }
+
+        private void btnFix_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ThemLoaiMon themLoaiMon = new ThemLoaiMon();
+            themLoaiMon.ShowDialog();
+            loadData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Bạn có chắc muốn bỏ những món đã chọn khỏi quán không?", "Thông báo xác nhận",
@@ -94,14 +116,14 @@ namespace LTWINDOW_.MenuQuanLy
                             "\nHàng mới là hàng cuối cùng và không có bất kì thông tin nào.", "thông báo chọn dòng");
                         break;
                     }
-                        
+
 
                     string id = row.Cells[0].Value.ToString().Trim();
                     string strDelte = "update DanhSachMon set TrangThai = @TrangThai where MaLoaiMon = @id " +
                                        "\n update LoaiMon set TrangThai = @TrangThai where MaLoaiMon = @Id";
 
-                    
-                   
+
+
 
                     if (!ListLoaiMoncs.delete(strDelte, id))
                     {
@@ -122,11 +144,9 @@ namespace LTWINDOW_.MenuQuanLy
                 }
             }
             else MessageBox.Show("Bạn chưa chọn dòng nào!", "thông báo chưa chọn dòng");
-
-            
         }
 
-        private void btnFix_Click(object sender, EventArgs e)
+        private void btnFix_Click_1(object sender, EventArgs e)
         {
             Form fixLoaiMon = new FixLoaiMon();
             fixLoaiMon.ShowDialog();

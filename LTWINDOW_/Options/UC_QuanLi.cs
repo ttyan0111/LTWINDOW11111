@@ -27,12 +27,6 @@ namespace LTWINDOW_.Options
         //
     
 
-        private void ptbLoaiMon_MouseHover(object sender, EventArgs e)
-        {
-            panel_top_loaiMon.BackColor = Color.FromArgb(255, 128, 255);
-            panel_top_loaiMon.BorderStyle = BorderStyle.Fixed3D;
-        }
-
         private void ptbLoaiMon_MouseLeave(object sender, EventArgs e)
         {
             panel_top_loaiMon.BackColor = Color.FromArgb(255, 192, 255);
@@ -41,12 +35,6 @@ namespace LTWINDOW_.Options
         //
         // hiệu ứng chuột ptb loại món
         //
-        private void ptbTaiKhoan_MouseHover(object sender, EventArgs e)
-        {
-            panel_top_taiKhoan.BackColor = Color.FromArgb(255, 128, 255);
-            panel_top_taiKhoan.BorderStyle = BorderStyle.Fixed3D;
-        }
-
         private void ptbTaiKhoan_MouseLeave(object sender, EventArgs e)
         {
             panel_top_taiKhoan.BackColor = Color.FromArgb(255, 192, 255);
@@ -80,22 +68,10 @@ namespace LTWINDOW_.Options
 
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
-            ptn_ThongBao.BorderStyle = BorderStyle.Fixed3D;
-        }
-
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             ptn_ThongBao.BackColor = Color.FromArgb(255, 192, 255);
             ptn_ThongBao.BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void ptbThucDon_MouseHover(object sender, EventArgs e)
-        {
-            panel_top_ThucDon.BackColor = Color.FromArgb(255, 128, 255);
-            panel_top_ThucDon.BorderStyle = BorderStyle.Fixed3D;
         }
 
         private void ptbThucDon_MouseLeave(object sender, EventArgs e)
@@ -145,12 +121,6 @@ namespace LTWINDOW_.Options
             ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
             ptn_ThongBao.BorderStyle = BorderStyle.Fixed3D;
         }
-        private void label1_MouseHover(object sender, EventArgs e)
-        {
-            ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
-            ptn_ThongBao.BorderStyle = BorderStyle.Fixed3D;
-        }
-
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             ptn_ThongBao.BackColor = Color.FromArgb(255, 192, 255);
@@ -166,17 +136,57 @@ namespace LTWINDOW_.Options
 
         private void ptbThucDon_Click(object sender, EventArgs e)
         {
-            uC_QuanLyNhanVien.Visible = false;
-            uC_QuanLyLoaiMon.Visible = false;
-            uC_ThongBao1.Visible= true;
+           
         }
 
-        
+        private void lblThucDon_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel_top_ThucDon.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_ThucDon.BorderStyle = BorderStyle.Fixed3D;
+        }
 
-        
+        private void lblLoaiMon_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel_top_loaiMon.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_loaiMon.BorderStyle = BorderStyle.Fixed3D;
+        }
 
-        
+        private void lblTaiKhoan_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel_top_taiKhoan.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_taiKhoan.BorderStyle = BorderStyle.Fixed3D;
+        }
 
-        
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            ptn_ThongBao.BackColor = Color.FromArgb(255, 128, 255);
+            ptn_ThongBao.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void lblTaiKhoan_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_QuanLyNhanVien.Visible = true;
+            uC_ThongBao1.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyNhanVien.Visible = false;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_ThongBao1.Visible = true;
+        }
+
+        private void lblLoaiMon_Click(object sender, EventArgs e)
+        {
+            uC_QuanLyNhanVien.Visible = false;
+            uC_QuanLyLoaiMon.Visible = true;
+            uC_ThongBao1.Visible = false;
+        }
+
+        private void lblThucDon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

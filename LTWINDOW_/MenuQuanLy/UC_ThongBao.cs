@@ -42,8 +42,6 @@ namespace LTWINDOW_.MenuQuanLy
             dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // Hàng tự căn chỉnh
             dataGridView.Dock = DockStyle.Fill; // Chiếm toàn bộ vùng chứa
                                                 // Cài đặt font chữ lớn hơn cho toàn bộ bảng
-            dataGridView.DefaultCellStyle.Font = new Font("Arial", 14); // Font chữ lớn hơn
-            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, FontStyle.Bold); // Font chữ tiêu đề
             dataGridView.Columns["ID"].HeaderText = "ID";
             dataGridView.Columns["TieuDe"].HeaderText = "Tiêu Đề";
             dataGridView.Columns["MoTa"].HeaderText = "Mô Tả";

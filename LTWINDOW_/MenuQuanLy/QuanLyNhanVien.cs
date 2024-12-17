@@ -53,14 +53,14 @@ namespace LTWINDOW_.MenuQuanLy
             loadData();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             Form addNhanVien = new AddNhanVien();
             addNhanVien.ShowDialog();
             loadData();
         }
 
-        private void btnFix_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             //khai báo form.
             Form fixNhanVien = new FixNhanVien();
@@ -70,7 +70,6 @@ namespace LTWINDOW_.MenuQuanLy
 
             // tải lại data lên gridView
             loadData();
-
         }
 
         bool discontinedNhanVien(string query, int id)
@@ -97,9 +96,9 @@ namespace LTWINDOW_.MenuQuanLy
                 
             }    
         }
-        private void btnDiscontined_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Bạn có chắc muốn dừng hoạt động của những nhân viên đã chọn?\nNếu có chọn Yes không chọn No",
                     "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No) return;
@@ -108,7 +107,7 @@ namespace LTWINDOW_.MenuQuanLy
                 bool check = false;
 
                 string strDiscontinued = "update NhanVien set trangThaiHoatDong = @status where MaNhanVien = @id";
-                while(dataGridView1.SelectedRows.Count > 0)
+                while (dataGridView1.SelectedRows.Count > 0)
                 {
                     DataGridViewRow row = dataGridView1.SelectedRows[0];
 
@@ -123,8 +122,8 @@ namespace LTWINDOW_.MenuQuanLy
                         dataGridView1.Rows.Remove(row);
                         check = true;
                         continue;
-                    } 
-                        
+                    }
+
                     int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
 
                     if (discontinedNhanVien(strDiscontinued, id))
@@ -133,7 +132,7 @@ namespace LTWINDOW_.MenuQuanLy
                         dataGridView1.Rows.Remove(row);
                     }
                     else break;
-                        
+
                 }
 
                 if (check)
@@ -147,8 +146,13 @@ namespace LTWINDOW_.MenuQuanLy
             else
             {
                 MessageBox.Show("bạn chưa chọn dòng nào", "Thông Báo Chọn Dòng");
-            } 
-                
+            }
         }
+
+        
+
+        
+
+        
     }
 }

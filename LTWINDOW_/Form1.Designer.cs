@@ -43,10 +43,10 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_QuanLi1 = new LTWINDOW_.Options.UC_QuanLi();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,11 +67,12 @@
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
             this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(209, 1112);
+            this.guna2Panel1.Size = new System.Drawing.Size(209, 1102);
             this.guna2Panel1.TabIndex = 0;
             // 
             // HUQuanLi
@@ -198,54 +199,6 @@
             this.buttonQuanLyBan.Text = "Quản lý bàn";
             this.buttonQuanLyBan.Click += new System.EventHandler(this.buttonQuanLyBan_Click);
             // 
-            // buttonTrangChinh
-            // 
-            this.buttonTrangChinh.BackColor = System.Drawing.Color.DarkViolet;
-            this.buttonTrangChinh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonTrangChinh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonTrangChinh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonTrangChinh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonTrangChinh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.buttonTrangChinh.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonTrangChinh.ForeColor = System.Drawing.Color.Purple;
-            this.buttonTrangChinh.Location = new System.Drawing.Point(12, 140);
-            this.buttonTrangChinh.Name = "buttonTrangChinh";
-            this.buttonTrangChinh.Size = new System.Drawing.Size(183, 83);
-            this.buttonTrangChinh.TabIndex = 1;
-            this.buttonTrangChinh.Text = "Trang chính";
-            this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.uC_QuanLi1);
-            this.panel1.Controls.Add(this.uC_DashBoard1);
-            this.panel1.Controls.Add(this.uC_Menu1);
-            this.panel1.Location = new System.Drawing.Point(215, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1725, 1102);
-            this.panel1.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Image = global::LTWINDOW_.Properties.Resources.exit;
-            this.buttonExit.ImageSize = new System.Drawing.Size(55, 55);
-            this.buttonExit.Location = new System.Drawing.Point(121, 3);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(88, 87);
-            this.buttonExit.TabIndex = 6;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // guna2Button1
             // 
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -282,24 +235,34 @@
             // 
             // panel1
             // 
-            this.uC_QuanLi1.Location = new System.Drawing.Point(-11, 115);
-            this.uC_QuanLi1.Name = "uC_QuanLi1";
-            this.uC_QuanLi1.Size = new System.Drawing.Size(1942, 1099);
-            this.uC_QuanLi1.TabIndex = 3;
+            this.panel1.Controls.Add(this.uC_QuanLi1);
+            this.panel1.Controls.Add(this.uC_DashBoard1);
+            this.panel1.Controls.Add(this.uC_Menu1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(209, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1733, 1102);
+            this.panel1.TabIndex = 1;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
             // 
             // uC_QuanLi1
             // 
-            this.uC_QuanLi1.Location = new System.Drawing.Point(-11, 0);
+            this.uC_QuanLi1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_QuanLi1.Location = new System.Drawing.Point(0, 0);
             this.uC_QuanLi1.Name = "uC_QuanLi1";
-            this.uC_QuanLi1.Size = new System.Drawing.Size(1953, 1102);
+            this.uC_QuanLi1.Size = new System.Drawing.Size(1733, 1102);
             this.uC_QuanLi1.TabIndex = 3;
             // 
             // uC_DashBoard1
             // 
             this.uC_DashBoard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_DashBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_DashBoard1.Location = new System.Drawing.Point(0, 0);
             this.uC_DashBoard1.Name = "uC_DashBoard1";
-            this.uC_DashBoard1.Size = new System.Drawing.Size(1725, 1102);
+            this.uC_DashBoard1.Size = new System.Drawing.Size(1733, 1102);
             this.uC_DashBoard1.TabIndex = 2;
             // 
             // uC_Menu1
@@ -308,12 +271,8 @@
             this.uC_Menu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uC_Menu1.Location = new System.Drawing.Point(0, 0);
             this.uC_Menu1.Name = "uC_Menu1";
-            this.uC_Menu1.Size = new System.Drawing.Size(1725, 1102);
+            this.uC_Menu1.Size = new System.Drawing.Size(1733, 1102);
             this.uC_Menu1.TabIndex = 1;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
             // 
             // Form1
             // 
@@ -328,7 +287,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "z";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-
             this.guna2Panel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
