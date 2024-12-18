@@ -165,11 +165,6 @@ namespace LTWINDOW_.Options
 
             sql.LuuDonHang(maDonHang, maNhanVien, DateTime.Now, grandTotal);
 
-
-
-
-
-
             // Mở hộp thoại chọn vị trí lưu file
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {

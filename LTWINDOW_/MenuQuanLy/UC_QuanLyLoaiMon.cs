@@ -60,36 +60,6 @@ namespace LTWINDOW_.MenuQuanLy
                 
             }    
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnDelate_Click(object sender, EventArgs e)
-        {
-            
-
-            
-
-            
-        }
-
-        private void btnFix_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ThemLoaiMon themLoaiMon = new ThemLoaiMon();

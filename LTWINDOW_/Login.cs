@@ -59,7 +59,6 @@ namespace LTWINDOW_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
           
             string username = txtUserName.Text, passsword = actualPassword;
 
@@ -99,19 +98,6 @@ namespace LTWINDOW_
                 }
             }
             
-
-            //if (username.Trim() != "" && passsword.Trim() != "")
-            //{
-            //    if (ltk.isExit(username, passsword))
-            //    {
-            //        this.Hide();
-            //        Form1 form1 = new Form1();
-            //        form1.Show();
-            //    }
-            //    else MessageBox.Show("Tài Khoản hoặc mật khẩu không chính xác.");
-            //}
-            //else MessageBox.Show("Bạn chưa nhập mật khẩu hoặc Tài Khoản");
-
 
         }
        

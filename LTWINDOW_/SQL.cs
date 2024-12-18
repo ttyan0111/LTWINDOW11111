@@ -363,14 +363,6 @@ namespace LTWINDOW_
             }
         }
 
-
-
-
-
-
-
-
-
     }
 }
 
