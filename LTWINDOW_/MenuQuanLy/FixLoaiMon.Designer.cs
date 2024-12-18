@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixLoaiMon));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.cmbId = new System.Windows.Forms.ComboBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -103,6 +104,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "false",
+            "true"});
+            this.cmbStatus.Location = new System.Drawing.Point(20, 195);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(286, 32);
+            this.cmbStatus.TabIndex = 8;
+            // 
+            // cmbId
+            // 
+            this.cmbId.FormattingEnabled = true;
+            this.cmbId.Location = new System.Drawing.Point(20, 73);
+            this.cmbId.Name = "cmbId";
+            this.cmbId.Size = new System.Drawing.Size(286, 32);
+            this.cmbId.TabIndex = 7;
+            this.cmbId.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -141,26 +162,6 @@
             this.txtName.Size = new System.Drawing.Size(286, 30);
             this.txtName.TabIndex = 2;
             // 
-            // cmbId
-            // 
-            this.cmbId.FormattingEnabled = true;
-            this.cmbId.Location = new System.Drawing.Point(20, 73);
-            this.cmbId.Name = "cmbId";
-            this.cmbId.Size = new System.Drawing.Size(286, 32);
-            this.cmbId.TabIndex = 7;
-            this.cmbId.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "false",
-            "true"});
-            this.cmbStatus.Location = new System.Drawing.Point(20, 195);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(286, 32);
-            this.cmbStatus.TabIndex = 8;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -169,10 +170,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(455, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(473, 497);
             this.Name = "FixLoaiMon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sửa Loại Món";
             this.Load += new System.EventHandler(this.FixLoaiMon_Load);
             this.groupBox2.ResumeLayout(false);

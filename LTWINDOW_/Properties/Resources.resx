@@ -172,11 +172,14 @@
   <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thongBao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thongBao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Thực đơn 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thực đơn 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thongBao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thongBao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="capNhat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\capNhat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,10 +205,13 @@
   <data name="avata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Doanh Thu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Doanh Thu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="QRNhanTien1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QRNhanTien1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capNhat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\capNhat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

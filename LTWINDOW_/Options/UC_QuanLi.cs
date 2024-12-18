@@ -18,6 +18,7 @@ namespace LTWINDOW_.Options
             InitializeComponent();
             uC_QuanLyLoaiMon.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
+            uC_quanLyDoanhThu.Visible = false;
         }
 
 
@@ -49,7 +50,7 @@ namespace LTWINDOW_.Options
 
         private void ptbLoaiMon_Click_2(object sender, EventArgs e)
         {
-
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = true;
             uC_ThongBao1.Visible = false;
@@ -57,6 +58,7 @@ namespace LTWINDOW_.Options
 
         private void ptbTaiKhoan_Click(object sender, EventArgs e)
         {
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_QuanLyNhanVien.Visible = true;
             uC_ThongBao1.Visible = false;
@@ -129,6 +131,7 @@ namespace LTWINDOW_.Options
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_ThongBao1.Visible = true;
@@ -165,6 +168,7 @@ namespace LTWINDOW_.Options
 
         private void lblTaiKhoan_Click(object sender, EventArgs e)
         {
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_QuanLyNhanVien.Visible = true;
             uC_ThongBao1.Visible = false;
@@ -172,6 +176,7 @@ namespace LTWINDOW_.Options
 
         private void label1_Click(object sender, EventArgs e)
         {
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_ThongBao1.Visible = true;
@@ -179,6 +184,7 @@ namespace LTWINDOW_.Options
 
         private void lblLoaiMon_Click(object sender, EventArgs e)
         {
+            uC_quanLyDoanhThu.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = true;
             uC_ThongBao1.Visible = false;
@@ -187,6 +193,48 @@ namespace LTWINDOW_.Options
         private void lblThucDon_Click(object sender, EventArgs e)
         {
 
+        }
+        //
+        // Daonh thu
+        //
+        private void ptbDoanhThu_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel_top_doanhThu.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_doanhThu.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void ptbDoanhThu_MouseLeave(object sender, EventArgs e)
+        {
+            panel_top_doanhThu.BackColor = Color.FromArgb(255, 192, 255);
+            panel_top_doanhThu.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void lblDoanhThu_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel_top_doanhThu.BackColor = Color.FromArgb(255, 128, 255);
+            panel_top_doanhThu.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void lblDoanhThu_MouseLeave(object sender, EventArgs e)
+        {
+            panel_top_doanhThu.BackColor = Color.FromArgb(255, 192, 255);
+            panel_top_doanhThu.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void ptbDoanhThu_Click(object sender, EventArgs e)
+        {
+            uC_ThongBao1.Visible = false;
+            uC_QuanLyLoaiMon.Visible = false;  
+            uC_QuanLyNhanVien.Visible = false;
+            uC_quanLyDoanhThu.Visible = true;
+        }
+
+        private void lblDoanhThu_Click(object sender, EventArgs e)
+        {
+            uC_ThongBao1.Visible = false;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_QuanLyNhanVien.Visible = false;
+            uC_quanLyDoanhThu.Visible = true;
         }
     }
 }
