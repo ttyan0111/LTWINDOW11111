@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="MenuQuanLy\ListLoaiMoncs.cs" />
     <Compile Include="MenuQuanLy\LoaiMon.cs" />
+    <Compile Include="MenuQuanLy\QuanLyDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\QuanLyDoanhThu.Designer.cs">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\QuanLyNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <EmbeddedResource Include="MenuQuanLy\FixNhanVien.resx">
       <DependentUpon>FixNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\QuanLyDoanhThu.resx">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +295,7 @@
     <None Include="Resources\hot.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\xem.png" />
     <None Include="Resources\avata.png" />
     <None Include="Resources\avata1.png" />
     <None Include="Resources\account1.png" />
@@ -309,6 +319,7 @@
     <None Include="Resources\plus1.png" />
     <None Include="Resources\minus1.png" />
     <None Include="Resources\minus2.png" />
+    <None Include="Resources\Doanh Thu.png" />
     <Content Include="Resources\trừ.png" />
   </ItemGroup>
   <ItemGroup />

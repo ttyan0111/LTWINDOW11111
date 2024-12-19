@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThanhToan));
             this.buttonInHoaDon = new System.Windows.Forms.Button();
             this.panelHienThi = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.buttonInHoaDon);
             this.Controls.Add(this.panelHienThi);
             this.Controls.Add(this.guna2PictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThanhToan";

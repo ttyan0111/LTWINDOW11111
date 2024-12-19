@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.panel_top_doanhThu = new System.Windows.Forms.Panel();
+            this.ptbDoanhThu = new System.Windows.Forms.PictureBox();
+            this.lblDoanhThu = new System.Windows.Forms.Label();
             this.ptn_ThongBao = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,15 +46,18 @@
             this.ptbTaiKhoan = new System.Windows.Forms.PictureBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.panel_body = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.uC_quanLyDoanhThu = new LTWINDOW_.MenuQuanLy.QuanLyDoanhThu();
             this.uC_ThongBao1 = new LTWINDOW_.MenuQuanLy.UC_ThongBao();
             this.uC_QuanLyNhanVien = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.uC_QuanLyLoaiMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.uC_QuanLyAccount = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
             this.uC_ThucDon1 = new LTWINDOW_.MenuQuanLy.UC_ThucDon();
             this.panel_Top.SuspendLayout();
+            this.panel_top_doanhThu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbDoanhThu)).BeginInit();
             this.ptn_ThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_top_ThucDon.SuspendLayout();
@@ -66,6 +72,7 @@
             // panel_Top
             // 
             this.panel_Top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel_Top.Controls.Add(this.panel_top_doanhThu);
             this.panel_Top.Controls.Add(this.ptn_ThongBao);
             this.panel_Top.Controls.Add(this.panel_top_ThucDon);
             this.panel_Top.Controls.Add(this.panel_top_loaiMon);
@@ -75,6 +82,46 @@
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(1942, 194);
             this.panel_Top.TabIndex = 3;
+            // 
+            // panel_top_doanhThu
+            // 
+            this.panel_top_doanhThu.Controls.Add(this.ptbDoanhThu);
+            this.panel_top_doanhThu.Controls.Add(this.lblDoanhThu);
+            this.panel_top_doanhThu.Location = new System.Drawing.Point(1271, 20);
+            this.panel_top_doanhThu.Name = "panel_top_doanhThu";
+            this.panel_top_doanhThu.Size = new System.Drawing.Size(163, 149);
+            this.panel_top_doanhThu.TabIndex = 11;
+            // 
+            // ptbDoanhThu
+            // 
+            this.ptbDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbDoanhThu.Image = global::LTWINDOW_.Properties.Resources.Doanh_Thu;
+            this.ptbDoanhThu.Location = new System.Drawing.Point(0, 0);
+            this.ptbDoanhThu.Name = "ptbDoanhThu";
+            this.ptbDoanhThu.Size = new System.Drawing.Size(163, 121);
+            this.ptbDoanhThu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbDoanhThu.TabIndex = 0;
+            this.ptbDoanhThu.TabStop = false;
+            this.ptbDoanhThu.Click += new System.EventHandler(this.ptbDoanhThu_Click);
+            this.ptbDoanhThu.MouseLeave += new System.EventHandler(this.ptbDoanhThu_MouseLeave);
+            this.ptbDoanhThu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ptbDoanhThu_MouseMove);
+            // 
+            // lblDoanhThu
+            // 
+            this.lblDoanhThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDoanhThu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDoanhThu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoanhThu.ForeColor = System.Drawing.Color.Purple;
+            this.lblDoanhThu.Location = new System.Drawing.Point(0, 121);
+            this.lblDoanhThu.Name = "lblDoanhThu";
+            this.lblDoanhThu.Size = new System.Drawing.Size(163, 28);
+            this.lblDoanhThu.TabIndex = 1;
+            this.lblDoanhThu.Text = "DoanhThu";
+            this.lblDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDoanhThu.Click += new System.EventHandler(this.lblDoanhThu_Click);
+            this.lblDoanhThu.MouseLeave += new System.EventHandler(this.lblDoanhThu_MouseLeave);
+            this.lblDoanhThu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblDoanhThu_MouseMove);
             // 
             // ptn_ThongBao
             // 
@@ -240,7 +287,11 @@
             // 
             this.panel_body.BackColor = System.Drawing.Color.White;
             this.panel_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+
             this.panel_body.Controls.Add(this.uC_ThucDon1);
+
+            this.panel_body.Controls.Add(this.uC_quanLyDoanhThu);
+
             this.panel_body.Controls.Add(this.uC_ThongBao1);
             this.panel_body.Controls.Add(this.uC_QuanLyNhanVien);
             this.panel_body.Controls.Add(this.uC_QuanLyLoaiMon);
@@ -249,6 +300,20 @@
             this.panel_body.Name = "panel_body";
             this.panel_body.Size = new System.Drawing.Size(1942, 905);
             this.panel_body.TabIndex = 2;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 3;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // uC_quanLyDoanhThu
+            // 
+            this.uC_quanLyDoanhThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_quanLyDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_quanLyDoanhThu.Location = new System.Drawing.Point(0, 0);
+            this.uC_quanLyDoanhThu.Name = "uC_quanLyDoanhThu";
+            this.uC_quanLyDoanhThu.Size = new System.Drawing.Size(1938, 901);
+            this.uC_quanLyDoanhThu.TabIndex = 3;
             // 
             // uC_ThongBao1
             // 
@@ -276,11 +341,6 @@
             this.uC_QuanLyLoaiMon.Name = "uC_QuanLyLoaiMon";
             this.uC_QuanLyLoaiMon.Size = new System.Drawing.Size(1938, 901);
             this.uC_QuanLyLoaiMon.TabIndex = 0;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 3;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // uC_QuanLyAccount
             // 
@@ -319,6 +379,8 @@
             this.Name = "UC_QuanLi";
             this.Size = new System.Drawing.Size(1942, 1099);
             this.panel_Top.ResumeLayout(false);
+            this.panel_top_doanhThu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbDoanhThu)).EndInit();
             this.ptn_ThongBao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_top_ThucDon.ResumeLayout(false);
@@ -357,6 +419,13 @@
         private MenuQuanLy.UC_QuanLyLoaiMon uC_QuanLyLoaiMon;
         private MenuQuanLy.QuanLyNhanVien uC_QuanLyNhanVien;
         private MenuQuanLy.UC_ThongBao uC_ThongBao1;
+
         private MenuQuanLy.UC_ThucDon uC_ThucDon1;
+
+        private System.Windows.Forms.Panel panel_top_doanhThu;
+        private System.Windows.Forms.PictureBox ptbDoanhThu;
+        private System.Windows.Forms.Label lblDoanhThu;
+        private MenuQuanLy.QuanLyDoanhThu uC_quanLyDoanhThu;
+
     }
 }
