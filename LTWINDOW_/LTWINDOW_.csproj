@@ -148,6 +148,12 @@
       <DependentUpon>UpdateMon.cs</DependentUpon>
     </Compile>
     <Compile Include="Mon.cs" />
+    <Compile Include="Options\UC_BangDangXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UC_BangDangXuat.Designer.cs">
+      <DependentUpon>UC_BangDangXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\UpdateMon.resx">
       <DependentUpon>UpdateMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UC_BangDangXuat.resx">
+      <DependentUpon>UC_BangDangXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>

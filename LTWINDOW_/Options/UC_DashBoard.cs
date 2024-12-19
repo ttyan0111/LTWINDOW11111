@@ -26,7 +26,7 @@ namespace LTWINDOW_.Options
             sql = new SQL();
             sql.OpenConnection();
             LoadRevenueChart();
-
+            uC_BangDangXuat1.Visible = false;
             LoadThongBao();
         }
 
@@ -185,10 +185,20 @@ namespace LTWINDOW_.Options
                 panelButton.Controls.Add(container);
             }
         }
-
+        private bool isVisible = false;
         private void acount_Click(object sender, EventArgs e)
         {
-
+            if (!isVisible)
+            {
+                uC_BangDangXuat1.Visible = true;
+                isVisible = true;
+            }
+            else
+            {
+                uC_BangDangXuat1.Visible = false;
+                isVisible = false;
+            }
+            
         }
         public void LoadDuLieuAll()
         {
