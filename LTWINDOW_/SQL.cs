@@ -14,21 +14,23 @@ using System.Collections;
 using System.Data.Common;
 using System.Reflection;
 using System.Runtime.InteropServices.ComTypes;
+using Org.BouncyCastle.Asn1.Cmp;
+using System.Xml.Linq;
 
 namespace LTWINDOW_
 {
     internal class SQL
     {
-        string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
+        //string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
 
-        //string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
         private SqlDataAdapter adapter;
         private DataTable dt;
         private SqlConnection conn;
         public SQL()
         {
-            conn = new SqlConnection(connectionString); 
-            
+            conn = new SqlConnection(connectionString);
+
         }
 
         // lấy chuỗi kết nối.
@@ -140,7 +142,7 @@ namespace LTWINDOW_
                             }
                         }
 
-                        
+
                     }
                 }
             }
@@ -150,7 +152,7 @@ namespace LTWINDOW_
             }
             finally
             {
-                
+
                 CloseConnection();
             }
             lastIndex = max;
@@ -172,7 +174,7 @@ namespace LTWINDOW_
                     {
                         while (reader.Read())
                         {
-                           
+
                             Mon mon = new Mon
                             (
                                 reader["MaLoaiMon"].ToString(),
@@ -233,7 +235,7 @@ namespace LTWINDOW_
 
             return loaiMons;
         }
-        public void LuuDonHang(string maDonHang,string maNhanVien, DateTime ngayDatHang, double tongTien)
+        public void LuuDonHang(string maDonHang, string maNhanVien, DateTime ngayDatHang, double tongTien)
         {
             string query = "INSERT INTO DonHang (MaDonHang, MaNhanVien, NgayDatHang, TongTien) " +
                            "VALUES (@MaDonHang, @MaNhanVien, @NgayDatHang, @TongTien)";
@@ -251,7 +253,7 @@ namespace LTWINDOW_
             }
         }
 
-        public void LuuChiTietDonHang(string maMon,int soLuong,double tongTien,string maDonHang)
+        public void LuuChiTietDonHang(string maMon, int soLuong, double tongTien, string maDonHang)
         {
             string query = "INSERT INTO ChiTietDonHang (MaMon, SoLuongMon, TongPhu, MaDonHang) " +
                            "VALUES (@MaMon, @SoLuongMon, @TongPhu, @MaDonHang)";
@@ -350,7 +352,7 @@ namespace LTWINDOW_
                     {
                         MessageBox.Show("Không tìm thấy thông báo với ID được cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                   
+
                 }
             }
             catch (Exception ex)
@@ -362,6 +364,192 @@ namespace LTWINDOW_
                 CloseConnection();
             }
         }
+        public List<string> GetMaLoaiMon()
+        {
+            // Tạo danh sách chứa kết quả
+            List<string> maLoaiMonList = new List<string>();
+
+            // Câu truy vấn SQL
+            string query = "SELECT MaLoaiMon FROM LoaiMon";
+
+            // Kết nối tới cơ sở dữ liệu
+            using (conn = new SqlConnection(connectionString))
+            {
+                // Tạo đối tượng SqlCommand
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    try
+                    {
+                        // Mở kết nối
+                        conn.Open();
+
+                        // Thực thi câu lệnh và đọc dữ liệu
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read()) // Đọc từng dòng kết quả
+                            {
+                                string maLoaiMon = reader["MaLoaiMon"].ToString();
+                                maLoaiMonList.Add(maLoaiMon);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Ghi log hoặc hiển thị thông báo lỗi
+                        MessageBox.Show("Lỗi khi truy vấn dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            return maLoaiMonList; // Trả về danh sách MaLoaiMon
+        }
+        public void AddMonMoi(string maLoaiMon, string maMon, string tenMon, double gia, string pathImg = null)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Kiểm tra xem món đã tồn tại hay chưa
+                    string checkQuery = "SELECT TrangThai FROM DanhSachMon WHERE MaMon = @MaMon";
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@MaMon", maMon);
+
+                        object result = checkCmd.ExecuteScalar();
+
+                        if (result != null) // Nếu mã món tồn tại
+                        {
+                            int trangThai = Convert.ToInt32(result);
+
+                            if (trangThai == 0) // Nếu TrangThai đang là 0, cập nhật về 1
+                            {
+                                string updateQuery = "UPDATE DanhSachMon SET TrangThai = 1, TenMon = @TenMon, Gia = @Gia, _Image = @Image WHERE MaMon = @MaMon";
+                                using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@MaMon", maMon);
+                                    updateCmd.Parameters.AddWithValue("@TenMon", tenMon);
+                                    updateCmd.Parameters.AddWithValue("@Gia", gia);
+
+                                    // Xử lý ảnh
+                                    if (string.IsNullOrWhiteSpace(pathImg))
+                                    {
+                                        updateCmd.Parameters.AddWithValue("@Image", DBNull.Value);
+                                    }
+                                    else
+                                    {
+                                        byte[] imageBytes = File.ReadAllBytes(pathImg);
+                                        updateCmd.Parameters.AddWithValue("@Image", imageBytes);
+                                    }
+
+                                    updateCmd.ExecuteNonQuery();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Mã món đã tồn tại và đang ở trạng thái kích hoạt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else // Nếu mã món chưa tồn tại, thực hiện thêm mới
+                        {
+                            string insertQuery = "INSERT INTO DanhSachMon (MaLoaiMon, MaMon, TenMon, Gia, _Image, TrangThai) VALUES (@MaLoaiMon, @MaMon, @TenMon, @Gia, @Image, 1)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("@MaLoaiMon", maLoaiMon);
+                                insertCmd.Parameters.AddWithValue("@MaMon", maMon);
+                                insertCmd.Parameters.AddWithValue("@TenMon", tenMon);
+                                insertCmd.Parameters.AddWithValue("@Gia", gia);
+
+                                // Xử lý ảnh
+                                if (string.IsNullOrWhiteSpace(pathImg))
+                                {
+                                    insertCmd.Parameters.AddWithValue("@Image", DBNull.Value);
+                                }
+                                else
+                                {
+                                    byte[] imageBytes = File.ReadAllBytes(pathImg);
+                                    insertCmd.Parameters.AddWithValue("@Image", imageBytes);
+                                }
+
+                                insertCmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xử lý món: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void DeleteMon(string maMon)
+        {
+            string query = "UPDATE DanhSachMon SET TrangThai = 0 WHERE MaMon = @MaMon";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm tham số cho câu truy vấn
+                    cmd.Parameters.AddWithValue("@MaMon", maMon);
+
+                    // Mở kết nối
+                    conn.Open();
+
+                    // Thực thi truy vấn
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public void UpdateMon(string maMon, string maLoaiMon, string tenMon, double gia, Image image)
+        {
+            // Truy vấn SQL với điều kiện cập nhật các cột tương ứng
+            string query = @"
+        UPDATE DanhSachMon 
+        SET MaLoaiMon = @MaLoaiMon, 
+            TenMon = @TenMon, 
+            Gia = @Gia, 
+            _Image = @Image
+        WHERE MaMon = @MaMon";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm tham số cho câu truy vấn
+                    cmd.Parameters.AddWithValue("@MaMon", maMon);
+                    cmd.Parameters.AddWithValue("@MaLoaiMon", maLoaiMon);
+                    cmd.Parameters.AddWithValue("@TenMon", tenMon);
+                    cmd.Parameters.AddWithValue("@Gia", gia);
+
+                    // Chuyển đổi ảnh thành mảng byte (hoặc null nếu không có ảnh)
+                    byte[] imageBytes = image != null ? ConvertImageToBytes(image) : null;
+                    cmd.Parameters.AddWithValue("@Image", (object)imageBytes ?? DBNull.Value);
+
+
+                    // Mở kết nối
+                    conn.Open();
+
+                    // Thực thi truy vấn
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public byte[] ConvertImageToBytes(Image img)
+        {
+            if (img == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Chuyển đổi hình ảnh thành mảng byte
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray(); // Trả về mảng byte
+            }
+        }
 
     }
 }
@@ -369,4 +557,4 @@ namespace LTWINDOW_
 
 
 
-   
+

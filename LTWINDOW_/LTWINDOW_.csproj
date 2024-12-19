@@ -79,6 +79,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\AddMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\AddMon.Designer.cs">
+      <DependentUpon>AddMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuQuanLy\AddNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +135,25 @@
     <Compile Include="MenuQuanLy\UC_ThongBao.Designer.cs">
       <DependentUpon>UC_ThongBao.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLy\UC_ThucDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\UC_ThucDon.Designer.cs">
+      <DependentUpon>UC_ThucDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuQuanLy\UpdateMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLy\UpdateMon.Designer.cs">
+      <DependentUpon>UpdateMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mon.cs" />
+    <Compile Include="Options\UC_BangDangXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\UC_BangDangXuat.Designer.cs">
+      <DependentUpon>UC_BangDangXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options\ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +204,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\AddMon.resx">
+      <DependentUpon>AddMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\AddNhanVien.resx">
       <DependentUpon>AddNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +230,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuQuanLy\UC_ThongBao.resx">
       <DependentUpon>UC_ThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\UC_ThucDon.resx">
+      <DependentUpon>UC_ThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQuanLy\UpdateMon.resx">
+      <DependentUpon>UpdateMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\UC_BangDangXuat.resx">
+      <DependentUpon>UC_BangDangXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>

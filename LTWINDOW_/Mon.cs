@@ -5,6 +5,8 @@ namespace LTWINDOW_
 {
     public class Mon
     {
+        private byte[] imageBytes;
+
         public string MaLoaiMon { get; set; }
         public string MaMon { get; set; }
         public string TenMon { get; set; }
@@ -19,12 +21,21 @@ namespace LTWINDOW_
             MaMon = maMon;
             TenMon = tenMon;
             Gia = gia;
-     
-            Image = image;
+            this.Image = image;
         }
 
         // Constructor mặc định
         public Mon() { }
+
+        public Mon(string maLoaiMon, string maMon, string tenMon,double gia)
+        {
+            MaLoaiMon = maLoaiMon;
+            MaMon = maMon;
+            TenMon = tenMon;
+            Gia = gia;
+            Image = null;
+        }
+        
 
         // Chuyển byte[] sang Image
         public Image ConvertBytesToImage()
