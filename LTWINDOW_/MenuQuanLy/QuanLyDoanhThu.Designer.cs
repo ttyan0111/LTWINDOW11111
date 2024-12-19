@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_top = new System.Windows.Forms.Panel();
             this.lbldenNgay = new System.Windows.Forms.Label();
             this.labeltuNgay = new System.Windows.Forms.Label();
@@ -119,6 +122,7 @@
             this.btnFix.Size = new System.Drawing.Size(116, 45);
             this.btnFix.TabIndex = 10;
             this.btnFix.Text = "Xóa";
+            this.btnFix.Click += new System.EventHandler(this.btnFix_Click);
             // 
             // dtpdenNgay
             // 
@@ -139,18 +143,28 @@
             this.dtptuNgay.Name = "dtptuNgay";
             this.dtptuNgay.Size = new System.Drawing.Size(200, 30);
             this.dtptuNgay.TabIndex = 0;
+            this.dtptuNgay.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // panel_body
             // 
             this.panel_body.Controls.Add(this.dataGridView1);
+            this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_body.Location = new System.Drawing.Point(0, 92);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1889, 262);
+            this.panel_body.Size = new System.Drawing.Size(1889, 333);
             this.panel_body.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOrder,
@@ -158,23 +172,36 @@
             this.employeeName,
             this.dateOrder,
             this.sumMoney});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1889, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(1889, 333);
             this.dataGridView1.TabIndex = 0;
             // 
             // idOrder
             // 
             this.idOrder.DataPropertyName = "MaDonHang";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Purple;
+            this.idOrder.DefaultCellStyle = dataGridViewCellStyle2;
             this.idOrder.HeaderText = "Mã Đơn Hàng";
             this.idOrder.MinimumWidth = 6;
             this.idOrder.Name = "idOrder";
             this.idOrder.ReadOnly = true;
-            this.idOrder.Width = 125;
+            this.idOrder.Width = 300;
             // 
             // idEmployee
             // 
@@ -183,7 +210,7 @@
             this.idEmployee.MinimumWidth = 6;
             this.idEmployee.Name = "idEmployee";
             this.idEmployee.ReadOnly = true;
-            this.idEmployee.Width = 125;
+            this.idEmployee.Width = 200;
             // 
             // employeeName
             // 
@@ -192,7 +219,7 @@
             this.employeeName.MinimumWidth = 6;
             this.employeeName.Name = "employeeName";
             this.employeeName.ReadOnly = true;
-            this.employeeName.Width = 125;
+            this.employeeName.Width = 250;
             // 
             // dateOrder
             // 
@@ -201,7 +228,7 @@
             this.dateOrder.MinimumWidth = 6;
             this.dateOrder.Name = "dateOrder";
             this.dateOrder.ReadOnly = true;
-            this.dateOrder.Width = 125;
+            this.dateOrder.Width = 200;
             // 
             // sumMoney
             // 
@@ -210,7 +237,7 @@
             this.sumMoney.MinimumWidth = 6;
             this.sumMoney.Name = "sumMoney";
             this.sumMoney.ReadOnly = true;
-            this.sumMoney.Width = 125;
+            this.sumMoney.Width = 370;
             // 
             // QuanLyDoanhThu
             // 

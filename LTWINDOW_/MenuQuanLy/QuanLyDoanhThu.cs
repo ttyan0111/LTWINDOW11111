@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Management;
 using System.Collections;
+using iTextSharp.text.pdf.codec;
 
 namespace LTWINDOW_.MenuQuanLy
 {
@@ -92,9 +93,23 @@ namespace LTWINDOW_.MenuQuanLy
             
 
         }
+
+        string[] getDate_S_E()
+        {
+            string[] dateSAndE = new string[3];
+            DateTime sdt = dtptuNgay.Value;
+            dateSAndE[0] = sdt.ToString("yyyy/MM/dd");
+            sdt = dtpdenNgay.Value;
+            dateSAndE[1] = sdt.ToString("yyyy/MM/dd");
+
+            return dateSAndE;
+        }
         private void QuanLyDoanhThu_Load(object sender, EventArgs e)
         {
-            loadData("select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang from DonHang");
+            string[] date_s_e = getDate_S_E();
+            loadData("select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
+                    "from DonHang " +
+                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'");
         }
 
         
@@ -104,25 +119,111 @@ namespace LTWINDOW_.MenuQuanLy
 
             if (dtptuNgay.Value <= dtpdenNgay.Value)
             {
+
                 // truy vấn.
-                DateTime sdt = dtptuNgay.Value;
-                string starDate = sdt.ToString("yyyy/MM/dd");
-                sdt = dtpdenNgay.Value;
-                string enDate = sdt.ToString("yyyy/MM/dd");
+                string[] date_s_e = getDate_S_E();
 
                 string queryDate = "select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
                     "from DonHang " +
-                    $"where NgayDatHang between '{starDate}' and '{enDate}'";
+                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'";
                 loadData(queryDate);
             }
             else
             {
-                MessageBox.Show("Ngày Bắt đầu phải lớn hơn hoặc bằng ngày kết thức", "Thông Báo Chọn Ngày");
+                MessageBox.Show("Ngày Bắt đầu phải nhỏ hơn hoặc bằng ngày kết thức", "Thông Báo Chọn Ngày");
             }
 
             
 
             
+        }
+
+
+        // xóa dữ liệu đơn hàng trong sql.
+        bool deleteDonHang(string strDeleteDonHang, string strDeleteChiTietDonHang_LQ, string idDonHang)
+        {
+            sql = new SQL();
+            string delteteDonhHangSql = $"{strDeleteChiTietDonHang_LQ}\n\n{strDeleteDonHang}";
+            using (connection = sql.Conn)
+            {
+                try
+                {
+                    if(connection.State != ConnectionState.Open)
+                    {
+                        connection.Open();
+                        
+                    }
+
+                    
+                    SqlCommand command = new SqlCommand(delteteDonhHangSql, connection);
+
+                    command.Parameters.AddWithValue("@idDonHang", idDonHang);
+                    
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("check");
+
+                    return true; // đã xóa thành công.
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false; // xóa không thành công.
+                } 
+                
+            } 
+                
+        }
+        private void btnFix_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                // thông báo có chắc chắc xóa.
+                if (MessageBox.Show("Bạn có chắc chắc xóa những dòng đã chọn!\nDòng mới là dòng cuối cùng và không có bất kì thông tin nào.", "Thông Báo Xác Nhận xóa Dòng Chọn",
+                    MessageBoxButtons.YesNo) == DialogResult.No) return; 
+
+                string strdeleteDonHang = "delete DonHang  where MaDonHang = @idDonHang";
+                string strdeleteChiTietDonHang = "delete ChitietDonHang where MaDonHang = @idDonHang";
+
+                bool check = false; // check có dòng nào xóa không;
+                while(dataGridView1.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow row = dataGridView1.SelectedRows[0];
+                    // xử lý khi có chọn dòng mới
+                    if (row.IsNewRow)
+                    {
+                        MessageBox.Show("khi Xóa không nên chọn dòng mới", "Thông báo khi chọn dòng mới");
+                        break;
+                    } 
+
+                    string idDonHang = row.Cells["idOrder"].Value.ToString();
+                    if(deleteDonHang(strdeleteDonHang, strdeleteChiTietDonHang, idDonHang))
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Xóa Dòng có mã Đơn {idDonHang} thất bại", "Thông Báo Xóa Dòng");
+                    } 
+                    dataGridView1.Rows.Remove(row);
+                        
+                }
+
+                if (check) MessageBox.Show("Thành công", "Thông Báo Xóa dòng");
+                else MessageBox.Show("Thất bại", "Thông Báo Xóa dòng");
+                string[] date_s_e = getDate_S_E();
+
+                string queryDate = "select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
+                    "from DonHang " +
+                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'";
+                loadData(queryDate);
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn dòng để xóa", "Thông Báo Chọn Dòng");
+            } 
+                
+                
         }
     }
 }
