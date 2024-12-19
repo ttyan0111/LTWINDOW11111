@@ -73,7 +73,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1134, 781);
+            this.dataGridView.Size = new System.Drawing.Size(1134, 796);
             this.dataGridView.TabIndex = 3;
             // 
             // guna2ButtonCapNhat
@@ -88,7 +88,7 @@
             this.guna2ButtonCapNhat.ForeColor = System.Drawing.Color.Purple;
             this.guna2ButtonCapNhat.Image = global::LTWINDOW_.Properties.Resources.capNhat;
             this.guna2ButtonCapNhat.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ButtonCapNhat.Location = new System.Drawing.Point(616, 56);
+            this.guna2ButtonCapNhat.Location = new System.Drawing.Point(758, 31);
             this.guna2ButtonCapNhat.Name = "guna2ButtonCapNhat";
             this.guna2ButtonCapNhat.Size = new System.Drawing.Size(180, 45);
             this.guna2ButtonCapNhat.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.guna2ButtonXoa.ForeColor = System.Drawing.Color.Purple;
             this.guna2ButtonXoa.Image = global::LTWINDOW_.Properties.Resources.minus2;
             this.guna2ButtonXoa.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ButtonXoa.Location = new System.Drawing.Point(335, 56);
+            this.guna2ButtonXoa.Location = new System.Drawing.Point(392, 31);
             this.guna2ButtonXoa.Name = "guna2ButtonXoa";
             this.guna2ButtonXoa.Size = new System.Drawing.Size(180, 45);
             this.guna2ButtonXoa.TabIndex = 2;
@@ -126,7 +126,7 @@
             this.guna2ButtonThem.ForeColor = System.Drawing.Color.Purple;
             this.guna2ButtonThem.Image = global::LTWINDOW_.Properties.Resources.plus;
             this.guna2ButtonThem.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ButtonThem.Location = new System.Drawing.Point(16, 56);
+            this.guna2ButtonThem.Location = new System.Drawing.Point(36, 31);
             this.guna2ButtonThem.Name = "guna2ButtonThem";
             this.guna2ButtonThem.Size = new System.Drawing.Size(180, 45);
             this.guna2ButtonThem.TabIndex = 1;
@@ -141,16 +141,16 @@
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Top.Location = new System.Drawing.Point(0, 0);
             this.panel_Top.Name = "panel_Top";
-            this.panel_Top.Size = new System.Drawing.Size(1134, 120);
+            this.panel_Top.Size = new System.Drawing.Size(1134, 105);
             this.panel_Top.TabIndex = 4;
             // 
             // panel_body
             // 
             this.panel_body.Controls.Add(this.dataGridView);
             this.panel_body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_body.Location = new System.Drawing.Point(0, 120);
+            this.panel_body.Location = new System.Drawing.Point(0, 105);
             this.panel_body.Name = "panel_body";
-            this.panel_body.Size = new System.Drawing.Size(1134, 781);
+            this.panel_body.Size = new System.Drawing.Size(1134, 796);
             this.panel_body.TabIndex = 5;
             // 
             // UC_ThongBao

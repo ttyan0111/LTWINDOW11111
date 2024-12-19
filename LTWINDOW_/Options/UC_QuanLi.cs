@@ -51,6 +51,7 @@ namespace LTWINDOW_.Options
         {
 
             uC_QuanLyNhanVien.Visible = false;
+            uC_ThucDon1.Visible = false;
             uC_QuanLyLoaiMon.Visible = true;
             uC_ThongBao1.Visible = false;
         }
@@ -58,6 +59,7 @@ namespace LTWINDOW_.Options
         private void ptbTaiKhoan_Click(object sender, EventArgs e)
         {
             uC_QuanLyLoaiMon.Visible = false;
+            uC_ThucDon1.Visible = false;
             uC_QuanLyNhanVien.Visible = true;
             uC_ThongBao1.Visible = false;
 
@@ -130,13 +132,17 @@ namespace LTWINDOW_.Options
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             uC_QuanLyNhanVien.Visible = false;
+            uC_ThucDon1.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_ThongBao1.Visible = true;
         }
 
         private void ptbThucDon_Click(object sender, EventArgs e)
         {
-           
+            uC_QuanLyNhanVien.Visible = false;
+            uC_ThucDon1.Visible = true;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_ThongBao1.Visible = false;
         }
 
         private void lblThucDon_MouseMove(object sender, MouseEventArgs e)
@@ -166,6 +172,7 @@ namespace LTWINDOW_.Options
         private void lblTaiKhoan_Click(object sender, EventArgs e)
         {
             uC_QuanLyLoaiMon.Visible = false;
+            uC_ThucDon1.Visible = false;
             uC_QuanLyNhanVien.Visible = true;
             uC_ThongBao1.Visible = false;
         }
@@ -175,12 +182,14 @@ namespace LTWINDOW_.Options
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_ThongBao1.Visible = true;
+            uC_ThucDon1.Visible = false;
         }
 
         private void lblLoaiMon_Click(object sender, EventArgs e)
         {
             uC_QuanLyNhanVien.Visible = false;
             uC_QuanLyLoaiMon.Visible = true;
+            uC_ThucDon1.Visible = false;
             uC_ThongBao1.Visible = false;
         }
 

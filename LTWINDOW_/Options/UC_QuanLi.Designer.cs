@@ -50,6 +50,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.uC_QuanLyAccount = new LTWINDOW_.MenuQuanLy.QuanLyNhanVien();
             this.uC_QuanLyMon = new LTWINDOW_.MenuQuanLy.UC_QuanLyLoaiMon();
+            this.uC_ThucDon1 = new LTWINDOW_.MenuQuanLy.UC_ThucDon();
             this.panel_Top.SuspendLayout();
             this.ptn_ThongBao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -239,6 +240,7 @@
             // 
             this.panel_body.BackColor = System.Drawing.Color.White;
             this.panel_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_body.Controls.Add(this.uC_ThucDon1);
             this.panel_body.Controls.Add(this.uC_ThongBao1);
             this.panel_body.Controls.Add(this.uC_QuanLyNhanVien);
             this.panel_body.Controls.Add(this.uC_QuanLyLoaiMon);
@@ -299,6 +301,15 @@
             this.uC_QuanLyMon.TabIndex = 0;
             this.uC_QuanLyMon.Visible = false;
             // 
+            // uC_ThucDon1
+            // 
+            this.uC_ThucDon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.uC_ThucDon1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_ThucDon1.Location = new System.Drawing.Point(0, 0);
+            this.uC_ThucDon1.Name = "uC_ThucDon1";
+            this.uC_ThucDon1.Size = new System.Drawing.Size(1938, 901);
+            this.uC_ThucDon1.TabIndex = 3;
+            // 
             // UC_QuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -346,5 +357,6 @@
         private MenuQuanLy.UC_QuanLyLoaiMon uC_QuanLyLoaiMon;
         private MenuQuanLy.QuanLyNhanVien uC_QuanLyNhanVien;
         private MenuQuanLy.UC_ThongBao uC_ThongBao1;
+        private MenuQuanLy.UC_ThucDon uC_ThucDon1;
     }
 }
