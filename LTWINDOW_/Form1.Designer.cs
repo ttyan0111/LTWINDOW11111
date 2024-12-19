@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel_left = new Guna.UI2.WinForms.Guna2Panel();
             this.HUQuanLi = new System.Windows.Forms.Panel();
             this.HUMenu = new System.Windows.Forms.Panel();
             this.HUBan = new System.Windows.Forms.Panel();
@@ -43,38 +43,38 @@
             this.buttonQuanLyBan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.buttonTrangChinh = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_Body = new System.Windows.Forms.Panel();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uC_QuanLi1 = new LTWINDOW_.Options.UC_QuanLi();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.uC_Menu1 = new LTWINDOW_.Options.UC_Menu();
-            this.guna2Panel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_left.SuspendLayout();
+            this.panel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // panel_left
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.Controls.Add(this.HUQuanLi);
-            this.guna2Panel1.Controls.Add(this.HUMenu);
-            this.guna2Panel1.Controls.Add(this.HUBan);
-            this.guna2Panel1.Controls.Add(this.HUTrangChinh);
-            this.guna2Panel1.Controls.Add(this.buttonExit);
-            this.guna2Panel1.Controls.Add(this.panel2);
-            this.guna2Panel1.Controls.Add(this.buttonThem);
-            this.guna2Panel1.Controls.Add(this.buttonQuanLy);
-            this.guna2Panel1.Controls.Add(this.buttonMenu);
-            this.guna2Panel1.Controls.Add(this.buttonQuanLyBan);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.buttonTrangChinh);
-            this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(209, 1102);
-            this.guna2Panel1.TabIndex = 0;
+            this.panel_left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel_left.Controls.Add(this.HUQuanLi);
+            this.panel_left.Controls.Add(this.HUMenu);
+            this.panel_left.Controls.Add(this.HUBan);
+            this.panel_left.Controls.Add(this.HUTrangChinh);
+            this.panel_left.Controls.Add(this.buttonExit);
+            this.panel_left.Controls.Add(this.panel2);
+            this.panel_left.Controls.Add(this.buttonThem);
+            this.panel_left.Controls.Add(this.buttonQuanLy);
+            this.panel_left.Controls.Add(this.buttonMenu);
+            this.panel_left.Controls.Add(this.buttonQuanLyBan);
+            this.panel_left.Controls.Add(this.guna2Button1);
+            this.panel_left.Controls.Add(this.buttonTrangChinh);
+            this.panel_left.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel_left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_left.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel_left.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel_left.Location = new System.Drawing.Point(0, 0);
+            this.panel_left.Name = "panel_left";
+            this.panel_left.Size = new System.Drawing.Size(209, 1102);
+            this.panel_left.TabIndex = 0;
             // 
             // HUQuanLi
             // 
@@ -150,7 +150,8 @@
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(183, 83);
             this.buttonThem.TabIndex = 5;
-            this.buttonThem.Text = "Thêm";
+            this.buttonThem.Text = "Đăng Xuất";
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // buttonQuanLy
             // 
@@ -234,16 +235,16 @@
             this.buttonTrangChinh.Text = "Trang chính";
             this.buttonTrangChinh.Click += new System.EventHandler(this.buttonTrangChinh_Click);
             // 
-            // panel1
+            // panel_Body
             // 
-            this.panel1.Controls.Add(this.uC_QuanLi1);
-            this.panel1.Controls.Add(this.uC_DashBoard1);
-            this.panel1.Controls.Add(this.uC_Menu1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(209, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1733, 1102);
-            this.panel1.TabIndex = 1;
+            this.panel_Body.Controls.Add(this.uC_QuanLi1);
+            this.panel_Body.Controls.Add(this.uC_DashBoard1);
+            this.panel_Body.Controls.Add(this.uC_Menu1);
+            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Body.Location = new System.Drawing.Point(209, 0);
+            this.panel_Body.Name = "panel_Body";
+            this.panel_Body.Size = new System.Drawing.Size(1733, 1102);
+            this.panel_Body.TabIndex = 1;
             // 
             // guna2Elipse1
             // 
@@ -281,29 +282,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panel_Body);
+            this.Controls.Add(this.panel_left);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "z";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.guna2Panel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel_left.ResumeLayout(false);
+            this.panel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel_left;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button buttonTrangChinh;
         private Guna.UI2.WinForms.Guna2Button buttonThem;
         private Guna.UI2.WinForms.Guna2Button buttonQuanLy;
         private Guna.UI2.WinForms.Guna2Button buttonMenu;
         private Guna.UI2.WinForms.Guna2Button buttonQuanLyBan;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Body;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Options.UC_Menu uC_Menu1;
         private System.Windows.Forms.Panel panel2;

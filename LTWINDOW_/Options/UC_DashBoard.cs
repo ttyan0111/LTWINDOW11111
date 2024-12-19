@@ -26,7 +26,6 @@ namespace LTWINDOW_.Options
             sql = new SQL();
             sql.OpenConnection();
             LoadRevenueChart();
-            uC_BangDangXuat1.Visible = false;
             LoadThongBao();
         }
 
@@ -78,11 +77,6 @@ namespace LTWINDOW_.Options
             {
                 chart1.Legends[0].Font = new Font("Arial", 12);
             }
-        }
-
-        public void SetTenNhanVien(string tenNhanVien)
-        {
-            labelTenNhanVien.Text = tenNhanVien;
         }
        
 
@@ -184,21 +178,6 @@ namespace LTWINDOW_.Options
                 // Thêm container vào panelButton
                 panelButton.Controls.Add(container);
             }
-        }
-        private bool isVisible = false;
-        private void acount_Click(object sender, EventArgs e)
-        {
-            if (!isVisible)
-            {
-                uC_BangDangXuat1.Visible = true;
-                isVisible = true;
-            }
-            else
-            {
-                uC_BangDangXuat1.Visible = false;
-                isVisible = false;
-            }
-            
         }
         public void LoadDuLieuAll()
         {

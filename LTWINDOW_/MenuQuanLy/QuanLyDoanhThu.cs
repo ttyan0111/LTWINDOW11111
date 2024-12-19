@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Management;
 using System.Collections;
 using iTextSharp.text.pdf.codec;
+using System.Xml.XPath;
 
 namespace LTWINDOW_.MenuQuanLy
 {
@@ -224,6 +225,49 @@ namespace LTWINDOW_.MenuQuanLy
             } 
                 
                 
+        }
+
+        // tính tổng tiền các hóa đơn theo khoảng ngày đã chọn.
+        float tongTien()
+        {
+            float result = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    //sumMoney
+                    float moneyOfRow = 0;
+                    if(float.TryParse(row.Cells["sumMoney"].Value.ToString(), out moneyOfRow))
+                    {
+                        result += moneyOfRow;
+                    }    
+                    else
+                    {
+                        result = -1;
+                        break;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private void guna2ButtonTongMoney_Click(object sender, EventArgs e)
+        {
+            float fSumMoney = tongTien();
+
+            if(fSumMoney == -1)
+            {
+                MessageBox.Show("quá trình tính bị lỗi mời bạn thử lại", "Thông Báo Tính  Tiền Lỗi");
+            }
+            else
+            {
+                HienThiTongTien hienThiTongTien = new HienThiTongTien(fSumMoney);
+                hienThiTongTien.Show();
+            } 
+                
+
         }
     }
 }

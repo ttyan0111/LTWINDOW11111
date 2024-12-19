@@ -1,4 +1,5 @@
 ﻿using LTWINDOW_.Options;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace LTWINDOW_
 {
@@ -18,10 +20,14 @@ namespace LTWINDOW_
         public Login()
         {
             InitializeComponent();
-            
+            maNhanVien = "";
+            tenNhanVien = "";
 
 
         }
+
+        public string getMaNhanVien() { return maNhanVien; }
+        public string getTenNhanVien() { return tenNhanVien; }
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             // Lấy vị trí con trỏ hiện tại
@@ -89,10 +95,10 @@ namespace LTWINDOW_
                     if (check == 1)
                     {
                         lblThongBaoInvalid.Visible = false;
+                        txtPassword.Text = txtUserName.Text = "";
                         this.Hide();
-                        Form1 form = new Form1(tenNhanVien, maNhanVien);
+                        Form1 form = new Form1(maNhanVien);
                         form.Show();
-                        
                     }
                     else lblThongBaoInvalid.Visible = true;
                 }
@@ -114,13 +120,19 @@ namespace LTWINDOW_
             }
 
         }
-
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        private void Login_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát?\nNếu thoát chon Yes không chọn No.", "Thoát Đăng Nhập",
-                MessageBoxButtons.YesNo) != DialogResult.Yes)
+               MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                // Đóng toàn bộ ứng dụng bao gồm các form ẩn
+                
                 e.Cancel = true;
 
+                
+            }
+
+            Application.Exit();
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)

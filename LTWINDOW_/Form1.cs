@@ -1,9 +1,11 @@
 ﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Enums;
 using LTWINDOW_.Options;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,17 +19,14 @@ namespace LTWINDOW_
     {
         SQL sql;
         Form currentFormChild;
-    
-        public Form1(string tenNhanVien,string maNhanVien)
+        string idNhanVien;
+        public Form1(string maNhanVien)
         {
             InitializeComponent();
-            
-
+            idNhanVien = maNhanVien;
 
             sql = new SQL();
             sql.OpenConnection();
-            uC_DashBoard1.SetTenNhanVien(tenNhanVien);
-            uC_Menu1.SetMaNhanVien(maNhanVien);
 
             uC_DashBoard1.Visible = true;
             uC_Menu1.Visible = false;
@@ -36,9 +35,39 @@ namespace LTWINDOW_
             HUMenu.Visible = false;
             HUQuanLi.Visible = false;
             HUTrangChinh.Visible = true;
-           
-         
 
+        }
+
+        // lấy chức vụ của nhân viên.
+        string getPosition(string query)
+        {
+            sql = new SQL();
+
+            string result = "";
+            using (SqlConnection connection = sql.Conn)
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@idNhanVien", idNhanVien);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if(reader.Read())
+                    {
+                        result = reader.GetString(0);
+                    }
+
+                    return result;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return result;
+                } 
+                
+            }    
         }
 
         private void buttonTrangChinh_Click(object sender, EventArgs e)
@@ -111,7 +140,7 @@ namespace LTWINDOW_
             
 
             // thêm form muốn hiển thị vào panel
-            panel1.Controls.Add(currentFormChild);
+            panel_Body.Controls.Add(currentFormChild);
 
             // để form con hiển thị ở chế độ ưu tiên.
             currentFormChild.BringToFront();
@@ -123,21 +152,36 @@ namespace LTWINDOW_
 
         private void buttonQuanLy_Click(object sender, EventArgs e)
         {
-            // đóng form đang mở
-            if (currentFormChild != null)
+            // lấy chức vụ của của tài khoản đã đăng nhập vào hệ thống.
+            string position = getPosition("select ChucVu from NhanVien where MaNhanVien = @idNhanVien").Trim().ToLower();
+
+            // check chức vụ
+            if (position == "quản lý" || position == "quản lí")
             {
-                currentFormChild.Close();
+                // đóng form đang mở
+                if (currentFormChild != null)
+                {
+                    currentFormChild.Close();
+                }
+
+                uC_DashBoard1.Visible = false;
+                uC_Menu1.Visible = false;
+                uC_QuanLi1.Visible = true;
+
+                HUBan.Visible = false;
+                HUMenu.Visible = false;
+                HUQuanLi.Visible = true;
+                HUTrangChinh.Visible = false;
             }
-
-            uC_DashBoard1.Visible = false;
-            uC_Menu1.Visible = false;
-            uC_QuanLi1.Visible = true;
-
-            HUBan.Visible = false;
-            HUMenu.Visible = false;
-            HUQuanLi.Visible = true;
-            HUTrangChinh.Visible = false;
-
+            else if (position == "")
+            {
+                MessageBox.Show("lỗi kết nối sql mời chọn lại");
+            }
+            else
+            {
+                MessageBox.Show("chỉ có quản lý mới được sử dụng chức năng này.", "Thông Báo Không Được truy Cập");
+            } 
+                
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -171,8 +215,16 @@ namespace LTWINDOW_
             HUTrangChinh.Visible = true;
         }
 
-       
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắc muốn đăng xuất", "Thông Báo Đăng Xuất",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+        }
 
-       
     }
 }

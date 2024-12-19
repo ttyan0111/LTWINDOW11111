@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_top = new System.Windows.Forms.Panel();
             this.lbldenNgay = new System.Windows.Forms.Label();
             this.labeltuNgay = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.employeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2ButtonTongMoney = new Guna.UI2.WinForms.Guna2Button();
             this.panel_top.SuspendLayout();
             this.panel_body.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             // panel_top
             // 
+            this.panel_top.Controls.Add(this.guna2ButtonTongMoney);
             this.panel_top.Controls.Add(this.lbldenNgay);
             this.panel_top.Controls.Add(this.labeltuNgay);
             this.panel_top.Controls.Add(this.btnAdd);
@@ -157,14 +159,14 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOrder,
@@ -172,14 +174,14 @@
             this.employeeName,
             this.dateOrder,
             this.sumMoney});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -192,11 +194,11 @@
             // idOrder
             // 
             this.idOrder.DataPropertyName = "MaDonHang";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Purple;
-            this.idOrder.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Purple;
+            this.idOrder.DefaultCellStyle = dataGridViewCellStyle5;
             this.idOrder.HeaderText = "Mã Đơn Hàng";
             this.idOrder.MinimumWidth = 6;
             this.idOrder.Name = "idOrder";
@@ -239,6 +241,25 @@
             this.sumMoney.ReadOnly = true;
             this.sumMoney.Width = 370;
             // 
+            // guna2ButtonTongMoney
+            // 
+            this.guna2ButtonTongMoney.BorderColor = System.Drawing.Color.Purple;
+            this.guna2ButtonTongMoney.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2ButtonTongMoney.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2ButtonTongMoney.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2ButtonTongMoney.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2ButtonTongMoney.FillColor = System.Drawing.Color.Plum;
+            this.guna2ButtonTongMoney.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2ButtonTongMoney.ForeColor = System.Drawing.Color.Purple;
+            this.guna2ButtonTongMoney.Image = global::LTWINDOW_.Properties.Resources.xem;
+            this.guna2ButtonTongMoney.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ButtonTongMoney.Location = new System.Drawing.Point(563, 21);
+            this.guna2ButtonTongMoney.Name = "guna2ButtonTongMoney";
+            this.guna2ButtonTongMoney.Size = new System.Drawing.Size(151, 45);
+            this.guna2ButtonTongMoney.TabIndex = 13;
+            this.guna2ButtonTongMoney.Text = "Tổng Tiền";
+            this.guna2ButtonTongMoney.Click += new System.EventHandler(this.guna2ButtonTongMoney_Click);
+            // 
             // QuanLyDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,5 +294,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumMoney;
+        private Guna.UI2.WinForms.Guna2Button guna2ButtonTongMoney;
     }
 }
