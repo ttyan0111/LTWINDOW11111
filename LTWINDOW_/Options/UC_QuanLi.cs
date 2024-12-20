@@ -201,7 +201,10 @@ namespace LTWINDOW_.Options
 
         private void lblThucDon_Click(object sender, EventArgs e)
         {
-
+            uC_QuanLyNhanVien.Visible = false;
+            uC_ThucDon1.Visible = true;
+            uC_QuanLyLoaiMon.Visible = false;
+            uC_ThongBao1.Visible = false;
         }
         //
         // Daonh thu
@@ -232,6 +235,7 @@ namespace LTWINDOW_.Options
 
         private void ptbDoanhThu_Click(object sender, EventArgs e)
         {
+            uC_ThucDon1.Visible = false;
             uC_ThongBao1.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;  
             uC_QuanLyNhanVien.Visible = false;
@@ -240,6 +244,7 @@ namespace LTWINDOW_.Options
 
         private void lblDoanhThu_Click(object sender, EventArgs e)
         {
+            uC_ThucDon1.Visible=false;
             uC_ThongBao1.Visible = false;
             uC_QuanLyLoaiMon.Visible = false;
             uC_QuanLyNhanVien.Visible = false;
