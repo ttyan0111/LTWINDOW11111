@@ -427,6 +427,7 @@ namespace LTWINDOW_.Options
             if (form.getCheckIn())
             {
                 XoaDuLieuHienThi();
+                form.setCheckIn();
             }
 
         }
@@ -445,6 +446,9 @@ namespace LTWINDOW_.Options
             radioButtonTaiQuan.Checked = false;
         }
 
-      
+        private void labelTien_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,8 +33,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelMon = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.buttonTim = new Guna.UI2.WinForms.Guna2Button();
             this.labelTenMonTimKiem = new System.Windows.Forms.Label();
+            this.buttonTim = new Guna.UI2.WinForms.Guna2Button();
             this.panelDanhSachMon = new System.Windows.Forms.FlowLayoutPanel();
             this.uC_DashBoard1 = new LTWINDOW_.Options.UC_DashBoard();
             this.panelThem = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -101,6 +101,15 @@
             this.panelMon.Size = new System.Drawing.Size(741, 1099);
             this.panelMon.TabIndex = 4;
             // 
+            // labelTenMonTimKiem
+            // 
+            this.labelTenMonTimKiem.AutoSize = true;
+            this.labelTenMonTimKiem.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTenMonTimKiem.Location = new System.Drawing.Point(353, 133);
+            this.labelTenMonTimKiem.Name = "labelTenMonTimKiem";
+            this.labelTenMonTimKiem.Size = new System.Drawing.Size(0, 33);
+            this.labelTenMonTimKiem.TabIndex = 13;
+            // 
             // buttonTim
             // 
             this.buttonTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -118,15 +127,6 @@
             this.buttonTim.TabIndex = 14;
             this.buttonTim.Text = "Tìm";
             this.buttonTim.Click += new System.EventHandler(this.buttonTim_Click);
-            // 
-            // labelTenMonTimKiem
-            // 
-            this.labelTenMonTimKiem.AutoSize = true;
-            this.labelTenMonTimKiem.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelTenMonTimKiem.Location = new System.Drawing.Point(353, 133);
-            this.labelTenMonTimKiem.Name = "labelTenMonTimKiem";
-            this.labelTenMonTimKiem.Size = new System.Drawing.Size(0, 33);
-            this.labelTenMonTimKiem.TabIndex = 13;
             // 
             // panelDanhSachMon
             // 
@@ -229,6 +229,7 @@
             this.labelTien.Size = new System.Drawing.Size(77, 27);
             this.labelTien.TabIndex = 14;
             this.labelTien.Text = "0,00 đ";
+            this.labelTien.Click += new System.EventHandler(this.labelTien_Click);
             // 
             // buttonThanhToan
             // 

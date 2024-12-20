@@ -90,7 +90,8 @@ namespace LTWINDOW_.MenuQuanLy
                 } 
             }
 
-            
+           
+            guna2HtmlLabelTongTien.Text = string.Format("{0:N0} đ", CalculateTotalMoney().ToString());
 
         }
 
@@ -224,6 +225,27 @@ namespace LTWINDOW_.MenuQuanLy
             } 
                 
                 
+        }
+
+        private decimal CalculateTotalMoney()
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["sumMoney"].Value != null &&
+                    decimal.TryParse(row.Cells["sumMoney"].Value.ToString(), out decimal money))
+                {
+                    total += money;
+                }
+            }
+
+            return total;
+        }
+
+        private void guna2HtmlLabelTongTien_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

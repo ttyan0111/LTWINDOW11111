@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace LTWINDOW_
     {
         SQL sql;
         Form currentFormChild;
-    
+        string idNhanVien;
         public Form1(string tenNhanVien,string maNhanVien)
         {
             InitializeComponent();
@@ -30,14 +31,15 @@ namespace LTWINDOW_
             uC_Menu1.SetMaNhanVien(maNhanVien);
 
             uC_DashBoard1.Visible = true;
+            uC_DashBoard1.DangXuat += uC_DashBoard1_DangXuat;
             uC_Menu1.Visible = false;
             uC_QuanLi1.Visible = false;
             HUBan.Visible = false;
             HUMenu.Visible = false;
             HUQuanLi.Visible = false;
             HUTrangChinh.Visible = true;
-           
-         
+            this.idNhanVien = maNhanVien;
+            
 
         }
 
@@ -123,20 +125,31 @@ namespace LTWINDOW_
 
         private void buttonQuanLy_Click(object sender, EventArgs e)
         {
-            // đóng form đang mở
-            if (currentFormChild != null)
+            // lấy chức vụ của của tài khoản đã đăng nhập vào hệ thống.
+            string position = getPosition("select ChucVu from NhanVien where MaNhanVien = @idNhanVien").Trim().ToLower();
+
+            // check chức vụ
+            if (position == "quản lý" || position == "quản lí")
             {
-                currentFormChild.Close();
+                // đóng form đang mở
+                if (currentFormChild != null)
+                {
+                    currentFormChild.Close();
+                }
+
+                uC_DashBoard1.Visible = false;
+                uC_Menu1.Visible = false;
+                uC_QuanLi1.Visible = true;
+
+                HUBan.Visible = false;
+                HUMenu.Visible = false;
+                HUQuanLi.Visible = true;
+                HUTrangChinh.Visible = false;
             }
-
-            uC_DashBoard1.Visible = false;
-            uC_Menu1.Visible = false;
-            uC_QuanLi1.Visible = true;
-
-            HUBan.Visible = false;
-            HUMenu.Visible = false;
-            HUQuanLi.Visible = true;
-            HUTrangChinh.Visible = false;
+            else
+            {
+                MessageBox.Show("Chỉ có quản lý mới được sử dụng chức năng này.", "Thông Báo Không Được truy Cập");
+            }
 
         }
 
@@ -170,9 +183,42 @@ namespace LTWINDOW_
             HUQuanLi.Visible = false;
             HUTrangChinh.Visible = true;
         }
+        string getPosition(string query)
+        {
+            sql = new SQL();
 
-       
+            string result = "";
+            using (SqlConnection connection = sql.Conn)
+            {
+                try
+                {
+                    connection.Open();
 
-       
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@idNhanVien", idNhanVien);
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        result = reader.GetString(0);
+                    }
+
+                    return result;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return result;
+                }
+
+            }
+        }
+
+        private void uC_DashBoard1_DangXuat(object sender, EventArgs e)
+        {
+            this.Close(); // Đóng ứng dụng hoặc thực hiện logic khác
+            
+        }
+
     }
 }

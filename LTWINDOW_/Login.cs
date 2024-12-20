@@ -89,10 +89,19 @@ namespace LTWINDOW_
                     if (check == 1)
                     {
                         lblThongBaoInvalid.Visible = false;
-                        this.Hide();
+                        this.Hide(); // Ẩn form hiện tại
+
+                        // Mở Form1 và đăng ký sự kiện FormClosed
                         Form1 form = new Form1(tenNhanVien, maNhanVien);
+                        form.FormClosed += (s, args) =>
+                        {
+                            this.Show(); // Hiển thị lại form đăng nhập khi Form1 đóng
+                        };
                         form.Show();
-                        
+                        txtPassword.Text = "";
+                        txtUserName.Text = "";
+                        actualPassword = "";
+                        txtUserName.Focus();
                     }
                     else lblThongBaoInvalid.Visible = true;
                 }

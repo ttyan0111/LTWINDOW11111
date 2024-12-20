@@ -12,19 +12,22 @@ namespace LTWINDOW_.Options
 {
     public partial class UC_BangDangXuat : UserControl
     {
+        public event EventHandler DangXuat;
         public UC_BangDangXuat()
         {
             InitializeComponent();
+          
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2ButtonDangXuat_Click(object sender, EventArgs e)
         {
+            
+            if (MessageBox.Show("Bạn có chắc chắc muốn đăng xuất", "Thông Báo Đăng Xuất",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
 
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
+                DangXuat?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }

@@ -18,16 +18,23 @@ namespace LTWINDOW_.Options
         SQL sql;
         int index;
         List<ThongBao> tBao;
+        public event EventHandler DangXuat; // Sự kiện truyền tiếp
         public UC_DashBoard()
         {
            
             InitializeComponent();
+           
+            uC_BangDangXuat1.DangXuat += (s, e) =>
+            {
+                DangXuat?.Invoke(this, EventArgs.Empty); // Truyền tiếp sự kiện
+            };
+            
             tBao = new List<ThongBao>();
             sql = new SQL();
             sql.OpenConnection();
             LoadRevenueChart();
             uC_BangDangXuat1.Visible = false;
-            LoadThongBao();
+            LoadThongBao(); 
         }
 
         private void LoadRevenueChart()
@@ -191,6 +198,7 @@ namespace LTWINDOW_.Options
             if (!isVisible)
             {
                 uC_BangDangXuat1.Visible = true;
+              
                 isVisible = true;
             }
             else
@@ -207,5 +215,6 @@ namespace LTWINDOW_.Options
             LoadThongBao();
 
         }
+        
     }
 }

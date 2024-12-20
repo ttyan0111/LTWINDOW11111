@@ -27,7 +27,7 @@ namespace LTWINDOW_.Options
         int check;
         string maNhanVien;
         string maDonHang;
-        double grandTotal ;
+        double grandTotal;
         bool checkIn;
 
         public List<KeyValuePair<string, int>> ds { get; set; }
@@ -40,8 +40,9 @@ namespace LTWINDOW_.Options
             sql = new SQL(); // Khởi tạo SQL nếu cần
             this.maNhanVien = maNhanVien;
             this.maDonHang = Guid.NewGuid().ToString();
-            HienThiThongTin(maNhanVien, maDonHang); // Hiển thị thông tin khi mở form
+           
             this.grandTotal = grandTotal;
+            HienThiThongTin(maNhanVien, maDonHang); // Hiển thị thông tin khi mở form
             this.checkIn = false;
         }
         public void HienThiThongTin(string maNhanVien,string maDonHang)
@@ -285,9 +286,6 @@ namespace LTWINDOW_.Options
                         this.checkIn = true;
                         // Đóng Form hiện tại
                         this.Close();
-
-
-
                     }
                 }
                 catch (Exception ex)
@@ -298,7 +296,7 @@ namespace LTWINDOW_.Options
         }
 
         public bool getCheckIn() { return checkIn; }
-
+        public void setCheckIn() { this.checkIn = false; }
 
 
 
