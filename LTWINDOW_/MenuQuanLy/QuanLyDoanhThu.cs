@@ -97,23 +97,32 @@ namespace LTWINDOW_.MenuQuanLy
 
         string[] getDate_S_E()
         {
-            string[] dateSAndE = new string[3];
+            string[] dateSAndE = new string[2]; // Dùng 2 phần tử, vì bạn chỉ có 2 ngày
             DateTime sdt = dtptuNgay.Value;
-            dateSAndE[0] = sdt.ToString("yyyy/MM/dd");
+            dateSAndE[0] = sdt.ToString("yyyy/MM/dd") + " 00:00:00"; // Ngày bắt đầu lúc 00:00:00
+
             sdt = dtpdenNgay.Value;
-            dateSAndE[1] = sdt.ToString("yyyy/MM/dd");
+            dateSAndE[1] = sdt.ToString("yyyy/MM/dd") + " 23:59:59"; // Ngày kết thúc lúc 23:59:59
+
 
             return dateSAndE;
         }
         private void QuanLyDoanhThu_Load(object sender, EventArgs e)
         {
             string[] date_s_e = getDate_S_E();
-            loadData("select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
-                    "from DonHang " +
-                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'");
+
+            string queryDate = "SELECT MaDonHang, TongTien, MaNhanVien, FORMAT(NgayDatHang, 'dd/MM/yyyy HH:mm:ss') AS NgayDatHang " +
+                   "FROM DonHang " +
+                   $"WHERE NgayDatHang BETWEEN '{date_s_e[0]}' AND '{date_s_e[1]}' " +
+                   "ORDER BY NgayDatHang DESC"; // Sắp xếp theo ngày và giờ giảm dần
+
+
+
+            loadData(queryDate);
         }
 
-        
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // ngày bắt đầu phả lớn hơn ngày kết thúc.
@@ -124,9 +133,11 @@ namespace LTWINDOW_.MenuQuanLy
                 // truy vấn.
                 string[] date_s_e = getDate_S_E();
 
-                string queryDate = "select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
-                    "from DonHang " +
-                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'";
+                string queryDate = "SELECT MaDonHang, TongTien, MaNhanVien, FORMAT(NgayDatHang, 'dd/MM/yyyy HH:mm:ss') AS NgayDatHang " +
+                   "FROM DonHang " +
+                   $"WHERE NgayDatHang BETWEEN '{date_s_e[0]}' AND '{date_s_e[1]}' " +
+                   "ORDER BY NgayDatHang DESC"; // Sắp xếp theo ngày và giờ giảm dần
+
                 loadData(queryDate);
             }
             else
@@ -214,10 +225,12 @@ namespace LTWINDOW_.MenuQuanLy
                 else MessageBox.Show("Thất bại", "Thông Báo Xóa dòng");
                 string[] date_s_e = getDate_S_E();
 
-                string queryDate = "select MaDonHang, TongTien, MaNhanVien, format(NgayDatHang, 'dd/MM/yyyy') as NgayDatHang " +
-                    "from DonHang " +
-                    $"where NgayDatHang between '{date_s_e[0]}' and '{date_s_e[1]}'";
-                loadData(queryDate);
+                string query = "SELECT MaDonHang, TongTien, MaNhanVien, FORMAT(NgayDatHang, 'dd/MM/yyyy HH:mm:ss') AS NgayDatHang " +
+                   "FROM DonHang " +
+                   $"WHERE NgayDatHang BETWEEN '{date_s_e[0]}' AND '{date_s_e[1]}' " +
+                   "ORDER BY NgayDatHang DESC"; // Sắp xếp theo ngày và giờ giảm dần
+
+                loadData(query);
             }
             else
             {
