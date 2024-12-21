@@ -22,6 +22,7 @@ namespace LTWINDOW_
     internal class SQL
     {
         string connectionString = @"server=localhost;database=QuanLyQuanNuoc_GDM;integrated security=true";
+        //string connectionString = @"server=localhost;database=QuanLyQuanNuoc;integrated security=true";
 
         //string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyQuanNuoc;Integrated Security=True;";
         private SqlDataAdapter adapter;

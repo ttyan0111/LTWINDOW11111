@@ -124,13 +124,13 @@ namespace LTWINDOW_
 
         }
 
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc muốn thoát?\nNếu thoát chon Yes không chọn No.", "Thoát Đăng Nhập",
-                MessageBoxButtons.YesNo) != DialogResult.Yes)
-                e.Cancel = true;
+        //private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    if (MessageBox.Show("Bạn có chắc muốn thoát?\nNếu thoát chon Yes không chọn No.", "Thoát Đăng Nhập",
+        //        MessageBoxButtons.YesNo) != DialogResult.Yes)
+        //        e.Cancel = true;
 
-        }
+        //}
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
